@@ -12,17 +12,19 @@ class input {
 		console.log(this.keys);
 	}
 	processor() {
+		this.cursorPad();
+		for (var i = this.keys.length - 1; i >= 0; i--)
+			this.keyPress(this.keys[i]);
+	}
+	cursorPad() {
 		if (this.cursors.up.isDown)
 			this.player.character.body.velocity.y -= 1;
 		if (this.cursors.down.isDown)
 			this.player.character.body.velocity.y += 1;
 		if (this.cursors.left.isDown)
 			this.player.character.body.velocity.x -= 5;
-		if (this.cursors.right.isDown) {
+		if (this.cursors.right.isDown)
 			this.player.character.body.velocity.x += 5;
-		}
-		for (var i = this.keys.length - 1; i >= 0; i--)
-			this.keyPress(this.keys[i]);
 	}
 	keyPress(key) {
 		if (key.isDown)
