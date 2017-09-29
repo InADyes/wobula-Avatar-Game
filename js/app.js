@@ -5,19 +5,20 @@ function preload() {
 	game.load.crossOrigin = 'anonymous';
 	game.load.image('background', 'imgs/twitchBackground.png');
 	game.load.image('stick', 'imgs/stick.png');
-	game.load.image('bgCore', 'imgs/bgCore.png');
-	game.load.image('bgTop', 'imgs/bgTop.png');
+	game.load.image('bgCoreGrassy', 'imgs/bgCore.png');
+	game.load.image('bgTopGrassy', 'imgs/bgTop.png');
 }
 
 var avatar;
 var controls;
 var env;
+var menu;
 
 function create() {
 	env = new environment('grassy');
 	avatar = new player('wobula');
 	controls = new input(avatar);
-	
+	//menu = new HUD();
 }
 
 function update() {
