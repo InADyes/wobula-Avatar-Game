@@ -14,11 +14,13 @@ var controls;
 var env;
 
 function create() {
-	env = new environment();
+	env = new environment('grassy');
 	avatar = new player('wobula');
 	controls = new input(avatar);
+	
 }
 
 function update() {
 	controls.processor();
+	game.physics.arcade.collide(env.floor, avatar.character);
 }
