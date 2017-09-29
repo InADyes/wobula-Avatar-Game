@@ -25,6 +25,10 @@ class input {
 			this.player.character.body.velocity.x -= 5;
 		if (this.cursors.right.isDown)
 			this.player.character.body.velocity.x += 5;
+		if (this.cursors.left.isUp && this.player.character.body.velocity.x < 0)
+			this.player.character.body.velocity.x += 5;
+		if (this.cursors.right.isUp && this.player.character.body.velocity.x > 0)
+			this.player.character.body.velocity.x -= 5;
 	}
 	keyPress(key) {
 		if (key.isDown)
