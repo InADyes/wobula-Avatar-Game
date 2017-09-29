@@ -2,14 +2,21 @@ class input {
 	constructor(avatar) {
 		this.player = avatar;
 		this.cursors = game.input.keyboard.createCursorKeys();
-		this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-		this.m = game.input.keyboard.addKey(Phaser.Keyboard.M);
-		this.m.press = false;
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.M]);
+		this.m;
+		this.space;
+		this.instantiateKeys();
 		this.keys = [];
 		this.keys.push(this.m, this.space);
-		console.log(this.keys);
+	}
+	instantiateKeys() {
+		this.m = game.input.keyboard.addKey(Phaser.Keyboard.M);
+		this.m.press = false;
+		this.m.action = () => { this.player.character.body.velocity.y -= 100; };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.M]);
+		this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+		this.space.press = false;
+		this.space.action = () => { console.log('You just pressed the spacebar'); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
 	}
 	processor() {
 		this.cursorPad();
@@ -34,8 +41,7 @@ class input {
 		if (key.isDown)
 			key.press = true;
 		if (key.press == true && key.isUp) {
-			console.log('you just pressed ' + key.event.code + ' key!');
-			this.player.character.body.velocity.y -= 100;
+			key.action();
 			key.press = false;
 		}
 	}
