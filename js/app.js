@@ -10,20 +10,12 @@ function preload() {
 }
 
 var avatar;
-var bg;
 var controls;
-var floorCore;
-var floorTop;
+var env;
 
 function create() {
-	bg = game.add.sprite(0, 0, 'background');
-	
-	floorTop = game.add.tileSprite(0, 340, 600, 10, 'bgTop');
-	floorCore = game.add.tileSprite(0, 350, 600, 20, 'bgCore');
-	
-	avatar = game.add.sprite(200, 270, 'stick');
-	avatar.scale.setTo(.25, .25);
-
+	env = new environment();
+	avatar = new player('wobula');
 	controls = new input(avatar);
 }
 
