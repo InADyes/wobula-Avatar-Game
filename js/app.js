@@ -7,6 +7,8 @@ function preload() {
 	game.load.image('stick', 'imgs/stick.png');
 	game.load.image('bgCoreGrassy', 'imgs/bgCore.png');
 	game.load.image('bgTopGrassy', 'imgs/bgTop.png');
+	game.load.image('inventory', 'imgs/inventory.png');
+	game.load.image('menu', 'imgs/menu.png');
 }
 
 var avatar;
@@ -18,10 +20,11 @@ function create() {
 	env = new environment('grassy');
 	avatar = new player('wobula');
 	controls = new input(avatar);
-	//menu = new HUD();
+	menu = new HUD(this);
 }
 
 function update() {
 	controls.processor();
+	menu.mouseOver();
 	game.physics.arcade.collide(env.floor, avatar.character);
 }

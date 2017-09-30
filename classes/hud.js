@@ -1,16 +1,27 @@
 class HUD {
-	constructor(type) {
-		if (type == 'grassy') {
-			console.log('Environment: grassy');
-			this.background = game.add.sprite(0, 0, 'background');
-			this.floorCore = game.add.tileSprite(0, 350, 600, 20, 'bgCore');
-			this.floorTop = game.add.tileSprite(0, 340, 600, 10, 'bgTop');
-			this.floor = game.add.physicsGroup();
-			this.floor.add(this.floorCore);
-			this.floor.add(this.floorTop);
-			game.physics.startSystem(Phaser.Physics.ARCADE);
-			this.floor.setAll('body.allowGravity', false);
-			this.floor.setAll('body.immovable', true);
-		}
+	constructor(test) {
+		this.menu = game.add.sprite(15, 345, 'menu');
+		this.menu.scale.setTo(.15, .15);
+		this.menu.inputEnabled = true;
+		this.menu.alpha = .5;
+		this.inventory = game.add.sprite(45, 345, 'inventory');
+		this.inventory.scale.setTo(.15, .15);
+		this.inventory.inputEnabled = true;
+		this.inventory.alpha = .5;
+		game.input.addMoveCallback(this.p, test);
+	}
+	p(pointer) {
+		if (pointer)
+			console.log(pointer);
+	}
+	mouseOver() {
+		if (this.menu.input.pointerOver())
+			this.menu.alpha = 1;
+		else
+			this.menu.alpha = .5;
+		if (this.inventory.input.pointerOver())
+			this.inventory.alpha = 1;
+		else
+			this.inventory.alpha = .5;
 	}
 }
