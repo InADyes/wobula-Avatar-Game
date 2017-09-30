@@ -1,4 +1,4 @@
-class HUD {
+class GUI {
 	constructor() {
 		this.menuBtn = game.add.button(15, 345, 'menu', this.actionOnClick, this, 2, 1, 0);
 		this.menuBtn.onInputOver.add(this.over, this);

@@ -15,8 +15,8 @@ function create() {
 	env = new environment('grassy');
 	avatar = new player('wobula');
 	controls = new input(avatar);
-	menu = new HUD();
-	data.sounds();
+	menu = new GUI();
+	data.addSounds();
 }
 
 function update() {
