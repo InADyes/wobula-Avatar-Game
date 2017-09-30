@@ -21,6 +21,18 @@ class HUD {
 		this.legs;
 		this.background;
 		this.inventory = this.makeInventory();
+
+		this.group = game.add.group();
+		this.group.inputEnableChildren = true;
+		this.group.add(this.chest);
+		this.group.add(this.feet);
+		this.group.add(this.hands);
+		this.group.add(this.head);
+		this.group.add(this.legs);
+
+		this.chest.input.enableDrag();
+		this.chest.events.onDragStart.add(this.onDragStart, this);
+		this.chest.events.onDragStop.add(this.onDragStop, this);
 	}
 	makeInventory() {
 		this.background = game.add.button(35, 185, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
@@ -44,6 +56,23 @@ class HUD {
 		this.legs = game.add.button(135, 280, 'pants', this.actionOnClick, this, 2, 1, 0);
 		this.legs.scale.setTo(.28, .28);
 		this.legs.alpha = 0;
+
+		this.result;
+	}
+	onDragStart(sprite, pointer) {
+		this.result = 'Dragging ' + sprite.key;
+	}
+	onDragStop(sprite, pointer) {
+		this.result = sprite.key + " dropped at x:" + pointer.x + " y: " + pointer.y;
+		console.log(this.result);
+
+		if (pointer.y > 400)
+		{
+			console.log('input disabled on', sprite.key);
+			sprite.input.enabled = false;
+
+			sprite.sendToBack();
+		}
 	}
 	invenBtnAction() {
 		console.log('You just clicked: ' + arguments[0].key);

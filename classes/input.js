@@ -52,6 +52,7 @@ class input {
 	spaceAction() {
 		this.player.character.body.velocity.y = 0;
 		this.player.character.body.velocity.y -= 400;
+		data.jump.play();
 		console.log('You pressed the space key');
 	}
 }
