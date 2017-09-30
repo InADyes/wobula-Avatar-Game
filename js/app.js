@@ -9,6 +9,13 @@ function preload() {
 	game.load.image('bgTopGrassy', 'imgs/bgTop.png');
 	game.load.image('inventory', 'imgs/inventory.png');
 	game.load.image('menu', 'imgs/menu.png');
+	game.load.image('inventoryBG', 'imgs/inventoryBG.png');
+	game.load.image('shirt', 'imgs/shirt.png');
+	game.load.image('shoes', 'imgs/shoes.png');
+	game.load.image('hat', 'imgs/hat.png');
+	game.load.image('gloves', 'imgs/gloves.png');
+	game.load.image('pants', 'imgs/pants.png');
+	game.load.audio('jump', 'sounds/jump.mp3');
 }
 
 var avatar;

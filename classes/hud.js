@@ -13,25 +13,58 @@ class HUD {
 		this.invenBtn.alpha = .5;
 		this.invenBtn.action = () => { this.invenBtnAction(); };
 
-		this.hat;
-		this.shoes;
-		this.shirt;
-		this.pants;
+		this.avatar;
+		this.chest;
+		this.feet;
+		this.hands;
+		this.head;
+		this.legs;
+		this.background;
 		this.inventory = this.makeInventory();
 	}
 	makeInventory() {
-		this.hat = game.add.button(45, 315, 'menu', this.actionOnClick, this, 2, 1, 0);
-		//this.hat.onInputOver.add(this.over, this);
-		//this.hat.onInputOut.add(this.out, this);
-		this.hat.scale.setTo(.15, .15);
-		this.hat.alpha = 0;
+		this.background = game.add.button(35, 185, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
+		this.background.scale.setTo(1.5, 1.5);
+		this.background.alpha = 0;
+		this.avatar = game.add.button(80, 200, 'stick', this.actionOnClick, this, 2, 1, 0);
+		this.avatar.scale.setTo(.4, .4);
+		this.avatar.alpha = 0;
+		this.chest = game.add.button(135, 240, 'shirt', this.actionOnClick, this, 2, 1, 0);
+		this.chest.scale.setTo(.17, .17);
+		this.chest.alpha = 0;
+		this.feet = game.add.button(45, 285, 'shoes', this.actionOnClick, this, 2, 1, 0);
+		this.feet.scale.setTo(.15, .15);
+		this.feet.alpha = 0;
+		this.hands = game.add.button(45, 240, 'gloves', this.actionOnClick, this, 2, 1, 0);
+		this.hands.scale.setTo(.19, .19);
+		this.hands.alpha = 0;
+		this.head = game.add.button(135, 200, 'hat', this.actionOnClick, this, 2, 1, 0);
+		this.head.scale.setTo(.19, .19);
+		this.head.alpha = 0;
+		this.legs = game.add.button(135, 280, 'pants', this.actionOnClick, this, 2, 1, 0);
+		this.legs.scale.setTo(.28, .28);
+		this.legs.alpha = 0;
 	}
 	invenBtnAction() {
 		console.log('You just clicked: ' + arguments[0].key);
-		if (this.hat.alpha == 0)
-			this.hat.alpha = 1;
-		else
-			this.hat.alpha = 0;
+		if (this.avatar.alpha == 0) {
+			this.avatar.alpha = 1;
+			this.background.alpha = 1;
+			this.chest.alpha = 1;
+			this.hands.alpha = 1;
+			this.head.alpha = 1;
+			this.feet.alpha = 1;
+			this.legs.alpha = 1;
+		}
+		else {
+			this.avatar.alpha = 0;
+			this.background.alpha = 0;
+			this.chest.alpha = 0;
+			this.feet.alpha = 0;
+			this.hands.alpha = 0;
+			this.head.alpha = 0;
+			this.legs.alpha = 0;
+		}
 	}
 	over() {
 		console.log('button over: ' + arguments[0].key);
