@@ -20,11 +20,10 @@ function create() {
 	env = new environment('grassy');
 	avatar = new player('wobula');
 	controls = new input(avatar);
-	menu = new HUD(this);
+	menu = new HUD();
 }
 
 function update() {
 	controls.processor();
-	menu.mouseOver();
 	game.physics.arcade.collide(env.floor, avatar.character);
 }
