@@ -14,8 +14,14 @@ class mediaLibrary {
 		this.hat = (game.load.image('hat', 'imgs/hat.png'));
 		this.gloves = (game.load.image('gloves', 'imgs/gloves.png'));
 		this.pants = (game.load.image('pants', 'imgs/pants.png'));
+
+		this.blood1 = (game.load.image('bloodDrop1', 'imgs/bloodDrop1.png'));
+		this.blood2 = (game.load.image('bloodDrop2', 'imgs/bloodDrop2.png'));
+		this.blood3 = (game.load.image('bloodDrop3', 'imgs/bloodDrop3.png'));
+		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
+
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
-		this.jump;	
+		this.jump;
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');

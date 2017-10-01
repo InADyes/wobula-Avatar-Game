@@ -1,6 +1,5 @@
 class environment {
 	constructor(type) {
-		
 		this.background = game.add.sprite(0, 0, 'background');
 		console.log('Environment: ' + type);
 		this.floorCore;

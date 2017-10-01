@@ -46,7 +46,7 @@ class input {
 		}
 	}
 	mAction() {
-		this.player.character.body.velocity.y += 400;
+		avatar.bloodGeyser.flow(1000, 500, 15, -1);
 		console.log('You pressed the m key');
 	}
 	spaceAction() {
