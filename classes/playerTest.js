@@ -3,10 +3,12 @@ class playerTest {
 		this.name = player;
 		this.addBodyParts();
 		this.headGeyser = this.addGeysers(this.characterHead);
-		this.chestGeyser = this.addGeysers(this.characterChest);
-		this.torsoGeyser = this.addGeysers(this.characterTorso);
+		this.chestGeyser = this.addGeysers(this.characterChest, 15, 30);
+		this.torsoGeyser = this.addGeysers(this.characterTorso, 20, 15);
 		this.arm1Geyser = this.addGeysers(this.characterArm1, 10, 35);
-		this.arm2Geyser = this.addGeysers(this.characterArm2);
+		this.arm2Geyser = this.addGeysers(this.characterArm2, 10, 35);
+		this.leg1Geyser = this.addGeysers(this.characterLeg1, 25, 25);
+		this.leg2Geyser = this.addGeysers(this.characterLeg2, 25, 25);
 		this.bindBody();
 		this.physics();
 	}
