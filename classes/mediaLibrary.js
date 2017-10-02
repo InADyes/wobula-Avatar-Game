@@ -26,6 +26,14 @@ class mediaLibrary {
 		this.jump;
 		this.invenOpen;
 		this.invenClose;
+
+		this.testHead = (game.load.image('stickHead', 'imgs/stickHead.png'));
+		this.testChest = (game.load.image('stickChest', 'imgs/stickChest.png'));
+		this.testTorso = (game.load.image('stickTorso', 'imgs/stickTorso.png'));
+		this.testArm1 = (game.load.image('stickArm1', 'imgs/stickArm1.png'));
+		this.testArm2 = (game.load.image('stickArm2', 'imgs/stickArm2.png'));
+		this.testLeg1 = (game.load.image('stickLeg1', 'imgs/stickLeg1.png'));
+		this.testLeg2 = (game.load.image('stickLeg2', 'imgs/stickLeg2.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');

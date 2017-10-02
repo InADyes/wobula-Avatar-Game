@@ -1,13 +1,39 @@
 class playerTest {
 	constructor(player) {
 		this.name = player;
-		this.character = game.add.sprite(200, 200, 'stick');
+		this.character = game.add.sprite(100, 200, 'stick');
 		this.character.scale.setTo(.25, .25);
 		game.physics.enable(this.character, Phaser.Physics.ARCADE);
 		this.character.body.collideWorldBounds = true;
 		this.character.body.gravity.y = 500;
 		this.character.body.bounce.y = 0.8;
 		this.character.anchor.setTo(.4, .3);
+
+		this.characterHead = game.add.sprite(50, 220, 'stickHead');
+		this.characterHead.scale.setTo(.25, .25);
+		/*game.physics.enable(this.characterHead, Phaser.Physics.ARCADE);
+		this.characterHead.body.collideWorldBounds = true;
+		this.characterHead.body.gravity.y = 500;
+		this.characterHead.body.bounce.y = 0.8;
+		//this.characterHead.anchor.setTo(.4, .3);*/
+
+		this.characterChest = game.add.sprite(48, 256, 'stickTorso');
+		this.characterChest.scale.setTo(.25, .25);
+
+		this.characterChest = game.add.sprite(50, 232, 'stickChest');
+		this.characterChest.scale.setTo(.25, .25);
+
+		this.characterArm1 = game.add.sprite(41, 232, 'stickArm1');
+		this.characterArm1.scale.setTo(.25, .25);
+
+		this.characterArm2 = game.add.sprite(59, 232, 'stickArm2');
+		this.characterArm2.scale.setTo(.25, .25);
+
+		this.characterLeg1 = game.add.sprite(44, 266, 'stickLeg1');
+		this.characterLeg1.scale.setTo(.25, .25);
+
+		this.characterLeg2 = game.add.sprite(56, 266, 'stickLeg2');
+		this.characterLeg2.scale.setTo(.25, .25);
 
 		this.bloodGeyser = game.add.emitter(0, 0, 999);
 		this.bloodGeyser.bounce.setTo(.5, .5);
