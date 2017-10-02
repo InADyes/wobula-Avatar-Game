@@ -46,7 +46,10 @@ class input {
 		}
 	}
 	mAction() {
-		avatar.bloodGeyser.flow(1000, 500, 15, -1);
+		//testAvatar.headGeyser.flow(1000, 500, 15, -1);
+		//testAvatar.chestGeyser.flow(1000, 500, 15, -1);
+		testAvatar.arm1Geyser.flow(1000, 500, 15, -1);
+		//testAvatar.arm2Geyser.flow(1000, 500, 15, -1);
 		console.log('You pressed the m key');
 	}
 	spaceAction() {
