@@ -64,7 +64,7 @@ class GUI {
 	//size 36* 36
 	makeBags(){
 		this.background1 = game.add.button(10, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
-		this.background1.scale.setTo(1.2, 1.2);
+		this.background1.scale.setTo(1.6, 1.6);
 		this.background1.alpha = 0;
 		this.emptybag1 =  game.add.button(25, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag1.scale.setTo(.3, .3);

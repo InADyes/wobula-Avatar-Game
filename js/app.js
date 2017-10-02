@@ -11,6 +11,7 @@ var env;
 var menu;
 
 var testAvatar;
+console.log(game);
 
 function create() {
 	env = new environment('grassy');

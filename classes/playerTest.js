@@ -24,19 +24,19 @@ class playerTest {
 	}
 	addNewCharacter() {
 		this.characterBox = game.add.sprite(50, 100);
-		this.characterHead = game.add.sprite(0, -225, 'stickHead');
+		this.characterHead = game.add.sprite(-3, -225, 'stickHead');
 		this.characterHead.scale.setTo(.5, .5);
 		this.characterChest = game.add.sprite(0, -200, 'stickChest');
 		this.characterChest.scale.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-35, -195, 'stickArm1');
+		this.characterArm1 = game.add.sprite(-20, -195, 'stickArm1');
 		this.characterArm1.scale.setTo(.5, .5);
-		this.characterArm2 = game.add.sprite(35, -195, 'stickArm2');
+		this.characterArm2 = game.add.sprite(20, -195, 'stickArm2');
 		this.characterArm2.scale.setTo(.5, .5);
 		this.characterLeg1 = game.add.sprite(-25, -50, 'stickLeg1');
 		this.characterLeg1.scale.setTo(.5, .5);
 		this.characterLeg2 = game.add.sprite(25, -50, 'stickLeg2');
 		this.characterLeg2.scale.setTo(.5, .5);
-		this.characterTorso = game.add.sprite(-10, -95, 'stickTorso');
+		this.characterTorso = game.add.sprite(-10, -130, 'stickTorso');
 		this.characterTorso.scale.setTo(.5, .5);
 
 		this.characterBox.addChild(this.characterHead);
