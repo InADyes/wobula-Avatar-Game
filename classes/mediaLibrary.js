@@ -14,6 +14,7 @@ class mediaLibrary {
 		this.hat = (game.load.image('hat', 'imgs/hat.png'));
 		this.gloves = (game.load.image('gloves', 'imgs/gloves.png'));
 		this.pants = (game.load.image('pants', 'imgs/pants.png'));
+		this.emptybag = (game.load.image('emptybag', 'imgs/emptybag.png'));
 
 		this.blood1 = (game.load.image('bloodDrop1', 'imgs/bloodDrop1.png'));
 		this.blood2 = (game.load.image('bloodDrop2', 'imgs/bloodDrop2.png'));

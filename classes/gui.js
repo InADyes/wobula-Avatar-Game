@@ -1,17 +1,17 @@
 class GUI {
 	constructor() {
-		this.menuBtn = game.add.button(15, 345, 'menu', this.actionOnClick, this, 2, 1, 0);
+		this.menuBtn = game.add.button(15, 345, 'menu', this.menuBtnAction, this, 2, 1, 0);
 		this.menuBtn.onInputOver.add(this.over, this);
 		this.menuBtn.onInputOut.add(this.out, this);
-		this.menuBtn.scale.setTo(.15, .15);
+		this.menuBtn.scale.setTo(.2, .2);
 		this.menuBtn.alpha = .5;
 
 		this.invenBtn = game.add.button(45, 345, 'inventory', this.invenBtnAction, this, 2, 1, 0);
 		this.invenBtn.onInputOver.add(this.over, this);
 		this.invenBtn.onInputOut.add(this.out, this);
-		this.invenBtn.scale.setTo(.15, .15);
+		this.invenBtn.scale.setTo(.2, .2);
 		this.invenBtn.alpha = .5;
-		this.invenBtn.action = () => { this.invenBtnAction(); };
+		//this.invenBtn.action = () => { this.invenBtnAction(); };
 
 		this.avatar;
 		this.chest;
@@ -21,6 +21,7 @@ class GUI {
 		this.legs;
 		this.background;
 		this.inventory = this.makeInventory();
+		this.menu = this.makeBags();
 
 		this.group = game.add.group();
 		this.group.inputEnableChildren = true;
@@ -34,30 +35,66 @@ class GUI {
 		this.chest.events.onDragStart.add(this.onDragStart, this);
 		this.chest.events.onDragStop.add(this.onDragStop, this);
 	}
+	//actual size  24 x 24
 	makeInventory() {
-		this.background = game.add.button(35, 185, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
-		this.background.scale.setTo(1.5, 1.5);
-		this.background.alpha = 0;
-		this.avatar = game.add.button(80, 200, 'stick', this.actionOnClick, this, 2, 1, 0);
+		this.background2 = game.add.button(30, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
+		this.background2.scale.setTo(1.2, 1.2);
+		this.background2.alpha = 0;
+		this.avatar = game.add.button(78, 210, 'stick', this.actionOnClick, this, 2, 1, 0);
 		this.avatar.scale.setTo(.4, .4);
 		this.avatar.alpha = 0;
-		this.chest = game.add.button(135, 240, 'shirt', this.actionOnClick, this, 2, 1, 0);
-		this.chest.scale.setTo(.17, .17);
+		this.chest = game.add.button(135, 250, 'shirt', this.actionOnClick, this, 2, 1, 0);
+		this.chest.scale.setTo(.2, .2);
 		this.chest.alpha = 0;
-		this.feet = game.add.button(45, 285, 'shoes', this.actionOnClick, this, 2, 1, 0);
-		this.feet.scale.setTo(.15, .15);
+		this.feet = game.add.button(45, 295, 'shoes', this.actionOnClick, this, 2, 1, 0);
+		this.feet.scale.setTo(.2, .2);
 		this.feet.alpha = 0;
-		this.hands = game.add.button(45, 240, 'gloves', this.actionOnClick, this, 2, 1, 0);
-		this.hands.scale.setTo(.19, .19);
+		this.hands = game.add.button(45, 250, 'gloves', this.actionOnClick, this, 2, 1, 0);
+		this.hands.scale.setTo(.2, .2);
 		this.hands.alpha = 0;
-		this.head = game.add.button(135, 200, 'hat', this.actionOnClick, this, 2, 1, 0);
-		this.head.scale.setTo(.19, .19);
+		this.head = game.add.button(135, 210, 'hat', this.actionOnClick, this, 2, 1, 0);
+		this.head.scale.setTo(.2, .2);
 		this.head.alpha = 0;
-		this.legs = game.add.button(135, 280, 'pants', this.actionOnClick, this, 2, 1, 0);
-		this.legs.scale.setTo(.28, .28);
+		this.legs = game.add.button(135, 290, 'pants', this.actionOnClick, this, 2, 1, 0);
+		this.legs.scale.setTo(.2, .2);
 		this.legs.alpha = 0;
 
 		this.result;
+	}
+	//size 36* 36
+	makeBags(){
+		this.background1 = game.add.button(10, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
+		this.background1.scale.setTo(1.2, 1.2);
+		this.background1.alpha = 0;
+		this.emptybag1 =  game.add.button(25, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag1.scale.setTo(.3, .3);
+		this.emptybag1.alpha = 0;
+		this.emptybag2 =  game.add.button(65, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag2.scale.setTo(.3, .3);
+		this.emptybag2.alpha = 0;
+		this.emptybag3 =  game.add.button(105, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag3.scale.setTo(.3, .3);
+		this.emptybag3.alpha = 0;
+		this.emptybag4 =  game.add.button(25, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag4.scale.setTo(.3, .3);
+		this.emptybag4.alpha = 0;
+		this.emptybag5 =  game.add.button(65, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag5.scale.setTo(.3, .3);
+		this.emptybag5.alpha = 0;
+		this.emptybag6 =  game.add.button(105, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag6.scale.setTo(.3, .3);
+		this.emptybag6.alpha = 0;
+		this.emptybag7 =  game.add.button(25, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag7.scale.setTo(.3, .3);
+		this.emptybag7.alpha = 0;
+		this.emptybag8 =  game.add.button(65, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag8.scale.setTo(.3, .3);
+		this.emptybag8.alpha = 0;
+		this.emptybag9 =  game.add.button(105, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag9.scale.setTo(.3, .3);
+		this.emptybag9.alpha = 0;
+
+
 	}
 	onDragStart(sprite, pointer) {
 		this.result = 'Dragging ' + sprite.key;
@@ -78,7 +115,7 @@ class GUI {
 		console.log('You just clicked: ' + arguments[0].key);
 		if (this.avatar.alpha == 0) {
 			this.avatar.alpha = 1;
-			this.background.alpha = 1;
+			this.background2.alpha = 1;
 			this.chest.alpha = 1;
 			this.hands.alpha = 1;
 			this.head.alpha = 1;
@@ -87,12 +124,41 @@ class GUI {
 			data.invenOpen.play();
 		} else {
 			this.avatar.alpha = 0;
-			this.background.alpha = 0;
+			this.background2.alpha = 0;
 			this.chest.alpha = 0;
 			this.feet.alpha = 0;
 			this.hands.alpha = 0;
 			this.head.alpha = 0;
 			this.legs.alpha = 0;
+			data.invenClose.play();
+		}
+	}
+	menuBtnAction(){
+		console.log('You just clicked: ' + arguments[0].key);
+		if (this.background1.alpha == 0) {
+			this.background1.alpha = 1;
+			this.emptybag1.alpha = 1;
+			this.emptybag2.alpha = 1;
+			this.emptybag3.alpha = 1;
+			this.emptybag4.alpha = 1;
+			this.emptybag5.alpha = 1;
+			this.emptybag6.alpha = 1;
+			this.emptybag7.alpha = 1;
+			this.emptybag8.alpha = 1;
+			this.emptybag9.alpha = 1;
+			data.invenOpen.play();
+		}
+		else {
+			this.background1.alpha = 0;
+			this.emptybag1.alpha = 0;
+			this.emptybag2.alpha = 0;
+			this.emptybag3.alpha = 0;
+			this.emptybag4.alpha = 0;
+			this.emptybag5.alpha = 0;
+			this.emptybag6.alpha = 0;
+			this.emptybag7.alpha = 0;
+			this.emptybag8.alpha = 0;
+			this.emptybag9.alpha = 0;
 			data.invenClose.play();
 		}
 	}
