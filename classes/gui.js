@@ -85,8 +85,7 @@ class GUI {
 			this.feet.alpha = 1;
 			this.legs.alpha = 1;
 			data.invenOpen.play();
-		}
-		else {
+		} else {
 			this.avatar.alpha = 0;
 			this.background.alpha = 0;
 			this.chest.alpha = 0;
@@ -105,7 +104,7 @@ class GUI {
 		console.log('button out: ' + arguments[0].key);
 		arguments[0].alpha = .5;
 	}
-	actionOnClick() {
+	actionOnClick(pointer) {
 		console.log('You just clicked: ' + arguments[0].key);
 	}
 }
