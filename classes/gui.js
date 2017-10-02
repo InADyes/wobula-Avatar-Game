@@ -63,10 +63,10 @@ class GUI {
 	}
 	//size 36* 36
 	makeBags(){
-		this.background1 = game.add.button(10, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
+		this.background1 = game.add.button(game.width/2, game.height/2, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
 		this.background1.scale.setTo(1.2, 1.2);
 		this.background1.alpha = 0;
-		this.emptybag1 =  game.add.button(25, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag1 =  game.add.button(game.width/2+15, game.height/2+10, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag1.scale.setTo(.3, .3);
 		this.emptybag1.alpha = 0;
 		this.emptybag2 =  game.add.button(65, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
