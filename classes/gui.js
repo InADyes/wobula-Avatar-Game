@@ -35,11 +35,11 @@ class GUI {
 		this.chest.events.onDragStop.add(this.onDragStop, this);
 	}
 	makeInventory() {
-		this.background = game.add.button(35, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
+		this.background = game.add.button(30, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
 		this.background.scale.setTo(1.2, 1.2);
 		this.background.alpha = 0;
-		this.avatar = game.add.button(80, 210, 'stick', this.actionOnClick, this, 2, 1, 0);
-		this.avatar.scale.setTo(.2, .2);
+		this.avatar = game.add.button(78, 210, 'stick', this.actionOnClick, this, 2, 1, 0);
+		this.avatar.scale.setTo(.4, .4);
 		this.avatar.alpha = 0;
 		this.chest = game.add.button(135, 250, 'shirt', this.actionOnClick, this, 2, 1, 0);
 		this.chest.scale.setTo(.2, .2);
