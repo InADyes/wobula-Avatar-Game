@@ -10,21 +10,15 @@ var controls;
 var env;
 var menu;
 
-var testAvatar;
-console.log(game);
-
 function create() {
 	env = new environment('grassy');
 	avatar = new player('wobula');
 	controls = new input(avatar);
 	menu = new GUI();
 	data.addSounds();
-
-	testAvatar = new playerTest('might work');
 }
 
 function update() {
 	controls.processor();
 	game.physics.arcade.collide(env.floor, avatar.character);
-	game.physics.arcade.collide(env.floor, testAvatar.character);
 }

@@ -54,17 +54,17 @@ class input {
 	}
 	cursorPad() {
 		if (this.cursors.up.isDown)
-			this.player.character.body.velocity.y -= 1;
+			this.player.characterBox.body.velocity.y -= 1;
 		if (this.cursors.down.isDown)
-			this.player.character.body.velocity.y += 1;
+			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown)
-			this.player.character.body.velocity.x -= 5;
+			this.player.characterBox.body.velocity.x -= 5;
 		if (this.cursors.right.isDown)
-			this.player.character.body.velocity.x += 5;
-		if (this.cursors.left.isUp && this.player.character.body.velocity.x < 0)
-			this.player.character.body.velocity.x += 5;
-		if (this.cursors.right.isUp && this.player.character.body.velocity.x > 0)
-			this.player.character.body.velocity.x -= 5;
+			this.player.characterBox.body.velocity.x += 5;
+		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
+			this.player.characterBox.body.velocity.x += 5;
+		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0)
+			this.player.characterBox.body.velocity.x -= 5;
 	}
 	keyPress(key) {
 		if (key.isDown)
@@ -76,35 +76,35 @@ class input {
 	}
 	vAction() {
 		console.log('You pressed the v key');
-		testAvatar.headGeyser.flow(1000, 500, 15, -1);
+		avatar.headGeyser.flow(1000, 500, 15, -1);
 	}
 	bAction() {
 		console.log('You pressed the b key');
-		testAvatar.chestGeyser.flow(1000, 500, 15, -1);
+		avatar.chestGeyser.flow(1000, 500, 15, -1);
 	}
 	mAction() {
 		console.log('You pressed the m key');
-		testAvatar.arm1Geyser.flow(1000, 500, 15, -1);
+		avatar.arm1Geyser.flow(1000, 500, 15, -1);
 	}
 	nAction() {
 		console.log('You pressed the n key')
-		testAvatar.arm2Geyser.flow(1000, 500, 15, -1);
+		avatar.arm2Geyser.flow(1000, 500, 15, -1);
 	}
 	cAction() {
 		console.log('You pressed the c key');
-		testAvatar.leg1Geyser.flow(1000, 500, 15, -1);
+		avatar.leg1Geyser.flow(1000, 500, 15, -1);
 	}
 	xAction() {
 		console.log('You pressed the x key');
-		testAvatar.leg2Geyser.flow(1000, 500, 15, -1);
+		avatar.leg2Geyser.flow(1000, 500, 15, -1);
 	}
 	zAction() {
 		console.log('You pressed the x key');
-		testAvatar.torsoGeyser.flow(1000, 500, 15, -1);
+		avatar.torsoGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
-		this.player.character.body.velocity.y = 0;
-		this.player.character.body.velocity.y -= 400;
+		this.player.characterBox.body.velocity.y = 0;
+		this.player.characterBox.body.velocity.y -= 400;
 		data.jump.play();
 		console.log('You pressed the space key');
 	}
