@@ -32,6 +32,7 @@ class GUI {
 		this.group.add(this.legs);
 
 		this.chest.input.enableDrag();
+		//this.chest.input.enableSnap(24, 24, false, true);
 		this.chest.events.onDragStart.add(this.onDragStart, this);
 		this.chest.events.onDragStop.add(this.onDragStop, this);
 	}
@@ -63,34 +64,34 @@ class GUI {
 	}
 	//size 36* 36
 	makeBags(){
-		this.background1 = game.add.button(10, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
+		this.background1 = game.add.button(210, 195, 'inventoryBG', this.actionOnClick, this, 2, 1, 0);
 		this.background1.scale.setTo(1.2, 1.2);
 		this.background1.alpha = 0;
-		this.emptybag1 =  game.add.button(25, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag1 =  game.add.button(225, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag1.scale.setTo(.3, .3);
 		this.emptybag1.alpha = 0;
-		this.emptybag2 =  game.add.button(65, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag2 =  game.add.button(265, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag2.scale.setTo(.3, .3);
 		this.emptybag2.alpha = 0;
-		this.emptybag3 =  game.add.button(105, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag3 =  game.add.button(305, 205, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag3.scale.setTo(.3, .3);
 		this.emptybag3.alpha = 0;
-		this.emptybag4 =  game.add.button(25, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag4 =  game.add.button(225, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag4.scale.setTo(.3, .3);
 		this.emptybag4.alpha = 0;
-		this.emptybag5 =  game.add.button(65, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag5 =  game.add.button(265, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag5.scale.setTo(.3, .3);
 		this.emptybag5.alpha = 0;
-		this.emptybag6 =  game.add.button(105, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag6 =  game.add.button(305, 245, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag6.scale.setTo(.3, .3);
 		this.emptybag6.alpha = 0;
-		this.emptybag7 =  game.add.button(25, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag7 =  game.add.button(225, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag7.scale.setTo(.3, .3);
 		this.emptybag7.alpha = 0;
-		this.emptybag8 =  game.add.button(65, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag8 =  game.add.button(265, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag8.scale.setTo(.3, .3);
 		this.emptybag8.alpha = 0;
-		this.emptybag9 =  game.add.button(105, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
+		this.emptybag9 =  game.add.button(305, 285, 'emptybag', this.actionOnClick, this, 2, 1, 0);
 		this.emptybag9.scale.setTo(.3, .3);
 		this.emptybag9.alpha = 0;
 
@@ -110,6 +111,22 @@ class GUI {
 
 			sprite.sendToBack();
 		}
+		if (pointer.y != 250 && pointer.x != 135)
+			{
+			if (pointer.x > 225 && pointer.x < 261 && pointer.y > 205 && pointer.y < 241)
+				{
+					console.log('in the block');
+					sprite.x = 232;
+					sprite.y = 212;
+					
+				}
+			else
+				{
+					console.log('out block');
+					sprite.x = 135;
+					sprite.y = 250;
+				}
+			}
 	}
 	invenBtnAction() {
 		console.log('You just clicked: ' + arguments[0].key);
