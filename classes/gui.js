@@ -84,6 +84,7 @@ class GUI {
 			this.head.alpha = 1;
 			this.feet.alpha = 1;
 			this.legs.alpha = 1;
+			data.invenOpen.play();
 		}
 		else {
 			this.avatar.alpha = 0;
@@ -93,6 +94,7 @@ class GUI {
 			this.hands.alpha = 0;
 			this.head.alpha = 0;
 			this.legs.alpha = 0;
+			data.invenClose.play();
 		}
 	}
 	over() {

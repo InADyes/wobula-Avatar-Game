@@ -21,9 +21,15 @@ class mediaLibrary {
 		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
 
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
+		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
+		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));
 		this.jump;
+		this.invenOpen;
+		this.invenClose;
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
+		this.invenOpen = game.add.audio('invenOpen');
+		this.invenClose = game.add.audio('invenClose');
 	}
 }
