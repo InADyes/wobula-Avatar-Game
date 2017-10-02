@@ -1,28 +1,18 @@
 class playerTest {
 	constructor(player) {
 		this.name = player;
-		this.character = game.add.sprite(100, 200, 'stick');
-		this.character.scale.setTo(.25, .25);
-		game.physics.enable(this.character, Phaser.Physics.ARCADE);
-		this.character.body.collideWorldBounds = true;
-		this.character.body.gravity.y = 500;
-		this.character.body.bounce.y = 0.8;
-		this.character.anchor.setTo(.4, .3);
-
-		this.addNewCharacter();
-
-		this.bloodGeyser = game.add.emitter(0, 0, 999);
-		this.bloodGeyser.bounce.setTo(.5, .5);
-		this.bloodGeyser.setXSpeed(800, -200);
-		this.bloodGeyser.setYSpeed(500, 0);
-		this.bloodGeyser.minParticleScale = .70;
-		this.bloodGeyser.maxParticleScale = .50;
-		this.bloodGeyser.makeParticles('bloodDrop1', 0, 250, true, true);
-		this.character.addChild(this.bloodGeyser);
-		this.bloodGeyser.start(false, 5000, 1);
-		console.log(this.bloodGeyser.maxParticles);
+		this.addBodyParts();
+		this.headGeyser = this.addGeysers(this.characterHead);
+		this.chestGeyser = this.addGeysers(this.characterChest, 15, 30);
+		this.torsoGeyser = this.addGeysers(this.characterTorso, 20, 15);
+		this.arm1Geyser = this.addGeysers(this.characterArm1, 10, 35);
+		this.arm2Geyser = this.addGeysers(this.characterArm2, 10, 35);
+		this.leg1Geyser = this.addGeysers(this.characterLeg1, 25, 25);
+		this.leg2Geyser = this.addGeysers(this.characterLeg2, 25, 25);
+		this.bindBody();
+		this.physics();
 	}
-	addNewCharacter() {
+	addBodyParts() {
 		this.characterBox = game.add.sprite(50, 100);
 		this.characterHead = game.add.sprite(-3, -225, 'stickHead');
 		this.characterHead.scale.setTo(.5, .5);
@@ -32,13 +22,27 @@ class playerTest {
 		this.characterArm1.scale.setTo(.5, .5);
 		this.characterArm2 = game.add.sprite(20, -195, 'stickArm2');
 		this.characterArm2.scale.setTo(.5, .5);
-		this.characterLeg1 = game.add.sprite(-25, -50, 'stickLeg1');
+		this.characterLeg1 = game.add.sprite(-15, -120, 'stickLeg1');
 		this.characterLeg1.scale.setTo(.5, .5);
-		this.characterLeg2 = game.add.sprite(25, -50, 'stickLeg2');
+		this.characterLeg2 = game.add.sprite(15, -120, 'stickLeg2');
 		this.characterLeg2.scale.setTo(.5, .5);
-		this.characterTorso = game.add.sprite(-10, -130, 'stickTorso');
+		this.characterTorso = game.add.sprite(-5, -145, 'stickTorso');
 		this.characterTorso.scale.setTo(.5, .5);
-
+	}
+	addGeysers(anchor, xoffset, yoffset) {
+		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
+		bloodGeyser.bounce.setTo(.5, .5);
+		bloodGeyser.setXSpeed(800, -200);
+		bloodGeyser.setYSpeed(500, 0);
+		bloodGeyser.minParticleScale = .70;
+		bloodGeyser.maxParticleScale = .50;
+		bloodGeyser.makeParticles('bloodDrop1', 0, 250, true, true);
+		anchor.addChild(bloodGeyser);
+		console.log(bloodGeyser.position.y);
+		bloodGeyser.start(false, 5000, 1);
+		return(bloodGeyser);
+	}
+	bindBody() {
 		this.characterBox.addChild(this.characterHead);
 		this.characterBox.addChild(this.characterChest);
 		this.characterBox.addChild(this.characterTorso);
@@ -47,7 +51,8 @@ class playerTest {
 		this.characterBox.addChild(this.characterArm1);
 		this.characterBox.addChild(this.characterArm2);
 		this.characterBox.scale.setTo(.5, .5);
-
+	}
+	physics() {
 		game.physics.enable(this.characterBox, Phaser.Physics.ARCADE);
 		this.characterBox.body.collideWorldBounds = true;
 		this.characterBox.body.gravity.y = 500;

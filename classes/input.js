@@ -3,16 +3,45 @@ class input {
 		this.player = avatar;
 		this.cursors = game.input.keyboard.createCursorKeys();
 		this.m;
+		this.n;
+		this.v;
+		this.c;
+		this.b;
+		this.z;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.m, this.space);
+		this.keys.push(this.m, this.space, this.n, this.v, this.c, this.x, this.b, this.z);
 	}
 	instantiateKeys() {
+		this.z = game.input.keyboard.addKey(Phaser.Keyboard.Z);
+		this.z.press = false;
+		this.z.action = () => { this.zAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.Z]);
+		this.b = game.input.keyboard.addKey(Phaser.Keyboard.B);
+		this.b.press = false;
+		this.b.action = () => { this.bAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.B]);
+		this.x = game.input.keyboard.addKey(Phaser.Keyboard.X);
+		this.x.press = false;
+		this.x.action = () => { this.xAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.X]);
+		this.c = game.input.keyboard.addKey(Phaser.Keyboard.C);
+		this.c.press = false;
+		this.c.action = () => { this.cAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.C]);
+		this.v = game.input.keyboard.addKey(Phaser.Keyboard.V);
+		this.v.press = false;
+		this.v.action = () => { this.vAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.V]);
 		this.m = game.input.keyboard.addKey(Phaser.Keyboard.M);
 		this.m.press = false;
 		this.m.action = () => { this.mAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.M]);
+		this.n = game.input.keyboard.addKey(Phaser.Keyboard.N);
+		this.n.press = false;
+		this.n.action = () => { this.nAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.N]);
 		this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 		this.space.press = false;
 		this.space.action = () => { this.spaceAction(); };
@@ -45,9 +74,33 @@ class input {
 			key.press = false;
 		}
 	}
+	vAction() {
+		console.log('You pressed the v key');
+		testAvatar.headGeyser.flow(1000, 500, 15, -1);
+	}
+	bAction() {
+		console.log('You pressed the b key');
+		testAvatar.chestGeyser.flow(1000, 500, 15, -1);
+	}
 	mAction() {
-		avatar.bloodGeyser.flow(1000, 500, 15, -1);
 		console.log('You pressed the m key');
+		testAvatar.arm1Geyser.flow(1000, 500, 15, -1);
+	}
+	nAction() {
+		console.log('You pressed the n key')
+		testAvatar.arm2Geyser.flow(1000, 500, 15, -1);
+	}
+	cAction() {
+		console.log('You pressed the c key');
+		testAvatar.leg1Geyser.flow(1000, 500, 15, -1);
+	}
+	xAction() {
+		console.log('You pressed the x key');
+		testAvatar.leg2Geyser.flow(1000, 500, 15, -1);
+	}
+	zAction() {
+		console.log('You pressed the x key');
+		testAvatar.torsoGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
 		this.player.character.body.velocity.y = 0;
