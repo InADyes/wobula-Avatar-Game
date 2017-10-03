@@ -2,13 +2,7 @@ class player {
 	constructor(player) {
 		this.name = player;
 		this.addBodyParts();
-		this.headGeyser = this.addGeysers(this.characterHead);
-		this.chestGeyser = this.addGeysers(this.characterChest, 15, 30);
-		this.torsoGeyser = this.addGeysers(this.characterTorso, 20, 15);
-		this.arm1Geyser = this.addGeysers(this.characterArm1, 10, 35);
-		this.arm2Geyser = this.addGeysers(this.characterArm2, 10, 35);
-		this.leg1Geyser = this.addGeysers(this.characterLeg1, 25, 25);
-		this.leg2Geyser = this.addGeysers(this.characterLeg2, 25, 25);
+		this.addGeysers();
 		this.bindBody();
 		this.physics();
 	}
@@ -29,7 +23,16 @@ class player {
 		this.characterTorso = game.add.sprite(-5, -145, 'stickTorso');
 		this.characterTorso.scale.setTo(.5, .5);
 	}
-	addGeysers(anchor, xoffset, yoffset) {
+	addGeysers() {
+		this.headGeyser = this.addIndividualGeysers(this.characterHead);
+		this.chestGeyser = this.addIndividualGeysers(this.characterChest, 15, 30);
+		this.torsoGeyser = this.addIndividualGeysers(this.characterTorso, 20, 15);
+		this.arm1Geyser = this.addIndividualGeysers(this.characterArm1, 10, 35);
+		this.arm2Geyser = this.addIndividualGeysers(this.characterArm2, 10, 35);
+		this.leg1Geyser = this.addIndividualGeysers(this.characterLeg1, 25, 25);
+		this.leg2Geyser = this.addIndividualGeysers(this.characterLeg2, 25, 25);
+	}
+	addIndividualGeysers(anchor, xoffset, yoffset) {
 		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
 		bloodGeyser.bounce.setTo(.5, .5);
 		bloodGeyser.setXSpeed(800, -200);
