@@ -57,10 +57,14 @@ class input {
 			this.player.characterBox.body.velocity.y -= 1;
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
-		if (this.cursors.left.isDown)
+		if (this.cursors.left.isDown) {
 			this.player.characterBox.body.velocity.x -= 5;
-		if (this.cursors.right.isDown)
+			runArms();
+		}
+		if (this.cursors.right.isDown) {
 			this.player.characterBox.body.velocity.x += 5;
+			runArms();
+		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
 			this.player.characterBox.body.velocity.x += 5;
 		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0)
