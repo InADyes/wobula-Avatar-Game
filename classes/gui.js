@@ -116,9 +116,9 @@ class GUI {
 			if (pointer.x > 225 && pointer.x < 261 && pointer.y > 205 && pointer.y < 241)
 				{
 					console.log('in the block');
-					sprite.x = 232;
-					sprite.y = 212;
-					
+					this.emptybag1 = this.chest;
+					this.emptybag1.x = 232;
+					this.emptybag1.y = 212;
 				}
 			else
 				{
