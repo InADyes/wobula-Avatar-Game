@@ -8,25 +8,32 @@ class player {
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(50, 100);
-		this.characterHead = game.add.sprite(-3, -225, 'stickHead');
-		this.characterHead.scale.setTo(.5, .5);
-		this.characterChest = game.add.sprite(0, -200, 'stickChest');
-		this.characterChest.scale.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-20, -195, 'stickArm1');
-		this.characterArm1.scale.setTo(.5, .5);
-		this.characterArm2 = game.add.sprite(20, -195, 'stickArm2');
-		this.characterArm2.scale.setTo(.5, .5);
-		this.characterLeg1 = game.add.sprite(-15, -120, 'stickLeg1');
+		this.characterHead = game.add.sprite(0, -210, 'char1Head');
+		this.characterHead.scale.setTo(.3, .3);
+		this.characterHead.anchor.setTo(.5, 1);
+		this.characterChest = game.add.sprite(0, -200, 'char1Chest');
+		this.characterChest.scale.setTo(.3, .3);
+		this.characterChest.anchor.setTo(.5, .5);
+		this.characterArm1 = game.add.sprite(-10, -210, 'char1ArmR');
+		this.characterArm1.scale.setTo(.3, .3);
+		this.characterArm1.anchor.setTo(1, 0);
+		this.characterArm2 = game.add.sprite(10, -210, 'char1ArmL');
+		this.characterArm2.scale.setTo(.3, .3);
+		this.characterArm2.anchor.setTo(0, 0);
+		this.characterLeg1 = game.add.sprite(10, -175, 'char1LegR');
 		this.characterLeg1.scale.setTo(.5, .5);
-		this.characterLeg2 = game.add.sprite(15, -120, 'stickLeg2');
+		this.characterLeg1.anchor.setTo(1, 0);
+		this.characterLeg2 = game.add.sprite(10, -175, 'char1LegL');
 		this.characterLeg2.scale.setTo(.5, .5);
-		this.characterTorso = game.add.sprite(-5, -145, 'stickTorso');
-		this.characterTorso.scale.setTo(.5, .5);
+		this.characterLeg2.anchor.setTo(0, 0);
+		this.characterPelvis = game.add.sprite(5, -165, 'char1Pelvis');
+		this.characterPelvis.scale.setTo(.3, .3);
+		this.characterPelvis.anchor.setTo(.5, .5);
 	}
 	addGeysers() {
 		this.headGeyser = this.addIndividualGeysers(this.characterHead);
 		this.chestGeyser = this.addIndividualGeysers(this.characterChest, 15, 30);
-		this.torsoGeyser = this.addIndividualGeysers(this.characterTorso, 20, 15);
+		this.PelvisGeyser = this.addIndividualGeysers(this.characterPelvis, 20, 15);
 		this.arm1Geyser = this.addIndividualGeysers(this.characterArm1, 10, 35);
 		this.arm2Geyser = this.addIndividualGeysers(this.characterArm2, 10, 35);
 		this.leg1Geyser = this.addIndividualGeysers(this.characterLeg1, 25, 25);
@@ -47,7 +54,7 @@ class player {
 	bindBody() {
 		this.characterBox.addChild(this.characterHead);
 		this.characterBox.addChild(this.characterChest);
-		this.characterBox.addChild(this.characterTorso);
+		this.characterBox.addChild(this.characterPelvis);
 		this.characterBox.addChild(this.characterLeg1);
 		this.characterBox.addChild(this.characterLeg2);
 		this.characterBox.addChild(this.characterArm1);

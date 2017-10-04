@@ -35,6 +35,24 @@ class mediaLibrary {
 		this.testArm2 = (game.load.image('stickArm2', 'imgs/stickArm2.png'));
 		this.testLeg1 = (game.load.image('stickLeg1', 'imgs/stickLeg1.png'));
 		this.testLeg2 = (game.load.image('stickLeg2', 'imgs/stickLeg2.png'));
+
+		this.char1Full = (game.load.image('char1Full', 'imgs/char1Full.png'));
+		this.char1Head = (game.load.image('char1Head', 'imgs/char1Head.png'));
+		this.char1Chest = (game.load.image('char1Chest', 'imgs/char1Chest.png'));
+		this.char1Pelvis = (game.load.image('char1Pelvis', 'imgs/char1Pelvis.png'));
+		this.char1ArmL = (game.load.image('char1ArmL', 'imgs/char1ArmL.png'));
+		this.char1ArmR = (game.load.image('char1ArmR', 'imgs/char1ArmR.png'));
+		this.char1LegL = (game.load.image('char1LegL', 'imgs/char1LegL.png'));
+		this.char1LegR = (game.load.image('char1LegR', 'imgs/char1LegR.png'));
+
+		this.char2Full = (game.load.image('char2Full', 'imgs/char2Full.png'));
+		this.char2Head = (game.load.image('char2Head', 'imgs/char2Head.png'));
+		this.char2Chest = (game.load.image('char2Chest', 'imgs/char2Chest.png'));
+		this.char2Pelvis = (game.load.image('char2Torso', 'imgs/char2Pelvis.png'));
+		this.char2ArmL = (game.load.image('char2ArmL', 'imgs/char2ArmL.png'));
+		this.char2ArmR = (game.load.image('char2ArmR', 'imgs/char2ArmR.png'));
+		this.char2LegL = (game.load.image('char2LegL', 'imgs/char2LegL.png'));
+		this.char2LegR = (game.load.image('char2LegR', 'imgs/char2LegR.png'));	
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
