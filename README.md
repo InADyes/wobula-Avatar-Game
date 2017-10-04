@@ -1,9 +1,9 @@
-# Avatar-Game
+# Avatar-Game by Opera Event (2017)
 A sandbox pet game for twitch streamers and viewers.
 
 <p>Installation:</p>
 
-1) From the terminal, start the python http server: 'python simple-cors-server.py' (located in the root directory of a fresh clone)
+1) From the terminal, start the python http server: 'python simple-cors-server.py'
 2) Open index.html from ~/public.
 
 <p>Controls:</p>
@@ -30,7 +30,5 @@ This game utilizes the following stack:
 2) ~/classes: all game classes
 3) ~/imgs: all image files in .png format
 4) ~/js: main javascript entrypoint file and utility function helpers
-5) ~/public: html entrypoint
+5) ~/public: html entrypoint via index.html
 6) ~/sounds: all sound files as .mp3 and .wav format
-
-					-- Opera Event 2017
