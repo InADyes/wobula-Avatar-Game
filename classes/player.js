@@ -8,25 +8,25 @@ class player {
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(50, 100);
-		this.characterHead = game.add.sprite(0, -210, 'char1Head');
+		this.characterHead = game.add.sprite(0, -175, 'char1Head');
 		this.characterHead.scale.setTo(.3, .3);
 		this.characterHead.anchor.setTo(.5, 1);
-		this.characterChest = game.add.sprite(0, -200, 'char1Chest');
+		this.characterChest = game.add.sprite(0, -165, 'char1Chest');
 		this.characterChest.scale.setTo(.3, .3);
 		this.characterChest.anchor.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-10, -210, 'char1ArmR');
+		this.characterArm1 = game.add.sprite(-10, -175, 'char1ArmR');
 		this.characterArm1.scale.setTo(.3, .3);
 		this.characterArm1.anchor.setTo(1, 0);
-		this.characterArm2 = game.add.sprite(10, -210, 'char1ArmL');
+		this.characterArm2 = game.add.sprite(10, -175, 'char1ArmL');
 		this.characterArm2.scale.setTo(.3, .3);
 		this.characterArm2.anchor.setTo(0, 0);
-		this.characterLeg1 = game.add.sprite(10, -175, 'char1LegR');
+		this.characterLeg1 = game.add.sprite(10, -140, 'char1LegR');
 		this.characterLeg1.scale.setTo(.5, .5);
 		this.characterLeg1.anchor.setTo(1, 0);
-		this.characterLeg2 = game.add.sprite(10, -175, 'char1LegL');
+		this.characterLeg2 = game.add.sprite(10, -140, 'char1LegL');
 		this.characterLeg2.scale.setTo(.5, .5);
 		this.characterLeg2.anchor.setTo(0, 0);
-		this.characterPelvis = game.add.sprite(5, -165, 'char1Pelvis');
+		this.characterPelvis = game.add.sprite(5, -130, 'char1Pelvis');
 		this.characterPelvis.scale.setTo(.3, .3);
 		this.characterPelvis.anchor.setTo(.5, .5);
 	}
