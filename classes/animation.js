@@ -8,24 +8,20 @@ class animation {
 		this.walkLegs(this.avatar);
 	}
 	walkArms(avatar) {
-		console.log(avatar.characterArm1.angle);
 		if (avatar.characterArm1.angle == -10) {
-			console.log('arm forward');
 			this.arm1.start();
 			this.arm2Rev.start();
 		} else if (avatar.characterArm1.angle == -110) {
-			console.log('arm reversing');
 			this.arm2.start();
 			this.arm1Rev.start();
 		}
 	}
 	walkLegs(avatar) {
+		console.log(avatar.characterLeg1.angle);
 		if (avatar.characterLeg1.rotation == -.5) {
-			console.log('leg forward');
 			this.leg1.start();
 			this.leg2Rev.start();
 		} else if (avatar.characterLeg1.rotation == .5) {
-			console.log('leg reversing');
 			this.leg1Rev.start();
 			this.leg2.start();
 		}

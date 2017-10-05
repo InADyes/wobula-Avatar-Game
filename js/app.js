@@ -8,19 +8,15 @@ function preload() {
 var avatar;
 var controls;
 var env;
-var menu;
-var playerAnime;
 
 function create() {
 	env = new environment('grassy');
 	avatar = new player('wobula');
-	playerAnime = new animation(avatar);
 	controls = new input(avatar);
-	menu = new GUI();
 	data.addSounds();
 }
 
 function update() {
-	controls.processor(playerAnime);
+	controls.processor();
 	game.physics.arcade.collide(env.floor, avatar.character);
 }

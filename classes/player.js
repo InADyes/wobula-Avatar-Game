@@ -1,10 +1,11 @@
 class player {
-	constructor(player) {
-		this.name = player;
+	constructor(name) {
+		this.name = name;
 		this.addBodyParts();
 		this.bindBody();
 		this.addGeysers();
 		this.physics();
+		this.animations = new animation(this);
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(50, 100);
