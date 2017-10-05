@@ -3,12 +3,12 @@ class animation {
 		this.avatar = avatar;
 		this.walkSetup(this.avatar);
 	}
-	walk() {
-		this.walkArms(this.avatar);
-		this.walkLegs(this.avatar);
+	walk(direction) {
+		this.walkArms(direction, this.avatar);
+		this.walkLegs(direction, this.avatar);
 	}
-	walkArms(avatar) {
-		if (avatar.characterArm1.angle == -10) {
+	walkArms(direction) {
+		if (this.avatar.characterArm1.angle == -10) {
 			this.arm1.start();
 			this.arm2Rev.start();
 		} else if (avatar.characterArm1.angle == -110) {
@@ -16,27 +16,26 @@ class animation {
 			this.arm1Rev.start();
 		}
 	}
-	walkLegs(avatar) {
-		console.log(avatar.characterLeg1.angle);
-		if (avatar.characterLeg1.rotation == -.5) {
+	walkLegs(direction) {
+		if (avatar.characterLeg1.angle == -10) {
 			this.leg1.start();
 			this.leg2Rev.start();
-		} else if (avatar.characterLeg1.rotation == .5) {
+		} else if (avatar.characterLeg1.angle == 10) {
 			this.leg1Rev.start();
 			this.leg2.start();
 		}
 	}
 	walkSetup(avatar) {
-		avatar.characterLeg1.rotation = -.5;
+		avatar.characterLeg1.angle = -10;
 		this.leg1 = game.add.tween(avatar.characterLeg1);
-		this.leg1.to({rotation: .5}, 100, Phaser.Easing.Linear.None);
+		this.leg1.to({angle: 10}, 100, Phaser.Easing.Linear.None);
 		this.leg2 = game.add.tween(avatar.characterLeg2);
-		this.leg2.to({rotation: .5}, 100, Phaser.Easing.Linear.None);
+		this.leg2.to({angle: 10}, 100, Phaser.Easing.Linear.None);
 
 		this.leg1Rev = game.add.tween(avatar.characterLeg1);
-		this.leg1Rev.to({rotation: -.5}, 100, Phaser.Easing.Linear.None);
+		this.leg1Rev.to({angle: -10}, 100, Phaser.Easing.Linear.None);
 		this.leg2Rev = game.add.tween(avatar.characterLeg2);
-		this.leg2Rev.to({rotation: -.5}, 100, Phaser.Easing.Linear.None);
+		this.leg2Rev.to({angle: -10}, 100, Phaser.Easing.Linear.None);
 
 		avatar.characterArm1.angle = -10;
 		this.arm1 = game.add.tween(avatar.characterArm1);
