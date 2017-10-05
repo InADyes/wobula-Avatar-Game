@@ -28,25 +28,23 @@ class input {
 		this.space.action = () => { this.spaceAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
 	}
-	processor() {
-		this.cursorPad();
+	processor(animate) {
+		this.cursorPad(animate);
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);
 	}
-	cursorPad() {
+	cursorPad(animate) {
 		if (this.cursors.up.isDown)
 			this.player.characterBox.body.velocity.y -= 1;
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
 			this.player.characterBox.body.velocity.x -= 5;
-			runLegs();
-			runArms();
+			animate.walk();
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterBox.body.velocity.x += 5;
-			runLegs();
-			runArms();
+			animate.walk();
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
 			this.player.characterBox.body.velocity.x += 5;
