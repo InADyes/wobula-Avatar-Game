@@ -11,7 +11,7 @@
 1) Use space to jump and double jump
 2) Use the M key to propel your character toward the ground.
 3) Use the arrow keys to move your avatar.
-4) Use the following keys to control your character's particle systems: zxcvbnm
+4) Use the following keys to control your character's particle systems: bvz
 
 ## <p>Game Stack and Libraries:</p>
 
