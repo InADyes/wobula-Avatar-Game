@@ -3,9 +3,7 @@
 	<script src="../bower_components/fabric.js/dist/fabric.js"></script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="../bower_components/phaser-ce/build/phaser.min.js"></script>
-</head>
 
-<body>
 	<script type="../utils.js"></script>
 	<script src="../classes/animation.js"></script>
 	<script src="../classes/environment.js"></script>
@@ -14,5 +12,60 @@
 	<script src="../classes/player.js"></script>
 	<script src="../classes/time.js"></script>
 	<script src="../js/app.js"></script>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td id="canvas"></td>
+			<td id="inventory" style="vertical-align:top;">
+				<div><h5>Character Information</h5></div>
+				<div><p>Name: Fluffy<br>
+						Age: 42<br>
+						Favorite movie: Goodfellas
+					</p>
+				</div>
+				<div><h5>Equipment</h5></div>
+				<div>
+					 <select>
+					 	<option selected="selected" value="default">Head</option>
+					 	<option value="human1">Human1</option>
+					 	<option value="human2">Human2</option>
+					 </select><br>
+					 <select>
+					 	<option selected="selected" value="default">Chest</option>
+					 	<option value="human1">Human1</option>
+					 	<option value="human2">Human2</option>
+					 </select><br>
+					 <select>
+					 	<option selected="selected" value="default">Left Arm</option>
+					 	<option value="human1">Human1</option>
+					 	<option value="human2">Human2</option>
+					 </select><br>
+					 <select>
+					 	<option selected="selected" value="default">Right Arm</option>
+					 	<option value="human1">Human1</option>
+					 	<option value="human2">Human2</option>
+					 </select><br>
+					 <select>
+					 	<option selected="selected" value="default">Pelvis</option>
+					 	<option value="human1">Human1</option>
+					 	<option value="human2">Human2</option>
+					 </select><br>
+					 <select>
+					 	<option selected="selected" value="default">Left Leg</option>
+					 	<option value="human1">Human1</option>
+					 	<option value="human2">Human2</option>
+					 </select><br>
+					 <select>
+					 	<option selected="selected" value="default">Right Leg</option>
+					 	<option value="human1">Human1</option>
+					 	<option value="human2">Human2</option>
+					 </select><br>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
 </body>
 </html>
