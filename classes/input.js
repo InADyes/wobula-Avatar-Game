@@ -2,15 +2,20 @@ class input {
 	constructor(avatar) {
 		this.player = avatar;
 		this.cursors = game.input.keyboard.createCursorKeys();
-		this.v;
+		this.z;
 		this.x;
 		this.c;
+		this.v;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c);
+		this.keys.push(this.space, this.z, this.x, this.c, this.v);
 	}
 	instantiateKeys() {
+		this.v = game.input.keyboard.addKey(Phaser.Keyboard.V)
+		this.v.press = false;
+		this.v.action = () => { this.vAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.V]);
 		this.z = game.input.keyboard.addKey(Phaser.Keyboard.Z);
 		this.z.press = false;
 		this.z.action = () => { this.zAction(); };
@@ -70,6 +75,10 @@ class input {
 	cAction() {
 		console.log('You pressed the pelvis key');
 		avatar.pelvisGeyser.flow(1000, 500, 15, -1);
+	}
+	vAction(){
+		console.log('You pressed the arm1 key');
+		avatar.leftarmGeyser.flow(1000, 500, 150, -1);
 	}
 	spaceAction() {
 		this.player.characterBox.body.velocity.y = 0;

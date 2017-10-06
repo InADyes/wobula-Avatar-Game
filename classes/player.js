@@ -36,6 +36,7 @@ class player {
 		//this.headGeyser = this.addIndividualGeysers(this.characterHead, this.characterHead.width/2, this.characterHead.height/2);
 		this.chestGeyser = this.addIndividualGeysers(this.characterChest, 0, 0);
 		this.pelvisGeyser = this.addIndividualGeysers(this.characterPelvis, 0, 0);
+		this.leftarmGeyser = this.addIndividualGeysers(this.characterArm1, 0, 10);
 	}
 	addIndividualGeysers(anchor, xoffset, yoffset) {
 		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
