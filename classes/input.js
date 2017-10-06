@@ -32,6 +32,10 @@ class input {
 		this.cursorPad();
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);
+		if (this.player.characterBox.position.x < 10)
+			this.player.characterBox.position.x = 434;
+		else if (this.player.characterBox.position.x > 435)
+			this.player.characterBox.position.x = 11;
 	}
 	cursorPad() {
 		if (this.cursors.up.isDown)
