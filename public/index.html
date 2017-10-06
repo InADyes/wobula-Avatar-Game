@@ -4,13 +4,12 @@
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="../bower_components/phaser-ce/build/phaser.min.js"></script>
 
-	<script type="../utils.js"></script>
 	<script src="../classes/animation.js"></script>
 	<script src="../classes/environment.js"></script>
 	<script src="../classes/input.js"></script>
 	<script src="../classes/mediaLibrary.js"></script>
 	<script src="../classes/player.js"></script>
-	<script src="../classes/time.js"></script>
+	<script src="../js/utils.js"></script>
 	<script src="../js/app.js"></script>
 </head>
 <body>
@@ -26,11 +25,41 @@
 				</div>
 				<div><h5>Equipment</h5></div>
 				<div>
-					 <select id='full'>
-					 	<option selected="selected" value="default">Character</option>
+					 <select id='head'>
+					 	<option selected="selected" value="default">Head</option>
 					 	<option value="char1Head">Human1</option>
 					 	<option value="char2Head">Human2</option>
-					 </select><br><br>
+					 </select><br>
+					 <select id='chest'>
+					 	<option selected="selected" value="default">Chest</option>
+					 	<option value="char1Chest">Human1</option>
+					 	<option value="char2Chest">Human2</option>
+					 </select><br>
+					 <select id='pelvis'>
+					 	<option selected="selected" value="default">Pelvis</option>
+					 	<option value="char1Pelvis">Human1</option>
+					 	<option value="char2Pelvis">Human2</option>
+					 </select><br>
+					 <select id='right arm'>
+					 	<option selected="selected" value="default">Right Arm</option>
+					 	<option value="char1ArmR">Human1</option>
+					 	<option value="char2ArmR">Human2</option>
+					 </select><br>
+					 <select id='left arm'>
+					 	<option selected="selected" value="default">Left Arm</option>
+					 	<option value="char1ArmL">Human1</option>
+					 	<option value="char2ArmL">Human2</option>
+					 </select><br>
+					 <select id='left leg'>
+					 	<option selected="selected" value="default">Right Leg</option>
+					 	<option value="char1LegR">Human1</option>
+					 	<option value="char2LegR">Human2</option>
+					 </select><br>
+					 <select id='right leg'>
+					 	<option selected="selected" value="default">Left Leg</option>
+					 	<option value="char1LegL">Human1</option>
+					 	<option value="char2LegL">Human2</option>
+					 </select><br>
 				</div>
 				<div>
 					<img id='display' src="../imgs/char1Full.png">

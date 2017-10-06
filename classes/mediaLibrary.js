@@ -48,7 +48,7 @@ class mediaLibrary {
 		this.char2Full = (game.load.image('char2Full', 'imgs/char2Full.png'));
 		this.char2Head = (game.load.image('char2Head', 'imgs/char2Head.png'));
 		this.char2Chest = (game.load.image('char2Chest', 'imgs/char2Chest.png'));
-		this.char2Pelvis = (game.load.image('char2Torso', 'imgs/char2Pelvis.png'));
+		this.char2Pelvis = (game.load.image('char2Pelvis', 'imgs/char2Pelvis.png'));
 		this.char2ArmL = (game.load.image('char2ArmL', 'imgs/char2ArmL.png'));
 		this.char2ArmR = (game.load.image('char2ArmR', 'imgs/char2ArmR.png'));
 		this.char2LegL = (game.load.image('char2LegL', 'imgs/char2LegL.png'));
