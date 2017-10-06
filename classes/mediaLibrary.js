@@ -20,7 +20,10 @@ class mediaLibrary {
 		this.blood2 = (game.load.image('bloodDrop2', 'imgs/bloodDrop2.png'));
 		this.blood3 = (game.load.image('bloodDrop3', 'imgs/bloodDrop3.png'));
 		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
-
+		particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
+		
+		
+		
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
 		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
 		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));

@@ -78,7 +78,10 @@ class input {
 	}
 	vAction(){
 		console.log('You pressed the arm1 key');
-		avatar.leftarmGeyser.flow(1000, 500, 150, -1);
+		//avatar.leftarmGeyser.flow(1000, 500, 15, -1);
+		//avatar.rightarmGeyser.flow(1000, 500, 15, -1);
+		//avatar.leftlegGeyser.flow(1000, 500, 15, -1);
+		avatar.rightlegGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
 		this.player.characterBox.body.velocity.y = 0;
