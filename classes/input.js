@@ -77,7 +77,7 @@ class input {
 		avatar.pelvisGeyser.flow(1000, 500, 15, -1);
 	}
 	vAction(){
-		console.log('You pressed the arm1 key');
+		console.log('You pressed the v key');
 		//avatar.leftarmGeyser.flow(1000, 500, 15, -1);
 		//avatar.rightarmGeyser.flow(1000, 500, 15, -1);
 		//avatar.leftlegGeyser.flow(1000, 500, 15, -1);
