@@ -33,6 +33,7 @@ class player {
 	}
 	addGeysers() {
 		this.headGeyser = this.addIndividualGeysers(this.characterHead, 0, 0);
+		//this.headGeyser = this.addIndividualGeysers(this.characterHead, this.characterHead.width/2, this.characterHead.height/2);
 		this.chestGeyser = this.addIndividualGeysers(this.characterChest, 0, 0);
 		this.pelvisGeyser = this.addIndividualGeysers(this.characterPelvis, 0, 0);
 	}
