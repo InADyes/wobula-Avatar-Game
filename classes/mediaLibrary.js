@@ -52,7 +52,16 @@ class mediaLibrary {
 		this.char2ArmL = (game.load.image('char2ArmL', 'imgs/char2ArmL.png'));
 		this.char2ArmR = (game.load.image('char2ArmR', 'imgs/char2ArmR.png'));
 		this.char2LegL = (game.load.image('char2LegL', 'imgs/char2LegL.png'));
-		this.char2LegR = (game.load.image('char2LegR', 'imgs/char2LegR.png'));	
+		this.char2LegR = (game.load.image('char2LegR', 'imgs/char2LegR.png'));
+
+		this.charPirateFull = (game.load.image('charPirateFull', 'imgs/charPirateFull.png'));
+		this.charPirateHead = (game.load.image('charPirateHead', 'imgs/charPirateHead.png'));
+		this.charPirateChest = (game.load.image('charPirateChest', 'imgs/charPirateChest.png'));
+		this.charPiratePelvis = (game.load.image('charPiratePelvis', 'imgs/charPiratePelvis.png'));
+		this.charPirateArmL = (game.load.image('charPirateArmL', 'imgs/charPirateArmL.png'));
+		this.charPirateArmR = (game.load.image('charPirateArmR', 'imgs/charPirateArmR.png'));
+		this.charPirateLegL = (game.load.image('charPirateLegL', 'imgs/charPirateLegL.png'));
+		this.charPirateLegR = (game.load.image('charPirateLegR', 'imgs/charPirateLegR.png'));	
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
