@@ -52,8 +52,8 @@ class player {
 		this.characterBox.addChild(this.characterHead);
 		this.characterBox.addChild(this.characterArm1);
 		this.characterBox.addChild(this.characterChest);
-		this.characterBox.addChild(this.characterArm2);
 		this.characterBox.addChild(this.characterPelvis);
+		this.characterBox.addChild(this.characterArm2);
 		this.characterBox.addChild(this.characterLeg1);
 		this.characterBox.addChild(this.characterLeg2);
 		this.characterBox.scale.setTo(.5, .5);
