@@ -6,8 +6,6 @@ var test;
 
 function preload() {
 	data = new mediaLibrary();
-	test = getDataHTML();
-	console.log(test.char);
 }
 
 var avatar;
@@ -19,6 +17,7 @@ function create() {
 	avatar = new player('wobula');
 	controls = new input(avatar);
 	data.addSounds();
+	test = getDataHTML();
 }
 
 function update() {
@@ -37,8 +36,11 @@ function getDataHTML() {
 	blah.event.addEventListener('change', function() {
 		console.log(this.value);
 		if (this.value != 'default') {
-			blah.change.src = "../imgs/" + this.value;
+			blah.change.src = "../imgs/" + this.value + ".png";
+			console.log(this.value);
+			avatar.characterHead.loadTexture(this.value);
 			console.log(blah.change.src);
+			console.log(avatar.characterHead.key);
 		}
 	}, false);
 	return (blah);
