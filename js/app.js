@@ -32,9 +32,14 @@ function getDataHTML() {
 
 	blah.char = document.getElementById("full").value;
 	blah.event = document.getElementById("full");
-	console.log(blah.event);
+	blah.change = document.getElementById("display");
+	console.log(blah.change);
 	blah.event.addEventListener('change', function() {
-		alert(this.value);
+		console.log(this.value);
+		if (this.value != 'default') {
+			blah.change.src = "../imgs/" + this.value;
+			console.log(blah.change.src);
+		}
 	}, false);
 	return (blah);
 }
