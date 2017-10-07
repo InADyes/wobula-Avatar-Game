@@ -61,7 +61,16 @@ class mediaLibrary {
 		this.charPirateArmL = (game.load.image('charPirateArmL', 'imgs/charPirateArmL.png'));
 		this.charPirateArmR = (game.load.image('charPirateArmR', 'imgs/charPirateArmR.png'));
 		this.charPirateLegL = (game.load.image('charPirateLegL', 'imgs/charPirateLegL.png'));
-		this.charPirateLegR = (game.load.image('charPirateLegR', 'imgs/charPirateLegR.png'));	
+		this.charPirateLegR = (game.load.image('charPirateLegR', 'imgs/charPirateLegR.png'));
+
+		this.charSpiderFull = (game.load.image('charSpiderFull', 'imgs/charSpiderFull.png'));
+		this.charSpiderHead = (game.load.image('charSpiderHead', 'imgs/charSpiderHead.png'));
+		this.charSpiderChest = (game.load.image('charSpiderChest', 'imgs/charSpiderChest.png'));
+		this.charSpiderPelvis = (game.load.image('charSpiderPelvis', 'imgs/charSpiderPelvis.png'));
+		this.charSpiderArmL = (game.load.image('charSpiderArmL', 'imgs/charSpiderArmL.png'));
+		this.charSpiderArmR = (game.load.image('charSpiderArmR', 'imgs/charSpiderArmR.png'));
+		//this.charSpiderLegL = (game.load.image('charSpiderLegL', 'imgs/charSpiderLegL.png'));
+		//this.charSpiderLegR = (game.load.image('charSpiderLegR', 'imgs/charSpiderLegR.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
