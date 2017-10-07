@@ -69,8 +69,8 @@ class mediaLibrary {
 		this.charSpiderPelvis = (game.load.image('charSpiderPelvis', 'imgs/charSpiderPelvis.png'));
 		this.charSpiderArmL = (game.load.image('charSpiderArmL', 'imgs/charSpiderArmL.png'));
 		this.charSpiderArmR = (game.load.image('charSpiderArmR', 'imgs/charSpiderArmR.png'));
-		//this.charSpiderLegL = (game.load.image('charSpiderLegL', 'imgs/charSpiderLegL.png'));
-		//this.charSpiderLegR = (game.load.image('charSpiderLegR', 'imgs/charSpiderLegR.png'));
+		this.charSpiderLegLBack1 = (game.load.image('charSpiderLegLBack1', 'imgs/charSpiderLegLBack1.png'));
+		this.charSpiderLegLBack2 = (game.load.image('charSpiderLegLBack2', 'imgs/charSpiderLegLBack2.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
