@@ -32,6 +32,8 @@ class spider {
 		this.characterLegLBack2 = game.add.sprite(56, -61, 'charSpiderLegLBack2');
 		this.characterLegLBack2.scale.setTo(.5, .5);
 		this.characterLegLBack2.anchor.setTo(0, 0);
+		this.characterLegRBack1 = game.add.sprite(39, -42, 'charSpiderLegRBack1');
+		this.characterLegRBack2 = game.add.sprite(39, -42, 'charSpiderLegRBack2');
 	}
 	bindBody() {
 		this.characterBox.addChild(this.characterHead);

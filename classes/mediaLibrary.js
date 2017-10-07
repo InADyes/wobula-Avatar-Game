@@ -71,6 +71,8 @@ class mediaLibrary {
 		this.charSpiderArmR = (game.load.image('charSpiderArmR', 'imgs/charSpiderArmR.png'));
 		this.charSpiderLegLBack1 = (game.load.image('charSpiderLegLBack1', 'imgs/charSpiderLegLBack1.png'));
 		this.charSpiderLegLBack2 = (game.load.image('charSpiderLegLBack2', 'imgs/charSpiderLegLBack2.png'));
+		this.charSpiderLegRBack1 = (game.load.image('charSpiderLegRBack1', 'imgs/charSpiderLegRBack1.png'));
+		this.charSpiderLegRBack2 = (game.load.image('charSpiderLegRBack2', 'imgs/charSpiderLegRBack2.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
