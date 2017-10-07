@@ -32,8 +32,12 @@ class spider {
 		this.characterLegLBack2 = game.add.sprite(56, -61, 'charSpiderLegLBack2');
 		this.characterLegLBack2.scale.setTo(.5, .5);
 		this.characterLegLBack2.anchor.setTo(0, 0);
-		this.characterLegRBack1 = game.add.sprite(39, -42, 'charSpiderLegRBack1');
-		this.characterLegRBack2 = game.add.sprite(39, -42, 'charSpiderLegRBack2');
+		this.characterLegRMiddle1 = game.add.sprite(-30, -55, 'charSpiderLegRMiddle1');
+		this.characterLegRMiddle1.scale.setTo(.3, .3);
+		this.characterLegRMiddle1.anchor.setTo(0, 0);
+		this.characterLegRMiddle2 = game.add.sprite(-88, -50, 'charSpiderLegRMiddle2');
+		this.characterLegRMiddle2.scale.setTo(.5, .5);
+		this.characterLegRMiddle2.anchor.setTo(0, 0);
 	}
 	bindBody() {
 		this.characterBox.addChild(this.characterHead);
@@ -43,6 +47,8 @@ class spider {
 		this.characterBox.addChild(this.characterArmR);
 		this.characterBox.addChild(this.characterLegLBack1);
 		this.characterBox.addChild(this.characterLegLBack2);
+		this.characterBox.addChild(this.characterLegRMiddle1);
+		this.characterBox.addChild(this.characterLegRMiddle2);
 		this.characterBox.scale.setTo(.7, .7);
 	}
 	physics() {
