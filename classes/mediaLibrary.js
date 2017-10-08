@@ -62,7 +62,6 @@ class mediaLibrary {
 		this.charPirateArmR = (game.load.image('charPirateArmR', 'imgs/charPirateArmR.png'));
 		this.charPirateLegL = (game.load.image('charPirateLegL', 'imgs/charPirateLegL.png'));
 		this.charPirateLegR = (game.load.image('charPirateLegR', 'imgs/charPirateLegR.png'));
-
 		this.charSpiderFull = (game.load.image('charSpiderFull', 'imgs/charSpiderFull.png'));
 		this.charSpiderHead = (game.load.image('charSpiderHead', 'imgs/charSpiderHead.png'));
 		this.charSpiderChest = (game.load.image('charSpiderChest', 'imgs/charSpiderChest.png'));
@@ -71,8 +70,18 @@ class mediaLibrary {
 		this.charSpiderArmR = (game.load.image('charSpiderArmR', 'imgs/charSpiderArmR.png'));
 		this.charSpiderLegLBack1 = (game.load.image('charSpiderLegLBack1', 'imgs/charSpiderLegLBack1.png'));
 		this.charSpiderLegLBack2 = (game.load.image('charSpiderLegLBack2', 'imgs/charSpiderLegLBack2.png'));
+
+		this.charSpiderLegRBack1 = (game.load.image('charSpiderLegRBack1', 'imgs/charSpiderLegRMiddle1.png'));
+		this.charSpiderLegRBack2 = (game.load.image('charSpiderLegRBack2', 'imgs/charSpiderLegRBack2.png'));
+
 		this.charSpiderLegRMiddle1 = (game.load.image('charSpiderLegRMiddle1', 'imgs/charSpiderLegRMiddle1.png'));
 		this.charSpiderLegRMiddle2 = (game.load.image('charSpiderLegRMiddle2', 'imgs/charSpiderLegRMiddle2.png'));
+		this.charSpiderLegLMiddle1 = (game.load.image('charSpiderLegLMiddle1', 'imgs/charSpiderLegLMiddle1.png'));
+		this.charSpiderLegLMiddle2 = (game.load.image('charSpiderLegLMiddle2', 'imgs/charSpiderLegLMiddle2.png'));
+		this.charSpiderLegRFront1 = (game.load.image('charSpiderLegRFront1', 'imgs/charSpiderLegRFront1.png'));
+		this.charSpiderLegRFront2 = (game.load.image('charSpiderLegRFront2', 'imgs/charSpiderLegRFront2.png'));
+		this.charSpiderLegLFront1 = (game.load.image('charSpiderLegLFront1', 'imgs/charSpiderLegLFront1.png'));
+		this.charSpiderLegLFront2 = (game.load.image('charSpiderLegLFront2', 'imgs/charSpiderLegLFront2.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');

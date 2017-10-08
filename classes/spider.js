@@ -38,23 +38,55 @@ class spider {
 		this.characterLegRMiddle2 = game.add.sprite(-88, -50, 'charSpiderLegRMiddle2');
 		this.characterLegRMiddle2.scale.setTo(.5, .5);
 		this.characterLegRMiddle2.anchor.setTo(0, 0);
+		this.characterLegRFront1 = game.add.sprite(-20, -45, 'charSpiderLegRFront1');
+		this.characterLegRFront1.scale.setTo(.3, .3);
+		this.characterLegRFront1.anchor.setTo(0, 0);
+		this.characterLegRFront2 = game.add.sprite(-68, -35, 'charSpiderLegRFront2');
+		this.characterLegRFront2.scale.setTo(.5, .5);
+		this.characterLegRFront2.anchor.setTo(0, 0);
+		this.characterLegLFront1 = game.add.sprite(35, -45, 'charSpiderLegLFront1');
+		this.characterLegLFront1.scale.setTo(.29, .29);
+		this.characterLegLFront1.anchor.setTo(0, 0);
+		this.characterLegLFront2 = game.add.sprite(55, -35, 'charSpiderLegLFront2');
+		this.characterLegLFront2.scale.setTo(.45, .45);
+		this.characterLegLFront2.anchor.setTo(0, 0);
+		this.characterLegLMiddle1 = game.add.sprite(35, -55, 'charSpiderLegLMiddle1');
+		this.characterLegLMiddle1.scale.setTo(.3, .3);
+		this.characterLegLMiddle1.anchor.setTo(0, 0);
+		this.characterLegLMiddle2 = game.add.sprite(70, -50, 'charSpiderLegLMiddle2');
+		this.characterLegLMiddle2.scale.setTo(.5, .5);
+		this.characterLegLMiddle2.anchor.setTo(0, 0);
+		this.characterLegRBack1 = game.add.sprite(0, -42, 'charSpiderLegRBack1');
+		this.characterLegRBack1.scale.setTo(.32, .32);
+		this.characterLegRBack1.anchor.setTo(.4, .4);
+		this.characterLegRBack2 = game.add.sprite(-67, -50, 'charSpiderLegRBack2');
+		this.characterLegRBack2.scale.setTo(.45, .45);
+		this.characterLegRBack2.anchor.setTo(0, 0);
 	}
 	bindBody() {
 		this.characterBox.addChild(this.characterHead);
-		this.characterBox.addChild(this.characterArmL);
-		this.characterBox.addChild(this.characterChest);
-		this.characterBox.addChild(this.characterPelvis);
-		this.characterBox.addChild(this.characterArmR);
 		this.characterBox.addChild(this.characterLegLBack1);
 		this.characterBox.addChild(this.characterLegLBack2);
+		this.characterBox.addChild(this.characterLegRBack1);
+		this.characterBox.addChild(this.characterLegRBack2);
+		this.characterBox.addChild(this.characterChest);
+		this.characterBox.addChild(this.characterPelvis);
 		this.characterBox.addChild(this.characterLegRMiddle1);
 		this.characterBox.addChild(this.characterLegRMiddle2);
+		this.characterBox.addChild(this.characterLegLMiddle1);
+		this.characterBox.addChild(this.characterLegLMiddle2);
+		this.characterBox.addChild(this.characterLegRFront1);
+		this.characterBox.addChild(this.characterLegRFront2);
+		this.characterBox.addChild(this.characterLegLFront1);
+		this.characterBox.addChild(this.characterLegLFront2);
+		this.characterBox.addChild(this.characterArmR);
+		this.characterBox.addChild(this.characterArmL);
 		this.characterBox.scale.setTo(.7, .7);
 	}
 	physics() {
 		game.physics.enable(this.characterBox, Phaser.Physics.ARCADE);
-		//this.characterBox.body.collideWorldBounds = true;
-		//this.characterBox.body.gravity.y = 500;
-		//this.characterBox.body.bounce.y = 0.8;
+		this.characterBox.body.collideWorldBounds = true;
+		this.characterBox.body.gravity.y = 500;
+		this.characterBox.body.bounce.y = 0.8;
 	}
 }
