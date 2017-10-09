@@ -37,6 +37,10 @@ class input {
 		this.cursorPad();
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);
+		if (this.player.characterBox.position.x < 10)
+			this.player.characterBox.position.x = 434;
+		else if (this.player.characterBox.position.x > 435)
+			this.player.characterBox.position.x = 11;
 	}
 	cursorPad() {
 		if (this.cursors.up.isDown)
@@ -45,11 +49,13 @@ class input {
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
 			this.player.characterBox.body.velocity.x -= 5;
-			this.player.animations.walk();
+			//this.player.characterLegRBack1.angle -= 1;
+			//this.player.animations.walk();
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterBox.body.velocity.x += 5;
-			this.player.animations.walk();
+			//this.player.characterLegRBack1.angle += 1;
+			//this.player.animations.walk();
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
 			this.player.characterBox.body.velocity.x += 5;
