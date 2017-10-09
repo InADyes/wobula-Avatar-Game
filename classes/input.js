@@ -5,14 +5,11 @@ class input {
 		this.z;
 		this.x;
 		this.c;
-		this.b;
-		this.n;
-		this.h;
-		this.g;
+		this.v;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c, this.n, this.b, this.h, this.g);
+		this.keys.push(this.space, this.z, this.x, this.c, this.v);
 		console.log(this.player);
 	}
 	instantiateKeys() {
@@ -36,21 +33,6 @@ class input {
 		this.space.press = false;
 		this.space.action = () => { this.spaceAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
-		this.b = game.input.keyboard.addKey(Phaser.Keyboard.B);
-		this.b.press = false;
-		this.b.action = () => { this.bAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.N]);
-		this.n = game.input.keyboard.addKey(Phaser.Keyboard.N);
-		this.n.press = false;
-		this.n.action = () => { this.nAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.G]);
-		this.g = game.input.keyboard.addKey(Phaser.Keyboard.G);
-		this.g.press = false;
-		this.g.action = () => { this.gAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.H]);
-		this.h = game.input.keyboard.addKey(Phaser.Keyboard.H);
-		this.h.press = false;
-		this.h.action = () => { this.hAction(); };
 	}
 	processor() {
 		this.cursorPad();
@@ -68,28 +50,16 @@ class input {
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
 			this.player.characterBox.body.velocity.x -= 5;
-			//this.player.animations.walk();
+			this.player.animations.walk();
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterBox.body.velocity.x += 5;
-			//this.player.animations.walk();
+			this.player.animations.walk();
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
 			this.player.characterBox.body.velocity.x += 5;
 		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0)
 			this.player.characterBox.body.velocity.x -= 5;
-		if (this.b.isDown) {
-			this.bAction();
-		}
-		if (this.n.isDown) {
-			this.nAction();
-		}
-		if (this.g.isDown) {
-			this.gAction();
-		}
-		if (this.h.isDown) {
-			this.hAction();
-		}
 	}
 	keyPress(key) {
 		if (key.isDown)
@@ -111,27 +81,11 @@ class input {
 		console.log('You pressed the pelvis key');
 		avatar.pelvisGeyser.flow(1000, 500, 15, -1);
 	}
-	nAction() {
-		console.log('n key');
-		this.player.characterLegLBack2.angle -= 1;
-	}
-	bAction() {
-		console.log('b key');
-		this.player.characterLegLBack2.angle += 1;
-	}
-	gAction() {
-		console.log('g key');
-		this.player.characterLegLBack1.angle -= 1;
-	}
-	hAction() {
-		console.log('h key');
-		this.player.characterLegLBack1.angle += 1;
-	}
 	vAction() {
 		console.log('You pressed the v key');
-		//avatar.leftarmGeyser.flow(1000, 500, 15, -1);
-		//avatar.rightarmGeyser.flow(1000, 500, 15, -1);
-		//avatar.leftlegGeyser.flow(1000, 500, 15, -1);
+		avatar.leftarmGeyser.flow(1000, 500, 15, -1);
+		avatar.rightarmGeyser.flow(1000, 500, 15, -1);
+		avatar.leftlegGeyser.flow(1000, 500, 15, -1);
 		avatar.rightlegGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
