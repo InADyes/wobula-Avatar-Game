@@ -19,8 +19,10 @@ function create() {
 	data.addSounds();
 	addListeners()
 }
+var timer = 1;
 
 function update() {
 	controls.processor();
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
+	avatar.animations.walkSideToSide(5000, 'right');
 }
