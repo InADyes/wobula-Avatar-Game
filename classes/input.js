@@ -11,7 +11,7 @@ class input {
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.a, this.s);
+		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.a, this.s, this.q, this.w);
 		console.log(this.player);
 	}
 	instantiateKeys() {
@@ -43,6 +43,16 @@ class input {
 		this.s.press = false;
 		this.s.action = () => { this.sAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.S]);
+
+		this.q = game.input.keyboard.addKey(Phaser.Keyboard.Q)
+		this.q.press = false;
+		this.q.action = () => { this.qAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.Q]);
+
+		this.w = game.input.keyboard.addKey(Phaser.Keyboard.W)
+		this.w.press = false;
+		this.w.action = () => { this.wAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.w]);
 	}
 	processor() {
 		this.cursorPad();
@@ -61,14 +71,14 @@ class input {
 		if (this.cursors.left.isDown) {
 			this.player.characterHead.loadTexture('char1HeadLeft', 0);
 			this.player.characterBox.body.velocity.x -= 5;
-			console.log(this.player);
 			this.player.animations.walk();
+			console.log(this.player);
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterHead.loadTexture('char1HeadRight', 0);
-			console.log(this.player);
 			this.player.characterBox.body.velocity.x += 5;
 			this.player.animations.walk();
+			console.log(this.player);
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0) {
 			this.player.characterBox.body.velocity.x += 5;
@@ -119,5 +129,17 @@ class input {
 		this.player.characterBox.body.velocity.y -= 400;
 		data.jump.play();
 		console.log('You pressed the space key');
+	}
+	qAction() {
+		console.log('You pressed q key');
+		this.player.characterHead.loadTexture('char1HeadRight', 0);
+		this.player.characterBox.body.velocity.x -= 5;
+		this.player.animations.walk();
+	}
+	wAction() {
+		console.log('You pressed w key');
+		this.player.characterHead.loadTexture('char1HeadRight', 0);
+		this.player.characterBox.body.velocity.x += 5;
+		this.player.animations.walk();
 	}
 }
