@@ -90,6 +90,6 @@ class player {
 		game.physics.enable(this.characterBox, Phaser.Physics.ARCADE);
 		this.characterBox.body.collideWorldBounds = true;
 		this.characterBox.body.gravity.y = 500;
-		this.characterBox.body.bounce.y = 0.8;
+		this.characterBox.body.bounce.y = 0.2;
 	}
 }

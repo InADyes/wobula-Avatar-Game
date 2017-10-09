@@ -1,5 +1,7 @@
 class animation {
 	constructor(avatar, type) {
+		this.now = game.time.time;
+		this.targetTime = undefined;
 		this.avatar = avatar;
 		this.walkSetup(this.avatar);
 		this.waveRightSetup(this.avatar);
@@ -82,5 +84,21 @@ class animation {
 				repeat--;
 			}
 		}
+	}
+	walkSideToSide(targetTime, direction) {
+		this.now = game.time.time;
+		console.log(this.now);
+		if (this.targetTime == undefined)
+			this.targetTime = game.time.time + targetTime;
+		console.log(this.targetTime);
+		if (this.now < this.targetTime) {
+			if (direction == 'right')
+				controls.w.isDown = true;
+			else
+				controls.q.isDown = true;
+			return (1);
+		}
+		controls.w.isDown = false;
+		return (0);
 	}
 }
