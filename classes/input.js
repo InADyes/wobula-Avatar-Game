@@ -9,7 +9,7 @@ class input {
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.a, this.s, this.q, this.w);
+		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.s, this.q, this.w);
 		console.log(this.player);
 	}
 	instantiateKeys() {
@@ -33,10 +33,6 @@ class input {
 		this.space.press = false;
 		this.space.action = () => { this.spaceAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
-		this.a = game.input.keyboard.addKey(Phaser.Keyboard.A);
-		this.a.press = false;
-		this.a.action = () => { this.aAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.A]);
 		this.s = game.input.keyboard.addKey(Phaser.Keyboard.S);
 		this.s.press = false;
 		this.s.action = () => { this.sAction(); };
@@ -155,7 +151,7 @@ class input {
 
 	qAction() {
 		console.log('You pressed q key');
-		this.player.characterHead.loadTexture('char1HeadRight', 0);
+		this.player.characterHead.loadTexture('char1HeadLeft', 0);
 		this.player.characterBox.body.velocity.x -= 5;
 		this.player.animations.walk();
 	}

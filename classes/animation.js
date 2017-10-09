@@ -87,10 +87,10 @@ class animation {
 	}
 	walkSideToSide(targetTime, direction) {
 		this.now = game.time.time;
-		console.log(this.now);
-		if (this.targetTime == undefined)
+		if (this.targetTime == undefined) {
+			console.log(targetTime);
 			this.targetTime = game.time.time + targetTime;
-		console.log(this.targetTime);
+		}
 		if (this.now < this.targetTime) {
 			if (direction == 'right')
 				controls.w.isDown = true;
@@ -98,7 +98,11 @@ class animation {
 				controls.q.isDown = true;
 			return (1);
 		}
-		controls.w.isDown = false;
+		if (controls.w.isDown == true)
+			controls.w.isDown = false;
+		else if (controls.q.isDown = true)
+			controls.q.isDown = false;
+		this.targetTime = undefined;
 		return (0);
 	}
 }
