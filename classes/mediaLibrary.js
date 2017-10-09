@@ -20,7 +20,10 @@ class mediaLibrary {
 		this.blood2 = (game.load.image('bloodDrop2', 'imgs/bloodDrop2.png'));
 		this.blood3 = (game.load.image('bloodDrop3', 'imgs/bloodDrop3.png'));
 		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
-
+		particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
+		
+		
+		
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
 		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
 		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));
@@ -46,7 +49,7 @@ class mediaLibrary {
 		this.char1LegR = (game.load.image('char1LegR', 'imgs/char1LegR.png'));
 
 		this.char2Full = (game.load.image('char2Full', 'imgs/char2Full.png'));
-		this.char2Head = (game.load.image('char2Head', 'imgs/char2Head.png'));
+		this.char2Head = (game.load.image('char2Head', 'imgs/piratehead.png'));
 		this.char2Chest = (game.load.image('char2Chest', 'imgs/char2Chest.png'));
 		this.char2Pelvis = (game.load.image('char2Pelvis', 'imgs/char2Pelvis.png'));
 		this.char2ArmL = (game.load.image('char2ArmL', 'imgs/char2ArmL.png'));

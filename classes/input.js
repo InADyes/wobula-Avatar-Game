@@ -2,7 +2,7 @@ class input {
 	constructor(avatar) {
 		this.player = avatar;
 		this.cursors = game.input.keyboard.createCursorKeys();
-		this.v;
+		this.z;
 		this.x;
 		this.c;
 		this.b;
@@ -16,6 +16,10 @@ class input {
 		console.log(this.player);
 	}
 	instantiateKeys() {
+		this.v = game.input.keyboard.addKey(Phaser.Keyboard.V)
+		this.v.press = false;
+		this.v.action = () => { this.vAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.V]);
 		this.z = game.input.keyboard.addKey(Phaser.Keyboard.Z);
 		this.z.press = false;
 		this.z.action = () => { this.zAction(); };
@@ -126,6 +130,12 @@ class input {
 	hAction() {
 		console.log('h key');
 		this.player.characterLegLBack1.angle += 1;
+	vAction(){
+		console.log('You pressed the v key');
+		//avatar.leftarmGeyser.flow(1000, 500, 15, -1);
+		//avatar.rightarmGeyser.flow(1000, 500, 15, -1);
+		//avatar.leftlegGeyser.flow(1000, 500, 15, -1);
+		avatar.rightlegGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
 		this.player.characterBox.body.velocity.y = 0;

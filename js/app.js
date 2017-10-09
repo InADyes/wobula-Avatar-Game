@@ -1,6 +1,9 @@
 var game = new Phaser.Game(600, 400, Phaser.CANVAS, 'canvas', { preload: preload, create: create, update: update });
 var data;
 
+var test;
+var particlesource = [];
+
 function preload() {
 	data = new mediaLibrary();
 }
