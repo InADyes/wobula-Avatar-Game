@@ -67,11 +67,15 @@ class input {
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
+
 			this.player.characterBox.body.velocity.x -= 5;
+			this.player.characterLegLBack2.angle -= 1;
 			//this.player.animations.walk();
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterBox.body.velocity.x += 5;
+			this.player.characterLegLBack2.angle += 1;
+
 			//this.player.animations.walk();
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
@@ -125,9 +129,8 @@ class input {
 	}
 	hAction() {
 		console.log('h key');
-		this.player.characterLegLBack1.angle += 1;
-	}
-	vAction() {
+		this.player.characterLegLBack1.angle += 1;}
+	vAction(){
 		console.log('You pressed the v key');
 		//avatar.leftarmGeyser.flow(1000, 500, 15, -1);
 		//avatar.rightarmGeyser.flow(1000, 500, 15, -1);
@@ -141,3 +144,4 @@ class input {
 		console.log('You pressed the space key');
 	}
 }
+
