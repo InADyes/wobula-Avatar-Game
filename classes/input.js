@@ -5,10 +5,15 @@ class input {
 		this.v;
 		this.x;
 		this.c;
+		this.b;
+		this.n;
+		this.h;
+		this.g;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c);
+		this.keys.push(this.space, this.z, this.x, this.c, this.n, this.b, this.h, this.g);
+		console.log(this.player);
 	}
 	instantiateKeys() {
 		this.z = game.input.keyboard.addKey(Phaser.Keyboard.Z);
@@ -27,6 +32,21 @@ class input {
 		this.space.press = false;
 		this.space.action = () => { this.spaceAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
+		this.b = game.input.keyboard.addKey(Phaser.Keyboard.B);
+		this.b.press = false;
+		this.b.action = () => { this.bAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.N]);
+		this.n = game.input.keyboard.addKey(Phaser.Keyboard.N);
+		this.n.press = false;
+		this.n.action = () => { this.nAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.G]);
+		this.g = game.input.keyboard.addKey(Phaser.Keyboard.G);
+		this.g.press = false;
+		this.g.action = () => { this.gAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.H]);
+		this.h = game.input.keyboard.addKey(Phaser.Keyboard.H);
+		this.h.press = false;
+		this.h.action = () => { this.hAction(); };
 	}
 	processor() {
 		this.cursorPad();
@@ -43,19 +63,33 @@ class input {
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
+
 			this.player.characterBox.body.velocity.x -= 5;
-			//this.player.characterLegRBack1.angle -= 1;
+			this.player.characterLegLBack2.angle -= 1;
 			//this.player.animations.walk();
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterBox.body.velocity.x += 5;
-			//this.player.characterLegRBack1.angle += 1;
+			this.player.characterLegLBack2.angle += 1;
+
 			//this.player.animations.walk();
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
 			this.player.characterBox.body.velocity.x += 5;
 		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0)
 			this.player.characterBox.body.velocity.x -= 5;
+		if (this.b.isDown) {
+			this.bAction();
+		}
+		if (this.n.isDown) {
+			this.nAction();
+		}
+		if (this.g.isDown) {
+			this.gAction();
+		}
+		if (this.h.isDown) {
+			this.hAction();
+		}
 	}
 	keyPress(key) {
 		if (key.isDown)
@@ -76,6 +110,22 @@ class input {
 	cAction() {
 		console.log('You pressed the pelvis key');
 		avatar.pelvisGeyser.flow(1000, 500, 15, -1);
+	}
+	nAction() {
+		console.log('n key');
+		this.player.characterLegLBack2.angle -= 1;
+	}
+	bAction() {
+		console.log('b key');
+		this.player.characterLegLBack2.angle += 1;
+	}
+	gAction() {
+		console.log('g key');
+		this.player.characterLegLBack1.angle -= 1;
+	}
+	hAction() {
+		console.log('h key');
+		this.player.characterLegLBack1.angle += 1;
 	}
 	spaceAction() {
 		this.player.characterBox.body.velocity.y = 0;
