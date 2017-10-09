@@ -89,10 +89,14 @@ class input {
 			this.player.animations.walk();
 			console.log(this.player);
 		}
-		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
+		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0) {
 			this.player.characterBox.body.velocity.x += 5;
-		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0)
+			this.player.characterHead.loadTexture('char1Head', 0);
+		}
+		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0) {
+			this.player.characterHead.loadTexture('char1Head', 0);
 			this.player.characterBox.body.velocity.x -= 5;
+		}
 	}
 	keyPress(key) {
 		if (key.isDown)
