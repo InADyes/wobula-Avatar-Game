@@ -41,6 +41,8 @@ class mediaLibrary {
 
 		this.char1Full = (game.load.image('char1Full', 'imgs/char1Full.png'));
 		this.char1Head = (game.load.image('char1Head', 'imgs/char1Head.png'));
+		this.char1HeadLeft = (game.load.image('char1HeadLeft', 'imgs/char1HeadLeft.png'));
+		this.char1HeadRight = (game.load.image('char1HeadRight', 'imgs/char1HeadRight.png'));
 		this.char1Chest = (game.load.image('char1Chest', 'imgs/char1Chest.png'));
 		this.char1Pelvis = (game.load.image('char1Pelvis', 'imgs/char1Pelvis.png'));
 		this.char1ArmL = (game.load.image('char1ArmL', 'imgs/char1ArmL.png'));

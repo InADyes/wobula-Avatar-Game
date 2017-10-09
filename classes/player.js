@@ -55,7 +55,6 @@ class player {
 		this.rightarmGeyser = this.addIndividualGeysers(this.arm2blood, 0, 0);
 		this.leftlegGeyser = this.addIndividualGeysers(this.leg1blood, 0, 0);
 		this.rightlegGeyser = this.addIndividualGeysers(this.leg2blood, 0, 0);
-
 		//this.leftarmGeyser = this.addIndividualGeysers(this.characterArm1,0,0);
 	}
 	addIndividualGeysers(anchor, xoffset, yoffset) {
@@ -85,7 +84,7 @@ class player {
 		this.characterBox.addChild(this.arm2blood);
 		this.characterBox.addChild(this.leg1blood);
 		this.characterBox.addChild(this.leg2blood);
-		this.characterBox.scale.setTo(.25, .25);
+		this.characterBox.scale.setTo(.5, .5);
 	}
 	physics() {
 		game.physics.enable(this.characterBox, Phaser.Physics.ARCADE);
