@@ -6,10 +6,11 @@ class input {
 		this.x;
 		this.c;
 		this.v;
+		this.a;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c, this.v);
+		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.a, this.s);
 		console.log(this.player);
 	}
 	instantiateKeys() {
@@ -33,6 +34,14 @@ class input {
 		this.space.press = false;
 		this.space.action = () => { this.spaceAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
+		this.a = game.input.keyboard.addKey(Phaser.Keyboard.A);
+		this.a.press = false;
+		this.a.action = () => { this.aAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.A]);
+		this.s = game.input.keyboard.addKey(Phaser.Keyboard.S);
+		this.s.press = false;
+		this.s.action = () => { this.sAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.S]);
 	}
 	processor() {
 		this.cursorPad();
@@ -87,6 +96,14 @@ class input {
 		avatar.rightarmGeyser.flow(1000, 500, 15, -1);
 		avatar.leftlegGeyser.flow(1000, 500, 15, -1);
 		avatar.rightlegGeyser.flow(1000, 500, 15, -1);
+	}
+	aAction() {
+		console.log('You pressed wave left key');
+		this.player.animations.waveLeft();
+	}
+	sAction() {
+		console.log('You pressed wave right key');
+		this.player.animations.waveRight();
 	}
 	spaceAction() {
 		this.player.characterBox.body.velocity.y = 0;
