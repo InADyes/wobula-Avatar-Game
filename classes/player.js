@@ -36,14 +36,14 @@ class player {
 		this.characterArm1 = game.add.sprite(-10, -175, 'char1ArmR');
 		this.characterArm1.scale.setTo(.3, .3);
 		this.characterArm1.anchor.setTo(1, 0);
-		this.characterLeg1 = game.add.sprite(10, -140, 'char1LegL');
-		this.characterLeg1.scale.setTo(.5, .5);
+		this.characterLeg1 = game.add.sprite(8, -140, 'char1LegL');
+		this.characterLeg1.scale.setTo(.3, .3);
 		this.characterLeg1.anchor.setTo(1, 0);
-		this.characterLeg2 = game.add.sprite(10, -140, 'char1LegR');
-		this.characterLeg2.scale.setTo(.5, .5);
+		this.characterLeg2 = game.add.sprite(8, -140, 'char1LegR');
+		this.characterLeg2.scale.setTo(.3, .3);
 		this.characterLeg2.anchor.setTo(0, 0);
-		this.characterPelvis = game.add.sprite(5, -130, 'char1Pelvis');
-		this.characterPelvis.scale.setTo(.3, .3);
+		this.characterPelvis = game.add.sprite(5, -135, 'char1Pelvis');
+		this.characterPelvis.scale.setTo(.25, .25);
 		this.characterPelvis.anchor.setTo(.5, .5);
 	}
 	addGeysers() {

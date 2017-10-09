@@ -22,5 +22,5 @@ function create() {
 
 function update() {
 	controls.processor();
-	game.physics.arcade.collide(env.floor, avatar.character);
+	game.physics.arcade.collide(env.floor, avatar.characterBox);
 }
