@@ -38,7 +38,7 @@ class input {
 		this.cursorPad();
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);
-		/*
+		
 		for (let presstimes = 0; presstimes < 500; presstimes++) {
 			if(presstimes % 100 == 0)
 				{
@@ -48,7 +48,7 @@ class input {
 				else
 					continue;
 		}
-*/
+
 		if (this.player.characterBox.position.x < 10)
 			this.player.characterBox.position.x = 434;
 		else if (this.player.characterBox.position.x > 435)
@@ -111,12 +111,12 @@ class input {
 	autoAnimating() {
 		var direction = 1000 * Math.random();
 		if (direction < 500) {
-			this.player.characterBox.body.velocity.x -= 15;
+			this.player.characterBox.body.velocity.x -= 50;
 			this.player.animations.walk();
 
 		}
 		else {
-			this.player.characterBox.body.velocity.x += 15;
+			this.player.characterBox.body.velocity.x += 50;
 			this.player.animations.walk();
 		}
 		console.log(direction);
