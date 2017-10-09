@@ -44,11 +44,13 @@ class input {
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
 			this.player.characterBox.body.velocity.x -= 5;
-			this.player.animations.walk();
+			//this.player.characterLegRBack1.angle -= 1;
+			//this.player.animations.walk();
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterBox.body.velocity.x += 5;
-			this.player.animations.walk();
+			//this.player.characterLegRBack1.angle += 1;
+			//this.player.animations.walk();
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0)
 			this.player.characterBox.body.velocity.x += 5;
