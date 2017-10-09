@@ -1,6 +1,8 @@
 var game = new Phaser.Game(600, 400, Phaser.CANVAS, 'canvas', { preload: preload, create: create, update: update });
 var data;
 
+var kk = 0;
+
 var test;
 var particlesource = [];
 

@@ -38,6 +38,17 @@ class input {
 		this.cursorPad();
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);
+		/*
+		for (let presstimes = 0; presstimes < 500; presstimes++) {
+			if(presstimes % 100 == 0)
+				{
+				this.loopanimate();
+				//console.log('execute');
+				}
+				else
+					continue;
+		}
+*/
 		if (this.player.characterBox.position.x < 10)
 			this.player.characterBox.position.x = 434;
 		else if (this.player.characterBox.position.x > 435)
@@ -79,7 +90,8 @@ class input {
 	}
 	cAction() {
 		console.log('You pressed the pelvis key');
-		avatar.pelvisGeyser.flow(1000, 500, 15, -1);
+		//avatar.pelvisGeyser.flow(1000, 500, 15, -1);
+		this.autoAnimating();
 	}
 	vAction() {
 		console.log('You pressed the v key');
@@ -88,10 +100,33 @@ class input {
 		avatar.leftlegGeyser.flow(1000, 500, 15, -1);
 		avatar.rightlegGeyser.flow(1000, 500, 15, -1);
 	}
+
 	spaceAction() {
 		this.player.characterBox.body.velocity.y = 0;
 		this.player.characterBox.body.velocity.y -= 400;
 		data.jump.play();
 		console.log('You pressed the space key');
 	}
+
+	autoAnimating() {
+		var direction = 1000 * Math.random();
+		if (direction < 500) {
+			this.player.characterBox.body.velocity.x -= 15;
+			this.player.animations.walk();
+
+		}
+		else {
+			this.player.characterBox.body.velocity.x += 15;
+			this.player.animations.walk();
+		}
+		console.log(direction);
+
+	}
+	loopanimate() {
+		this.c.press = true;
+		//this.sleep(1000);
+	}
+
 }
+
+
