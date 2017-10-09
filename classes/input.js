@@ -7,6 +7,7 @@ class input {
 		this.c;
 		this.v;
 		this.a;
+		this.s;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
