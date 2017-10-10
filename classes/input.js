@@ -74,29 +74,16 @@ class input {
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
-<<<<<<< HEAD
-
-			this.player.characterBox.body.velocity.x -= 5;
-			this.player.characterLegLBack2.angle -= 1;
-			//this.player.animations.walk();
-=======
 			this.player.characterHead.loadTexture('char1HeadLeft', 0);
 			this.player.characterBox.body.velocity.x -= 5;
 			this.player.animations.walk();
 			console.log(this.player);
->>>>>>> origin
 		}
 		if (this.cursors.right.isDown) {
 			this.player.characterHead.loadTexture('char1HeadRight', 0);
 			this.player.characterBox.body.velocity.x += 5;
-<<<<<<< HEAD
-			this.player.characterLegLBack2.angle += 1;
-
-			//this.player.animations.walk();
-=======
 			this.player.animations.walk();
 			console.log(this.player);
->>>>>>> origin
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0) {
 			this.player.characterBox.body.velocity.x += 5;
@@ -125,31 +112,10 @@ class input {
 	}
 	cAction() {
 		console.log('You pressed the pelvis key');
-<<<<<<< HEAD
-		avatar.pelvisGeyser.flow(1000, 500, 15, -1);
-	}
-	nAction() {
-		console.log('n key');
-		this.player.characterLegLBack2.angle -= 1;
-	}
-	bAction() {
-		console.log('b key');
-		this.player.characterLegLBack2.angle += 1;
-	}
-	gAction() {
-		console.log('g key');
-		this.player.characterLegLBack1.angle -= 1;
-	}
-	hAction() {
-		console.log('h key');
-		this.player.characterLegLBack1.angle += 1;}
-	vAction(){
-=======
 		//avatar.pelvisGeyser.flow(1000, 500, 15, -1);
 		this.autoAnimating();
 	}
 	vAction() {
->>>>>>> origin
 		console.log('You pressed the v key');
 		avatar.leftarmGeyser.flow(1000, 500, 15, -1);
 		avatar.rightarmGeyser.flow(1000, 500, 15, -1);
@@ -197,7 +163,3 @@ class input {
 	}
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin
