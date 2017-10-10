@@ -74,23 +74,23 @@ class input {
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
-			this.player.characterHead.loadTexture('char1HeadLeft', 0);
+			//this.player.characterHead.loadTexture('char1HeadLeft', 0);
 			this.player.characterBox.body.velocity.x -= 5;
 			this.player.animations.walk();
 			console.log(this.player);
 		}
 		if (this.cursors.right.isDown) {
-			this.player.characterHead.loadTexture('char1HeadRight', 0);
+			//this.player.characterHead.loadTexture('char1HeadRight', 0);
 			this.player.characterBox.body.velocity.x += 5;
 			this.player.animations.walk();
 			console.log(this.player);
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0) {
 			this.player.characterBox.body.velocity.x += 5;
-			this.player.characterHead.loadTexture('char1Head', 0);
+			//this.player.characterHead.loadTexture('char1Head', 0);
 		}
 		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0) {
-			this.player.characterHead.loadTexture('char1Head', 0);
+			//this.player.characterHead.loadTexture('char1Head', 0);
 			this.player.characterBox.body.velocity.x -= 5;
 		}
 	}
