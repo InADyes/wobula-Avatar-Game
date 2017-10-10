@@ -24,26 +24,26 @@ class player {
 		this.pelvisblood = game.add.sprite(5, -130);
 		this.pelvisblood.scale.setTo(.3, .3);
 
-		this.characterHead = game.add.sprite(0, -195, 'char1Head');
+		this.characterHead = game.add.sprite(0, -50, 'char1Head');
 		this.characterHead.scale.setTo(.3, .3);
 		this.characterHead.anchor.setTo(.5, .5);
-		this.characterArm2 = game.add.sprite(10, -175, 'char1ArmL');
+		this.characterArm2 = game.add.sprite(9, -32, 'char1ArmL');
 		this.characterArm2.scale.setTo(.3, .3);
 		this.characterArm2.anchor.setTo(0, 0);
-		this.characterChest = game.add.sprite(0, -165, 'char1Chest');
+		this.characterChest = game.add.sprite(0, -20, 'char1Chest');
 		this.characterChest.scale.setTo(.3, .3);
 		this.characterChest.anchor.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-10, -175, 'char1ArmR');
+		this.characterArm1 = game.add.sprite(-9, -28, 'char1ArmR');
 		this.characterArm1.scale.setTo(.3, .3);
 		this.characterArm1.anchor.setTo(1, 0);
-		this.characterLeg1 = game.add.sprite(10, -140, 'char1LegL');
-		this.characterLeg1.scale.setTo(.5, .5);
+		this.characterLeg1 = game.add.sprite(8, 5, 'char1LegL');
+		this.characterLeg1.scale.setTo(.3, .3);
 		this.characterLeg1.anchor.setTo(1, 0);
-		this.characterLeg2 = game.add.sprite(10, -140, 'char1LegR');
-		this.characterLeg2.scale.setTo(.5, .5);
+		this.characterLeg2 = game.add.sprite(8, 5, 'char1LegR');
+		this.characterLeg2.scale.setTo(.3, .3);
 		this.characterLeg2.anchor.setTo(0, 0);
-		this.characterPelvis = game.add.sprite(5, -130, 'char1Pelvis');
-		this.characterPelvis.scale.setTo(.3, .3);
+		this.characterPelvis = game.add.sprite(5, 10, 'char1Pelvis');
+		this.characterPelvis.scale.setTo(.25, .25);
 		this.characterPelvis.anchor.setTo(.5, .5);
 	}
 	addGeysers() {
@@ -55,7 +55,6 @@ class player {
 		this.rightarmGeyser = this.addIndividualGeysers(this.arm2blood, 0, 0);
 		this.leftlegGeyser = this.addIndividualGeysers(this.leg1blood, 0, 0);
 		this.rightlegGeyser = this.addIndividualGeysers(this.leg2blood, 0, 0);
-
 		//this.leftarmGeyser = this.addIndividualGeysers(this.characterArm1,0,0);
 	}
 	addIndividualGeysers(anchor, xoffset, yoffset) {
@@ -91,6 +90,6 @@ class player {
 		game.physics.enable(this.characterBox, Phaser.Physics.ARCADE);
 		this.characterBox.body.collideWorldBounds = true;
 		this.characterBox.body.gravity.y = 500;
-		this.characterBox.body.bounce.y = 0.8;
+		this.characterBox.body.bounce.y = 0.6;
 	}
 }
