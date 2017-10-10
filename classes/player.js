@@ -84,7 +84,7 @@ class player {
 		this.characterBox.addChild(this.arm2blood);
 		this.characterBox.addChild(this.leg1blood);
 		this.characterBox.addChild(this.leg2blood);
-		this.characterBox.scale.setTo(.5, .5);
+		this.characterBox.scale.setTo(.4, .4);
 	}
 	physics() {
 		game.physics.enable(this.characterBox, Phaser.Physics.ARCADE);

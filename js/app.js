@@ -27,11 +27,5 @@ var direction = 'right';
 function update() {
 	controls.processor();
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
-	if ((avatar.animations.walkSideToSide(random(5000, 200), direction)) == 0) {
-		if (random(6, 1) > 3)
-			direction = 'right';
-		else
-			direction = 'left';
-		console.log(direction);
-	}
+	//avatar.animations.randomWalk();
 }

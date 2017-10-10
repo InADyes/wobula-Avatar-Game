@@ -105,4 +105,13 @@ class animation {
 		this.targetTime = undefined;
 		return (0);
 	}
+	randomWalk() {
+		if ((avatar.animations.walkSideToSide(random(5000, 200), direction)) == 0) {
+			if (random(6, 1) > 3)
+				direction = 'right';
+			else
+				direction = 'left';
+			console.log(direction);
+		}
+	}
 }
