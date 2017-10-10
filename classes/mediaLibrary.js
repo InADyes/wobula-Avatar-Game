@@ -88,6 +88,16 @@ class mediaLibrary {
 		this.charSpiderLegRFront2 = (game.load.image('charSpiderLegRFront2', 'imgs/charSpiderLegRFront2.png'));
 		this.charSpiderLegLFront1 = (game.load.image('charSpiderLegLFront1', 'imgs/charSpiderLegLFront1.png'));
 		this.charSpiderLegLFront2 = (game.load.image('charSpiderLegLFront2', 'imgs/charSpiderLegLFront2.png'));
+
+		this.charFireFull = (game.load.image('charFireFull', 'imgs/Fire_Character/Fire_CharacterFull.png'));
+		this.charFireHead = (game.load.image('charFireHead', 'imgs/Fire_Character/Fire_Head.png'));
+		this.charFireHeadLeft = (game.load.image('charFireHeadLeft', 'imgs/Fire_Character/Fire_Head_Looking.png'));
+		this.charFireHeadRight = (game.load.image('charFireHeadRight', 'imgs/Fire_Character/Fire_Head_Looking.png'));
+		this.charFirePelvis = (game.load.image('charFirePelvis', 'imgs/Fire_Character/Fire_Pelvis.png'));
+		this.charFireArmL = (game.load.image('charFireArmL', 'imgs/Fire_Character/Fire_R_Arm.png'));
+		this.charFireArmR = (game.load.image('charFireArmR', 'imgs/Fire_Character/Fire_L_Arm.png'));
+		this.charFireLegL = (game.load.image('charFireLegL', 'imgs/Fire_Character/Fire_L_Leg.png'));
+		this.charFireLegR = (game.load.image('charFireLegR', 'imgs/Fire_Character/Fire_R_Leg.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');

@@ -16,7 +16,7 @@ var env;
 
 function create() {
 	env = new environment('grassy');
-	avatar = new player('wobula');
+	avatar = new gnome('wobula');
 	controls = new input(avatar);
 	data.addSounds();
 	addListeners()
