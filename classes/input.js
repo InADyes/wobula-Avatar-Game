@@ -64,35 +64,21 @@ class input {
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown) {
-<<<<<<< HEAD
-			this.player.characterHead.loadTexture('charFireHeadLeft', 0);
-=======
 			//this.player.characterHead.loadTexture('char1HeadLeft', 0);
->>>>>>> hao-test
 			this.player.characterBox.body.velocity.x -= 5;
 			this.player.animations.walk();
 		}
 		if (this.cursors.right.isDown) {
-<<<<<<< HEAD
-			this.player.characterHead.loadTexture('charFireHeadRight', 0);
-=======
 			//this.player.characterHead.loadTexture('char1HeadRight', 0);
->>>>>>> hao-test
 			this.player.characterBox.body.velocity.x += 5;
 			this.player.animations.walk();
 		}
 		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0) {
 			this.player.characterBox.body.velocity.x += 5;
-<<<<<<< HEAD
-			this.player.characterHead.loadTexture('charFireHead', 0);
-		}
-		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0) {
-=======
 			//this.player.characterHead.loadTexture('char1Head', 0);
 		}
 		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0) {
 			//this.player.characterHead.loadTexture('char1Head', 0);
->>>>>>> hao-test
 			this.player.characterBox.body.velocity.x -= 5;
 			this.player.characterHead.loadTexture('charFireHead', 0);
 		}

@@ -22,31 +22,6 @@ class player {
 		this.leg2blood = game.add.sprite(25, -120);
 		//this.leg2blood.scale.setTo(.3, .3);
 		this.pelvisblood = game.add.sprite(5, -130);
-<<<<<<< HEAD
-		this.pelvisblood.scale.setTo(.3, .3);
-
-		this.characterHead = game.add.sprite(0, -50, 'char1Head');
-		//this.characterHead.scale.setTo(.3, .3);
-		this.characterHead.anchor.setTo(.5, .5);
-		this.characterArm2 = game.add.sprite(9, -32, 'char1ArmL');
-		//this.characterArm2.scale.setTo(.3, .3);
-		this.characterArm2.anchor.setTo(0, 0);
-		this.characterChest = game.add.sprite(0, -20, 'char1Chest');
-		//this.characterChest.scale.setTo(.3, .3);
-		this.characterChest.anchor.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-9, -28, 'char1ArmR');
-		//this.characterArm1.scale.setTo(.3, .3);
-		this.characterArm1.anchor.setTo(1, 0);
-		this.characterLeg1 = game.add.sprite(8, 5, 'char1LegL');
-		//this.characterLeg1.scale.setTo(.3, .3);
-		this.characterLeg1.anchor.setTo(1, 0);
-		this.characterLeg2 = game.add.sprite(8, 5, 'char1LegR');
-		//this.characterLeg2.scale.setTo(.3, .3);
-		this.characterLeg2.anchor.setTo(0, 0);
-		//this.characterPelvis = game.add.sprite(5, 10, 'char1Pelvis');
-		//this.characterPelvis.scale.setTo(.25, .25);
-		//this.characterPelvis.anchor.setTo(.5, .5);
-=======
 		//this.pelvisblood.scale.setTo(.3, .3);
 		/*  //alien
 		this.characterHead = game.add.sprite(0, -385, 'char1Head');
@@ -93,7 +68,6 @@ class player {
 		this.characterPelvis = game.add.sprite(5, 10, 'char1Pelvis');
 		this.characterPelvis.scale.setTo(.01, .01);
 		this.characterPelvis.anchor.setTo(.5, .5);
->>>>>>> hao-test
 	}
 	addGeysers() {
 		this.headGeyser = this.addIndividualGeysers(this.characterHead, 0, 0);
@@ -133,13 +107,9 @@ class player {
 		this.characterBox.addChild(this.arm2blood);
 		this.characterBox.addChild(this.leg1blood);
 		this.characterBox.addChild(this.leg2blood);
-<<<<<<< HEAD
-		//this.characterBox.scale.setTo(.4, .4);
-=======
 		//this.characterBox.scale.setTo(.3, .3);
 		//this.characterBox.alpha = 0.5;
 		//this.characterBox.alpha.setTo(.3);
->>>>>>> hao-test
 	}
 	physics() {
 		game.physics.enable(this.characterBox, Phaser.Physics.ARCADE);
