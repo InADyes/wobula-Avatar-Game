@@ -40,15 +40,25 @@ class mediaLibrary {
 		this.testLeg2 = (game.load.image('stickLeg2', 'imgs/stickLeg2.png'));
 
 		this.char1Full = (game.load.image('char1Full', 'imgs/char1Full.png'));
-		this.char1Head = (game.load.image('char1Head', 'imgs/char1Head.png'));
-		this.char1HeadLeft = (game.load.image('char1HeadLeft', 'imgs/char1HeadLeft.png'));
-		this.char1HeadRight = (game.load.image('char1HeadRight', 'imgs/char1HeadRight.png'));
-		this.char1Chest = (game.load.image('char1Chest', 'imgs/char1Chest.png'));
-		this.char1Pelvis = (game.load.image('char1Pelvis', 'imgs/char1Pelvis.png'));
-		this.char1ArmL = (game.load.image('char1ArmL', 'imgs/char1ArmL.png'));
-		this.char1ArmR = (game.load.image('char1ArmR', 'imgs/char1ArmR.png'));
-		this.char1LegL = (game.load.image('char1LegL', 'imgs/char1LegL.png'));
-		this.char1LegR = (game.load.image('char1LegR', 'imgs/char1LegR.png'));
+		this.char1Head = (game.load.image('char1Head', 'imgs/test_avatars1/head.png'));
+		this.char1HeadLeft = (game.load.image('char1HeadLeft', 'imgs/test_avatars/char1HeadLeft.png'));
+		this.char1HeadRight = (game.load.image('char1HeadRight', 'imgs/test_avatars/char1HeadRight.png'));
+		this.char1Chest = (game.load.image('char1Chest', 'imgs/test_avatars1/body.png'));
+		this.char1Pelvis = (game.load.image('char1Pelvis', ''));
+		this.char1ArmL = (game.load.image('char1ArmL', 'imgs/test_avatars1/arm2.png'));
+		this.char1ArmR = (game.load.image('char1ArmR', 'imgs/test_avatars1/arm1.png'));
+		this.char1LegL = (game.load.image('char1LegL', 'imgs/test_avatars1/leg1.png'));
+		this.char1LegR = (game.load.image('char1LegR', 'imgs/test_avatars1/leg2.png'));
+		//duck?
+		this.duckhead = (game.load.image('duckhead', 'imgs/duck/head.png'));
+		this.duckbody = (game.load.image('duckbody', 'imgs/duck/body.png'));
+		this.duckarm1 = (game.load.image('duckarm1', 'imgs/duck/left_arm.png'));
+		this.duckarm2 = (game.load.image('duckarm2', 'imgs/duck/right_arm.png'));
+		this.duckleg1 = (game.load.image('duckleg1', 'imgs/duck/left_leg.png'));
+		this.duckleg2 = (game.load.image('duckleg2', 'imgs/duck/right_leg.png'));
+
+
+
 
 		this.char2Full = (game.load.image('char2Full', 'imgs/char2Full.png'));
 		this.char2Head = (game.load.image('char2Head', 'imgs/piratehead.png'));

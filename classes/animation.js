@@ -49,9 +49,9 @@ class animation {
 
 		avatar.characterArm1.angle = -10;
 		this.arm1 = game.add.tween(avatar.characterArm1);
-		this.arm1.to({angle: -110}, 600, Phaser.Easing.Linear.None);
+		this.arm1.to({angle: -110}, 600, Phaser.Easing.Linear.In);
 		this.arm1Rev = game.add.tween(avatar.characterArm1);
-		this.arm1Rev.to({angle: -10}, 600, Phaser.Easing.Linear.None);
+		this.arm1Rev.to({angle: -10}, 600, Phaser.Easing.Linear.In);
 
 		this.arm2 = game.add.tween(avatar.characterArm2);
 		this.arm2.to({angle: -10}, 600, Phaser.Easing.Linear.None);
