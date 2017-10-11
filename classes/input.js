@@ -80,7 +80,7 @@ class input {
 		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0) {
 			//this.player.characterHead.loadTexture('char1Head', 0);
 			this.player.characterBox.body.velocity.x -= 5;
-			this.player.characterHead.loadTexture('charFireHead', 0);
+			//this.player.characterHead.loadTexture('charFireHead', 0);
 		}
 	}
 	keyPress(key) {

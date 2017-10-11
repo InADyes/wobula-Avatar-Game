@@ -20,10 +20,7 @@ class mediaLibrary {
 		this.blood2 = (game.load.image('bloodDrop2', 'imgs/bloodDrop2.png'));
 		this.blood3 = (game.load.image('bloodDrop3', 'imgs/bloodDrop3.png'));
 		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
-		particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
-		
-		
-		
+
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
 		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
 		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));
@@ -41,10 +38,10 @@ class mediaLibrary {
 
 		this.char1Full = (game.load.image('char1Full', 'imgs/char1Full.png'));
 		this.char1Head = (game.load.image('char1Head', 'imgs/test_avatars1/head.png'));
-		this.char1HeadLeft = (game.load.image('char1HeadLeft', 'imgs/test_avatars/char1HeadLeft.png'));
-		this.char1HeadRight = (game.load.image('char1HeadRight', 'imgs/test_avatars/char1HeadRight.png'));
+		this.char1HeadLeft = (game.load.image('char1HeadLeft', 'imgs/char1HeadLeft.png'));
+		this.char1HeadRight = (game.load.image('char1HeadRight', 'imgs/char1HeadRight.png'));
 		this.char1Chest = (game.load.image('char1Chest', 'imgs/test_avatars1/body.png'));
-		this.char1Pelvis = (game.load.image('char1Pelvis', ''));
+		this.char1Pelvis = (game.load.image('char1Pelvis', 'imgs/char1Pelvis.png'));
 		this.char1ArmL = (game.load.image('char1ArmL', 'imgs/test_avatars1/arm2.png'));
 		this.char1ArmR = (game.load.image('char1ArmR', 'imgs/test_avatars1/arm1.png'));
 		this.char1LegL = (game.load.image('char1LegL', 'imgs/test_avatars1/leg1.png'));
@@ -57,8 +54,12 @@ class mediaLibrary {
 		this.duckleg1 = (game.load.image('duckleg1', 'imgs/duck/left_leg.png'));
 		this.duckleg2 = (game.load.image('duckleg2', 'imgs/duck/right_leg.png'));
 
-
-
+		this.blueHead = (game.load.image('blueHead', 'imgs/blueGuy/8Bit_head.png'));
+		this.blueBody = (game.load.image('blueBody', 'imgs/blueGuy/8Bit_body.png'));
+		this.blueArm1 = (game.load.image('blueArm1', 'imgs/blueGuy/8Bit_L_Arm.png'));
+		this.blueArm2 = (game.load.image('blueArm2', 'imgs/blueGuy/8Bit_R_Arm.png'));
+		this.blueLeg1 = (game.load.image('blueLeg1', 'imgs/blueGuy/8Bit_L_Leg.png'));
+		this.blueLeg2 = (game.load.image('blueLeg2', 'imgs/blueGuy/8Bit_R_Leg.png'));
 
 		this.char2Full = (game.load.image('char2Full', 'imgs/char2Full.png'));
 		this.char2Head = (game.load.image('char2Head', 'imgs/piratehead.png'));
