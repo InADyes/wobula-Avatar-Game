@@ -71,7 +71,7 @@ class player {
 		this.characterBox.addChild(this.arm2blood);
 		this.characterBox.addChild(this.leg1blood);
 		this.characterBox.addChild(this.leg2blood);
-		this.characterBox.scale.setTo(.8, .8);
+		this.characterBox.scale.setTo(1, 1);
 		//this.characterBox.alpha = 0.5;
 		//this.characterBox.alpha.setTo(.3);
 	}
