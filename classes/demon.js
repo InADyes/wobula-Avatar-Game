@@ -4,16 +4,18 @@ class demon {
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
-		this.animations = new animation(this, 'demon');
+		this.animations = new animationDemon(this, 'demon');
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(100, 100, 'bloodDrop1');
 		this.characterWingL = game.add.sprite(-15, -75, 'charDevilWingL');
 		this.characterWingL.anchor.setTo(1, .25);
 		this.characterWingL.scale.setTo(1.5, 1.5);
+		this.characterWingL.angle = -70;
 		this.characterWingR = game.add.sprite(5, -75, 'charDevilWingR');
 		this.characterWingR.anchor.setTo(0, .25);
 		this.characterWingR.scale.setTo(1.5, 1.5);
+		this.characterWingR.angle = 60;
 		this.characterHead = game.add.sprite(-10, -120, 'charDevilHead');
 		this.characterHead.anchor.setTo(.5, .5);
 		this.characterChest = game.add.sprite(-4, -70, 'charDevilChest');

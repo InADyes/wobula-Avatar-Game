@@ -50,6 +50,8 @@ class input {
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.w]);
 	}
 	processor() {
+		if (this.player.characterBox.position.y < 320)
+			this.player.animations.wingFly();
 		this.cursorPad();
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);
@@ -80,7 +82,6 @@ class input {
 		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0) {
 			//this.player.characterHead.loadTexture('char1Head', 0);
 			this.player.characterBox.body.velocity.x -= 5;
-			//this.player.characterHead.loadTexture('charFireHead', 0);
 		}
 	}
 	keyPress(key) {
@@ -121,10 +122,11 @@ class input {
 	spaceAction() {
 		this.player.characterBox.body.velocity.y = 0;
 		this.player.characterBox.body.velocity.y -= 400;
+		this.player.characterWingR.angle = -10;
+		this.player.characterWingL.angle = 10;
 		data.jump.play();
 		console.log('You pressed the space key');
 	}
-
 	autoAnimating() {
 		var direction = 1000 * Math.random();
 		if (direction < 500) {
@@ -137,7 +139,6 @@ class input {
 			this.player.animations.walk();
 		}
 		console.log(direction);
-
 	}
 	qAction() {
 		console.log('You pressed q key');
