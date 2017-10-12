@@ -19,5 +19,6 @@ function create() {
 
 function update() {
 	controls.processor();
+	avatar.animations.breathe();
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
 }

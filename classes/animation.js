@@ -6,6 +6,7 @@ class animation {
 		this.walkSetup(this.avatar);
 		this.waveRightSetup(this.avatar);
 		this.waveLeftSetup(this.avatar);
+		this.breathSetup(this.avatar);
 	}
 	walk(direction) {
 		this.walkArms(direction, this.avatar);
@@ -34,6 +35,18 @@ class animation {
 			this.leg1Rev.start();
 			this.leg2.start();
 		}
+	}
+	breathe() {
+		if (avatar.characterChest.scale.x == 1.2)
+			this.breathOut.start();
+		else if (avatar.characterChest.scale.x == 1)
+			this.breathIn.start();
+	}
+	breathSetup(avatar) {
+		this.breathIn = game.add.tween(avatar.characterChest.scale);
+		this.breathIn.to({x: 1.2, y: 1.2}, 1000, Phaser.Easing.Linear.None);
+		this.breathOut = game.add.tween(avatar.characterChest.scale);
+		this.breathOut.to({x: 1, y: 1}, 4000, Phaser.Easing.Linear.None);
 	}
 	walkSetup(avatar) {
 		avatar.characterLeg1.angle = -10;
