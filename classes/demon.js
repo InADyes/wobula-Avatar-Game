@@ -14,20 +14,24 @@ class demon {
 		this.characterWingR = game.add.sprite(5, -75, 'charDevilWingR');
 		this.characterWingR.anchor.setTo(0, .25);
 		this.characterWingR.scale.setTo(1.5, 1.5);
-		this.characterHead = game.add.sprite(-10, -130, 'charDevilHead');
+		this.characterHead = game.add.sprite(-10, -120, 'charDevilHead');
 		this.characterHead.anchor.setTo(.5, .5);
-		this.characterChest = game.add.sprite(-4, -73, 'charDevilChest');
+		this.characterChest = game.add.sprite(-4, -70, 'charDevilChest');
 		this.characterChest.anchor.setTo(.5, .5);
+		this.characterChest.scale.setTo(.7, 1);
 		this.characterArm2 = game.add.sprite(5, -80, 'charDevilArmR');
 		this.characterArm2.anchor.setTo(0, 0);
-		this.characterArm1 = game.add.sprite(-20, -80, 'charDevilArmL');
+		this.characterArm1 = game.add.sprite(-15, -80, 'charDevilArmL');
 		this.characterArm1.anchor.setTo(1, 0);
-		this.characterLeg1 = game.add.sprite(-17, -10, 'charDevilLegL');
+		this.characterLeg1 = game.add.sprite(-8, -13, 'charDevilLegL');
 		this.characterLeg1.anchor.setTo(.2, 0);
-		this.characterLeg2 = game.add.sprite(22, -10, 'charDevilLegR');
+		this.characterLeg1.scale.setTo(.7, 1);
+		this.characterLeg2 = game.add.sprite(14, -13, 'charDevilLegR');
 		this.characterLeg2.anchor.setTo(.8, 0);
-		this.characterPelvis = game.add.sprite(.2, -20, 'charDevilPelvis');
+		this.characterLeg2.scale.setTo(.7, 1);
+		this.characterPelvis = game.add.sprite(.2, -19, 'charDevilPelvis');
 		this.characterPelvis.anchor.setTo(.5, .5);
+		this.characterPelvis.scale.setTo(.6, 1);
 	}
 	bindBody() {
 		this.characterBox.addChild(this.characterHead);

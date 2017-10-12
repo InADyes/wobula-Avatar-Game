@@ -28,10 +28,10 @@ class animation {
 		}
 	}
 	walkLegs() {
-		if (avatar.characterLeg1.angle == -10) {
+		if (avatar.characterLeg1.angle == -20) {
 			this.leg1.start();
 			this.leg2Rev.start();
-		} else if (avatar.characterLeg1.angle == 10) {
+		} else if (avatar.characterLeg1.angle == 20) {
 			this.leg1Rev.start();
 			this.leg2.start();
 		}
@@ -49,27 +49,27 @@ class animation {
 		this.breathOut.to({x: 1, y: 1}, 4000, Phaser.Easing.Linear.None);
 	}
 	walkSetup(avatar) {
-		avatar.characterLeg1.angle = -10;
+		avatar.characterLeg1.angle = -20;
 		this.leg1 = game.add.tween(avatar.characterLeg1);
-		this.leg1.to({angle: 10}, 400, Phaser.Easing.Quadratic.InOut);
+		this.leg1.to({angle: 20}, 550, Phaser.Easing.Quadratic.InOut);
 		this.leg2 = game.add.tween(avatar.characterLeg2);
-		this.leg2.to({angle: 10}, 400, Phaser.Easing.Quadratic.InOut);
+		this.leg2.to({angle: 20}, 550, Phaser.Easing.Quadratic.InOut);
 
 		this.leg1Rev = game.add.tween(avatar.characterLeg1);
-		this.leg1Rev.to({angle: -10}, 400, Phaser.Easing.Quadratic.InOut);
+		this.leg1Rev.to({angle: -20}, 550, Phaser.Easing.Quadratic.InOut);
 		this.leg2Rev = game.add.tween(avatar.characterLeg2);
-		this.leg2Rev.to({angle: -10}, 400, Phaser.Easing.Quadratic.InOut);
+		this.leg2Rev.to({angle: -20}, 550, Phaser.Easing.Quadratic.InOut);
 
 		avatar.characterArm1.angle = -10;
 		this.arm1 = game.add.tween(avatar.characterArm1);
-		this.arm1.to({angle: -110}, 800, Phaser.Easing.Quadratic.InOut);
+		this.arm1.to({angle: -110}, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm1Rev = game.add.tween(avatar.characterArm1);
-		this.arm1Rev.to({angle: -10}, 800, Phaser.Easing.Quadratic.InOut);
+		this.arm1Rev.to({angle: -10}, 550, Phaser.Easing.Quadratic.InOut);
 
 		this.arm2 = game.add.tween(avatar.characterArm2);
-		this.arm2.to({angle: -10}, 800, Phaser.Easing.Quadratic.InOut);
+		this.arm2.to({angle: -10}, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm2Rev = game.add.tween(avatar.characterArm2);
-		this.arm2Rev.to({angle: 90}, 800, Phaser.Easing.Quadratic.InOut);
+		this.arm2Rev.to({angle: 90}, 550, Phaser.Easing.Quadratic.InOut);
 	}
 	waveLeftSetup(avatar) {
 		this.arm1Wave = game.add.tween(avatar.characterArm1);
