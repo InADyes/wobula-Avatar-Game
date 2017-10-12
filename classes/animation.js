@@ -38,25 +38,25 @@ class animation {
 	walkSetup(avatar) {
 		avatar.characterLeg1.angle = -10;
 		this.leg1 = game.add.tween(avatar.characterLeg1);
-		this.leg1.to({angle: 10}, 600, Phaser.Easing.Back.InOut);
+		this.leg1.to({angle: 10}, 400, Phaser.Easing.Back.InOut);
 		this.leg2 = game.add.tween(avatar.characterLeg2);
-		this.leg2.to({angle: 10}, 600, Phaser.Easing.Back.InOut);
+		this.leg2.to({angle: 10}, 400, Phaser.Easing.Back.InOut);
 
 		this.leg1Rev = game.add.tween(avatar.characterLeg1);
-		this.leg1Rev.to({angle: -10}, 600, Phaser.Easing.Back.InOut);
+		this.leg1Rev.to({angle: -10}, 400, Phaser.Easing.Back.InOut);
 		this.leg2Rev = game.add.tween(avatar.characterLeg2);
-		this.leg2Rev.to({angle: -10}, 600, Phaser.Easing.Back.InOut);
+		this.leg2Rev.to({angle: -10}, 400, Phaser.Easing.Back.InOut);
 
 		avatar.characterArm1.angle = -10;
 		this.arm1 = game.add.tween(avatar.characterArm1);
-		this.arm1.to({angle: -110}, 600, Phaser.Easing.Quartic.InOut);
+		this.arm1.to({angle: -110}, 400, Phaser.Easing.Quartic.InOut);
 		this.arm1Rev = game.add.tween(avatar.characterArm1);
-		this.arm1Rev.to({angle: -10}, 600, Phaser.Easing.Quartic.InOut);
+		this.arm1Rev.to({angle: -10}, 400, Phaser.Easing.Quartic.InOut);
 
 		this.arm2 = game.add.tween(avatar.characterArm2);
-		this.arm2.to({angle: -10}, 600, Phaser.Easing.Quartic.InOut);
+		this.arm2.to({angle: -10}, 400, Phaser.Easing.Quartic.InOut);
 		this.arm2Rev = game.add.tween(avatar.characterArm2);
-		this.arm2Rev.to({angle: 90}, 600, Phaser.Easing.Quartic.InOut);
+		this.arm2Rev.to({angle: 90}, 400, Phaser.Easing.Quartic.InOut);
 	}
 	waveLeftSetup(avatar) {
 		this.arm1Wave = game.add.tween(avatar.characterArm1);
