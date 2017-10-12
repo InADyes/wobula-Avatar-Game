@@ -4,7 +4,7 @@ class gnome {
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
-		this.animations = new animation(this);
+		this.animations = new animation(this, 'gnome');
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(100, 100);
