@@ -109,6 +109,19 @@ class mediaLibrary {
 		this.charFireArmR = (game.load.image('charFireArmR', 'imgs/Fire_Character/Fire_L_Arm.png'));
 		this.charFireLegL = (game.load.image('charFireLegL', 'imgs/Fire_Character/Fire_L_Leg.png'));
 		this.charFireLegR = (game.load.image('charFireLegR', 'imgs/Fire_Character/Fire_R_Leg.png'));
+
+		this.charDevilFull = (game.load.image('charDevilFull', 'imgs/charDevilFull.png'));
+		this.charDevilHead = (game.load.image('charDevilHead', 'imgs/charDevilHead.png'));
+		this.charDevilChest = (game.load.image('charDevilChest', 'imgs/charDevilChest.png'));
+		//this.charFireHeadLeft = (game.load.image('charFireHeadLeft', 'imgs/Fire_Character/Fire_Head_Looking.png'));
+		//this.charFireHeadRight = (game.load.image('charDevilHeadRight', 'imgs/Fire_Character/Fire_Head_Looking.png'));
+		this.charDevilPelvis = (game.load.image('charDevilPelvis', 'imgs/charDevilPelvis.png'));
+		this.charDevilArmL = (game.load.image('charDevilArmL', 'imgs/charDevilArmL.png'));
+		this.charDevilArmR = (game.load.image('charDevilArmR', 'imgs/charDevilArmR.png'));
+		this.charDevilLegL = (game.load.image('charDevilLegL', 'imgs/charDevilLegL.png'));
+		this.charDevilLegR = (game.load.image('charDevilLegR', 'imgs/charDevilLegR.png'));
+		this.charDevilWingL = (game.load.image('charDevilWingL', 'imgs/charDevilWingL.png'));
+		this.charDevilWingR = (game.load.image('charDevilWingR', 'imgs/charDevilWingR.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
