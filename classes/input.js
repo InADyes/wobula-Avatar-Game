@@ -74,6 +74,7 @@ class input {
 			key.press = false;
 		}
 	}
+	
 	aAction() {
 		console.log('You pressed the a key');
 		avatar.animations.waveLeft();
