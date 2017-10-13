@@ -57,7 +57,5 @@ class mediaLibrary {
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
-		this.invenOpen = game.add.audio('invenOpen');
-		this.invenClose = game.add.audio('invenClose');
 	}
 }
