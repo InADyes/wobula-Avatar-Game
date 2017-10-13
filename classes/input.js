@@ -76,30 +76,30 @@ class input {
 	}
 	aAction() {
 		console.log('You pressed the a key');
-		avatar.animations.waveLeft();
+		animations.waveLeft();
 	}
 	sAction() {
 		console.log('You pressed the s key');
-		avatar.animations.waveRight();
+		animations.waveRight();
 	}
 	zAction() {
 		console.log('You pressed the head key');
-		avatar.headGeyser.flow(1000, 500, 15, -1);
+		this.player.headGeyser.flow(1000, 500, 15, -1);
 	}
 	xAction() {
 		console.log('You pressed the chest key');
-		avatar.chestGeyser.flow(1000, 500, 15, -1);
+		this.player.chestGeyser.flow(1000, 500, 15, -1);
 	}
 	cAction() {
 		console.log('You pressed the pelvis key');
-		avatar.pelvisGeyser.flow(1000, 500, 15, -1);
+		this.player.pelvisGeyser.flow(1000, 500, 15, -1);
 	}
 	vAction() {
 		console.log('You pressed the v key');
-		avatar.leftarmGeyser.flow(1000, 500, 15, -1);
-		avatar.rightarmGeyser.flow(1000, 500, 15, -1);
-		avatar.leftlegGeyser.flow(1000, 500, 15, -1);
-		avatar.rightlegGeyser.flow(1000, 500, 15, -1);
+		this.player.leftarmGeyser.flow(1000, 500, 15, -1);
+		this.player.rightarmGeyser.flow(1000, 500, 15, -1);
+		this.player.leftlegGeyser.flow(1000, 500, 15, -1);
+		this.player.rightlegGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
 		console.log('You pressed the space key');
