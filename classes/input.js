@@ -3,33 +3,18 @@ class input {
 		this.player = avatar;
 		this.cursors = game.input.keyboard.createCursorKeys();
 		this.z;
-		this.x;
-		this.c;
-		this.v;
 		this.s;
 		this.a;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.s, this.a);
+		this.keys.push(this.space, this.z, this.s, this.a);
 	}
 	instantiateKeys() {
-		this.v = game.input.keyboard.addKey(Phaser.Keyboard.V)
-		this.v.press = false;
-		this.v.action = () => { this.vAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.V]);
 		this.z = game.input.keyboard.addKey(Phaser.Keyboard.Z);
 		this.z.press = false;
 		this.z.action = () => { this.zAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.Z]);
-		this.x = game.input.keyboard.addKey(Phaser.Keyboard.X);
-		this.x.press = false;
-		this.x.action = () => { this.xAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.X]);
-		this.c = game.input.keyboard.addKey(Phaser.Keyboard.C);
-		this.c.press = false;
-		this.c.action = () => { this.cAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.C]);
 		this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 		this.space.press = false;
 		this.space.action = () => { this.spaceAction(); };
@@ -85,21 +70,6 @@ class input {
 	zAction() {
 		console.log('You pressed the head key');
 		this.player.headGeyser.flow(1000, 500, 15, -1);
-	}
-	xAction() {
-		console.log('You pressed the chest key');
-		this.player.chestGeyser.flow(1000, 500, 15, -1);
-	}
-	cAction() {
-		console.log('You pressed the pelvis key');
-		this.player.pelvisGeyser.flow(1000, 500, 15, -1);
-	}
-	vAction() {
-		console.log('You pressed the v key');
-		this.player.leftarmGeyser.flow(1000, 500, 15, -1);
-		this.player.rightarmGeyser.flow(1000, 500, 15, -1);
-		this.player.leftlegGeyser.flow(1000, 500, 15, -1);
-		this.player.rightlegGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
 		console.log('You pressed the space key');
