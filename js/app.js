@@ -12,8 +12,10 @@ var animations;
 
 function create() {
 	env = new environment('grassy');
-	avatar = new demon('wobula');
-	animations = new animationDemon(avatar);
+	//avatar = new demon('wobula');
+	avatar = new player('wubala');
+	//animations = new animationDemon(avatar);
+	animations = new animationPlayer(avatar);
 	controls = new input(avatar);
 	data.addSounds();
 	addListeners()

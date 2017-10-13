@@ -1,5 +1,5 @@
 class animationDemon {
-	constructor(avatar, type) {
+	constructor(avatar) {
 		this.now = game.time.time;
 		this.targetTime = undefined;
 		this.avatar = avatar;
