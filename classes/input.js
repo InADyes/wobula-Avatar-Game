@@ -109,17 +109,5 @@ class input {
 		this.player.characterWingL.angle = 10;
 		data.jump.play();
 	}
-	autoAnimating() {
-		var direction = 1000 * Math.random();
-		if (direction < 500) {
-			this.player.characterBox.body.velocity.x -= 50;
-			this.player.animations.walk();
-		}
-		else {
-			this.player.characterBox.body.velocity.x += 50;
-			this.player.animations.walk();
-		}
-		console.log(direction);
-	}
 }
 
