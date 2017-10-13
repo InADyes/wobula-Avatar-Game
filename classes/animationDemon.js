@@ -4,73 +4,9 @@ class animationDemon {
 		this.targetTime = undefined;
 		this.avatar = avatar;
 		this.walkSetup(this.avatar);
-		this.waveRightSetup(this.avatar);
-		this.waveLeftSetup(this.avatar);
+		this.waveSetup(this.avatar);
 		this.breathSetup(this.avatar);
 		this.wingFlySetup(this.avatar);
-	}
-	walk(direction) {
-		this.walkArms(direction, this.avatar);
-		this.walkLegs(direction, this.avatar);
-	}
-	wingFlySetup(avatar) {
-		avatar.characterWingR.angle = -10;
-		avatar.characterWingL.angle = 10;
-		this.wingR = game.add.tween(avatar.characterWingR);
-		this.wingR.to({angle: -10}, 45, Phaser.Easing.Quadratic.InOut);
-		this.wingL = game.add.tween(avatar.characterWingL);
-		this.wingL.to({angle: 10}, 45, Phaser.Easing.Quadratic.InOut);
-
-		this.wingRRev = game.add.tween(avatar.characterWingR);
-		this.wingRRev.to({angle: -60}, 45, Phaser.Easing.Quadratic.InOut);
-		this.wingLRev = game.add.tween(avatar.characterWingL);
-		this.wingLRev.to({angle: 60}, 45, Phaser.Easing.Quadratic.InOut);
-	}
-	wingFly() {
-		console.log(this.avatar.characterWingR.angle);
-		if (this.avatar.characterWingR.angle == -60) {
-			this.wingR.start();
-			this.wingL.start();
-		} else if (avatar.characterWingR.angle == -10) {
-			this.wingRRev.start();
-			this.wingLRev.start();
-		}
-	}
-	waveLeft() {
-		this.arm1Wave.start();
-	}
-	waveRight() {
-		this.arm2Wave.start();
-	}
-	walkArms(direction) {
-		if (this.avatar.characterArm1.angle == -10) {
-			this.arm1.start();
-			this.arm2Rev.start();
-		} else if (avatar.characterArm1.angle == -110) {
-			this.arm2.start();
-			this.arm1Rev.start();
-		}
-	}
-	walkLegs() {
-		if (avatar.characterLeg1.angle == -20) {
-			this.leg1.start();
-			this.leg2Rev.start();
-		} else if (avatar.characterLeg1.angle == 20) {
-			this.leg1Rev.start();
-			this.leg2.start();
-		}
-	}
-	breathe() {
-		if (avatar.characterChest.scale.x == 1.2)
-			this.breathOut.start();
-		else if (avatar.characterChest.scale.x == 1)
-			this.breathIn.start();
-	}
-	breathSetup(avatar) {
-		this.breathIn = game.add.tween(avatar.characterChest.scale);
-		this.breathIn.to({x: 1.2, y: 1.2}, 1000, Phaser.Easing.Linear.None);
-		this.breathOut = game.add.tween(avatar.characterChest.scale);
-		this.breathOut.to({x: 1, y: 1}, 4000, Phaser.Easing.Linear.None);
 	}
 	walkSetup(avatar) {
 		avatar.characterLeg1.angle = -20;
@@ -94,6 +30,54 @@ class animationDemon {
 		this.arm2.to({angle: -10}, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm2Rev = game.add.tween(avatar.characterArm2);
 		this.arm2Rev.to({angle: 90}, 550, Phaser.Easing.Quadratic.InOut);
+	}
+	walk() {
+		this.walkArms();
+		this.walkLegs();
+	}
+	walkArms() {
+		if (this.avatar.characterArm1.angle == -10) {
+			this.arm1.start();
+			this.arm2Rev.start();
+		} else if (avatar.characterArm1.angle == -110) {
+			this.arm2.start();
+			this.arm1Rev.start();
+		}
+	}
+	walkLegs() {
+		if (avatar.characterLeg1.angle == -20) {
+			this.leg1.start();
+			this.leg2Rev.start();
+		} else if (avatar.characterLeg1.angle == 20) {
+			this.leg1Rev.start();
+			this.leg2.start();
+		}
+	}
+	wingFlySetup(avatar) {
+		avatar.characterWingR.angle = -10;
+		avatar.characterWingL.angle = 10;
+		this.wingR = game.add.tween(avatar.characterWingR);
+		this.wingR.to({angle: -10}, 45, Phaser.Easing.Quadratic.InOut);
+		this.wingL = game.add.tween(avatar.characterWingL);
+		this.wingL.to({angle: 10}, 45, Phaser.Easing.Quadratic.InOut);
+
+		this.wingRRev = game.add.tween(avatar.characterWingR);
+		this.wingRRev.to({angle: -60}, 45, Phaser.Easing.Quadratic.InOut);
+		this.wingLRev = game.add.tween(avatar.characterWingL);
+		this.wingLRev.to({angle: 60}, 45, Phaser.Easing.Quadratic.InOut);
+	}
+	wingFly() {
+		if (this.avatar.characterWingR.angle == -60) {
+			this.wingR.start();
+			this.wingL.start();
+		} else if (avatar.characterWingR.angle == -10) {
+			this.wingRRev.start();
+			this.wingLRev.start();
+		}
+	}
+	waveSetup(avatar) {
+		this.waveLeftSetup(avatar);
+		this.waveRightSetup(avatar);
 	}
 	waveLeftSetup(avatar) {
 		this.arm1Wave = game.add.tween(avatar.characterArm1);
@@ -121,6 +105,24 @@ class animationDemon {
 				repeat--;
 			}
 		}
+	}
+	waveLeft() {
+		this.arm1Wave.start();
+	}
+	waveRight() {
+		this.arm2Wave.start();
+	}
+	breathSetup(avatar) {
+		this.breathIn = game.add.tween(avatar.characterChest.scale);
+		this.breathIn.to({x: 1.2, y: 1.2}, 1000, Phaser.Easing.Linear.None);
+		this.breathOut = game.add.tween(avatar.characterChest.scale);
+		this.breathOut.to({x: 1, y: 1}, 4000, Phaser.Easing.Linear.None);
+	}
+	breathe() {
+		if (avatar.characterChest.scale.x == 1.2)
+			this.breathOut.start();
+		else if (avatar.characterChest.scale.x == 1)
+			this.breathIn.start();
 	}
 	walkSideToSide(targetTime, direction) {
 		this.now = game.time.time;

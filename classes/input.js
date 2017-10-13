@@ -53,6 +53,10 @@ class input {
 			this.player.characterBox.position.x = 434;
 		else if (this.player.characterBox.position.x > 435)
 			this.player.characterBox.position.x = 11;
+		if (this.player.characterBox.body.velocity.x > 0)
+			this.player.characterBox.body.velocity.x -= 1;
+		else if (this.player.characterBox.body.velocity.x < 0)
+			this.player.characterBox.body.velocity.x += 1;
 	}
 	cursorPad() {
 		if (this.cursors.up.isDown)
