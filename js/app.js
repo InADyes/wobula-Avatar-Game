@@ -1,6 +1,7 @@
 var game = new Phaser.Game(600, 400, Phaser.CANVAS, 'canvas', { preload: preload, create: create, update: update });
 var data;
 
+var particlesource = [];
 function preload() {
 	data = new mediaLibrary();
 }
@@ -16,7 +17,7 @@ function create() {
 	avatar = new player('wubala');
 	//animations = new animationDemon(avatar);
 	animations = new animationPlayer(avatar);
-	controls = new input(avatar);
+	controls = new input(avatar, animations);
 	data.addSounds();
 	addListeners()
 }

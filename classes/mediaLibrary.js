@@ -15,12 +15,13 @@ class mediaLibrary {
 		this.gloves = (game.load.image('gloves', 'imgs/gloves.png'));
 		this.pants = (game.load.image('pants', 'imgs/pants.png'));
 		this.emptybag = (game.load.image('emptybag', 'imgs/emptybag.png'));
-
+		//blood particle
 		this.blood1 = (game.load.image('bloodDrop1', 'imgs/bloodDrop1.png'));
 		this.blood2 = (game.load.image('bloodDrop2', 'imgs/bloodDrop2.png'));
 		this.blood3 = (game.load.image('bloodDrop3', 'imgs/bloodDrop3.png'));
 		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
 
+		particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
 		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
 		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));

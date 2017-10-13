@@ -4,6 +4,7 @@ class player {
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
+		this.addGeysers();
 		//this.animations = new animation(this, 'player');
 	}
 	addBodyParts() {
@@ -56,6 +57,7 @@ class player {
 		this.rightlegGeyser = this.addIndividualGeysers(this.leg2blood, 0, 0);
 		//this.leftarmGeyser = this.addIndividualGeysers(this.characterArm1,0,0);
 	}
+
 	addIndividualGeysers(anchor, xoffset, yoffset) {
 		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
 		bloodGeyser.bounce.setTo(.5, .5);

@@ -1,5 +1,5 @@
 class input {
-	constructor(avatar) {
+	constructor(avatar, animations) {
 		this.player = avatar;
 		this.cursors = game.input.keyboard.createCursorKeys();
 		this.z;
@@ -74,18 +74,19 @@ class input {
 			key.press = false;
 		}
 	}
-	
+
 	aAction() {
 		console.log('You pressed the a key');
-		avatar.animations.waveLeft();
+		animations.waveLeft();
 	}
 	sAction() {
 		console.log('You pressed the s key');
-		avatar.animations.waveRight();
+		animations.waveRight();
 	}
 	zAction() {
 		console.log('You pressed the head key');
-		avatar.headGeyser.flow(1000, 500, 15, -1);
+		//console.log(avatar);
+		this.player.headGeyser.flow(1000, 500, 15, -1);
 	}
 	xAction() {
 		console.log('You pressed the chest key');
