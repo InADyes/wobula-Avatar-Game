@@ -6,7 +6,7 @@ class demon {
 		this.physics();
 	}
 	addBodyParts() {
-		this.characterBox = game.add.sprite(100, 100, 'bloodDrop1');
+		this.characterBox = game.add.sprite(100, 100);
 		this.characterWingL = game.add.sprite(-15, -75, 'charDevilWingL');
 		this.characterWingL.anchor.setTo(1, .25);
 		this.characterWingL.scale.setTo(1.5, 1.5);
