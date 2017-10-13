@@ -2,7 +2,10 @@ class demon {
 	constructor(name) {
 		this.name = name;
 		this.airStatus = true;
+		this.particleSource = [];
+		this.particleSource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
 		this.addBodyParts();
+		this.addGeysers();
 		this.bindBody();
 		this.physics();
 	}
@@ -34,6 +37,21 @@ class demon {
 		this.characterPelvis = game.add.sprite(.2, -19, 'charDevilPelvis');
 		this.characterPelvis.anchor.setTo(.5, .5);
 		this.characterPelvis.scale.setTo(.6, 1);
+	}
+	addIndividualGeysers(anchor, xoffset, yoffset) {
+		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
+		bloodGeyser.bounce.setTo(.5, .5);
+		bloodGeyser.setXSpeed(800, -200);
+		bloodGeyser.setYSpeed(500, 0);
+		bloodGeyser.minParticleScale = .70;
+		bloodGeyser.maxParticleScale = .50;
+		bloodGeyser.makeParticles(this.particleSource, 0, 250, true, true);
+		anchor.addChild(bloodGeyser);
+		bloodGeyser.start(false, 5000, 1);
+		return(bloodGeyser);
+	}
+	addGeysers() {
+		this.headGeyser = this.addIndividualGeysers(this.characterHead, 0, 0);
 	}
 	bindBody() {
 		this.characterBox.addChild(this.characterHead);
