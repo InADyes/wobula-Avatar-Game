@@ -6,10 +6,12 @@ class input {
 		this.x;
 		this.c;
 		this.v;
+		this.s;
+		this.a;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.s, this.q, this.w, this.a, this.s);
+		this.keys.push(this.space, this.z, this.x, this.c, this.v, this.s, this.a);
 	}
 	instantiateKeys() {
 		this.v = game.input.keyboard.addKey(Phaser.Keyboard.V)
@@ -40,14 +42,6 @@ class input {
 		this.s.press = false;
 		this.s.action = () => { this.sAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.S]);
-		this.q = game.input.keyboard.addKey(Phaser.Keyboard.Q)
-		this.q.press = false;
-		this.q.action = () => { this.qAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.Q]);
-		this.w = game.input.keyboard.addKey(Phaser.Keyboard.W)
-		this.w.press = false;
-		this.w.action = () => { this.wAction(); };
-		game.input.keyboard.addKeyCapture([Phaser.Keyboard.w]);
 	}
 	processor() {
 		if (this.player.characterBox.position.y < 320)
@@ -65,24 +59,10 @@ class input {
 			this.player.characterBox.body.velocity.y -= 1;
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
-		if (this.cursors.left.isDown) {
-			//this.player.characterHead.loadTexture('char1HeadLeft', 0);
+		if (this.cursors.left.isDown)
 			this.player.characterBox.body.velocity.x -= 5;
-			this.player.animations.walk();
-		}
-		if (this.cursors.right.isDown) {
-			//this.player.characterHead.loadTexture('char1HeadRight', 0);
+		if (this.cursors.right.isDown)
 			this.player.characterBox.body.velocity.x += 5;
-			this.player.animations.walk();
-		}
-		if (this.cursors.left.isUp && this.player.characterBox.body.velocity.x < 0) {
-			this.player.characterBox.body.velocity.x += 5;
-			//this.player.characterHead.loadTexture('char1Head', 0);
-		}
-		if (this.cursors.right.isUp && this.player.characterBox.body.velocity.x > 0) {
-			//this.player.characterHead.loadTexture('char1Head', 0);
-			this.player.characterBox.body.velocity.x -= 5;
-		}
 	}
 	keyPress(key) {
 		if (key.isDown)
@@ -120,37 +100,24 @@ class input {
 		avatar.rightlegGeyser.flow(1000, 500, 15, -1);
 	}
 	spaceAction() {
+		console.log('You pressed the space key');
 		this.player.characterBox.body.velocity.y = 0;
 		this.player.characterBox.body.velocity.y -= 400;
 		this.player.characterWingR.angle = -10;
 		this.player.characterWingL.angle = 10;
 		data.jump.play();
-		console.log('You pressed the space key');
 	}
 	autoAnimating() {
 		var direction = 1000 * Math.random();
 		if (direction < 500) {
 			this.player.characterBox.body.velocity.x -= 50;
 			this.player.animations.walk();
-
 		}
 		else {
 			this.player.characterBox.body.velocity.x += 50;
 			this.player.animations.walk();
 		}
 		console.log(direction);
-	}
-	qAction() {
-		console.log('You pressed q key');
-		this.player.characterHead.loadTexture('char1HeadLeft', 0);
-		this.player.characterBox.body.velocity.x -= 5;
-		this.player.animations.walk();
-	}
-	wAction() {
-		console.log('You pressed w key');
-		this.player.characterHead.loadTexture('char1HeadRight', 0);
-		this.player.characterBox.body.velocity.x += 5;
-		this.player.animations.walk();
 	}
 }
 
