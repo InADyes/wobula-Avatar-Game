@@ -4,7 +4,6 @@ class demon {
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
-		this.animations = new animationDemon(this, 'demon');
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(100, 100, 'bloodDrop1');

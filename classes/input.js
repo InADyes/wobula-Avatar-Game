@@ -44,8 +44,6 @@ class input {
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.S]);
 	}
 	processor() {
-		if (this.player.characterBox.position.y < 320)
-			this.player.animations.wingFly();
 		this.cursorPad();
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);

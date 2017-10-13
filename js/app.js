@@ -8,10 +8,12 @@ function preload() {
 var avatar;
 var controls;
 var env;
+var animations;
 
 function create() {
 	env = new environment('grassy');
 	avatar = new demon('wobula');
+	animations = new animationDemon(avatar);
 	controls = new input(avatar);
 	data.addSounds();
 	addListeners()
@@ -19,5 +21,6 @@ function create() {
 
 function update() {
 	controls.processor();
+	animations.processor();
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
 }

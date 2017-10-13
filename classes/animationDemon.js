@@ -8,6 +8,12 @@ class animationDemon {
 		this.breathSetup(this.avatar);
 		this.wingFlySetup(this.avatar);
 	}
+	processor() {
+		if (this.avatar.characterBox.position.y < 320)
+			this.wingFly();
+		if (this.avatar.characterBox.body.velocity.x != 0)
+			this.walk();
+	}
 	walkSetup(avatar) {
 		avatar.characterLeg1.angle = -20;
 		this.leg1 = game.add.tween(avatar.characterLeg1);
