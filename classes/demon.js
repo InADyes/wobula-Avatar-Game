@@ -1,6 +1,7 @@
 class demon {
 	constructor(name) {
 		this.name = name;
+		this.airStatus = true;
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
@@ -51,5 +52,20 @@ class demon {
 		this.characterBox.body.collideWorldBounds = true;
 		this.characterBox.body.gravity.y = 500;
 		this.characterBox.body.bounce.y = 0.6;
+	}
+	getAirStatus() {
+		if (this.characterBox.position.y == 324) {
+			if (this.airStatus == true) {
+				this.airStatus = false;
+				console.log('air status changed to false');
+				this.characterWingR.angle = 50;
+				this.characterWingL.angle = -50;
+			}
+		} else if (this.characterBox.position.y < 324) {
+			if (this.airStatus == false) {
+				this.airStatus = true;
+				console.log(this.airStatus);
+			}
+		}
 	}
 }

@@ -12,8 +12,6 @@ class mediaLibrary {
 		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
 
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
-		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
-		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));
 
 		this.char1Full = (game.load.image('char1Full', 'imgs/char1Full.png'));
 		this.char1Head = (game.load.image('char1Head', 'imgs/char1Head.png'));
