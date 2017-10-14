@@ -12,6 +12,12 @@ class animationDemon {
 			this.wingFly();
 		if (this.avatar.characterBox.body.velocity.x != 0)
 			this.walk();
+		if (this.avatar.characterBox.body.velocity.x < 0)
+			this.avatar.characterHead.loadTexture('charDemonHeadL', 0);
+		else if (this.avatar.characterBox.body.velocity.x > 0)
+			this.avatar.characterHead.loadTexture('charDemonHeadR', 0);
+		else
+			this.avatar.characterHead.loadTexture('charDemonHead', 0);
 	}
 	walkSetup() {
 		this.avatar.characterLeg1.angle = -20;

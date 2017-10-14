@@ -42,16 +42,18 @@ class mediaLibrary {
 		this.charPirateLegL = (game.load.image('charPirateLegL', 'imgs/charPirateLegL.png'));
 		this.charPirateLegR = (game.load.image('charPirateLegR', 'imgs/charPirateLegR.png'));
 
-		this.charDevilFull = (game.load.image('charDevilFull', 'imgs/charDevilFull.png'));
-		this.charDevilHead = (game.load.image('charDevilHead', 'imgs/charDevilHead.png'));
-		this.charDevilChest = (game.load.image('charDevilChest', 'imgs/charDevilChest.png'));
-		this.charDevilPelvis = (game.load.image('charDevilPelvis', 'imgs/charDevilPelvis.png'));
-		this.charDevilArmL = (game.load.image('charDevilArmL', 'imgs/charDevilArmL.png'));
-		this.charDevilArmR = (game.load.image('charDevilArmR', 'imgs/charDevilArmR.png'));
-		this.charDevilLegL = (game.load.image('charDevilLegL', 'imgs/charDevilLegL.png'));
-		this.charDevilLegR = (game.load.image('charDevilLegR', 'imgs/charDevilLegR.png'));
-		this.charDevilWingL = (game.load.image('charDevilWingL', 'imgs/charDevilWingL.png'));
-		this.charDevilWingR = (game.load.image('charDevilWingR', 'imgs/charDevilWingR.png'));
+		this.charDemonFull = (game.load.image('charDemonFull', 'imgs/charDemonFull.png'));
+		this.charDemonHead = (game.load.image('charDemonHead', 'imgs/charDemonHead.png'));
+		this.charDemonHeadL = (game.load.image('charDemonHeadL', 'imgs/charDemonHeadL.png'));
+		this.charDemonHeadR = (game.load.image('charDemonHeadR', 'imgs/charDemonHeadR.png'));
+		this.charDemonChest = (game.load.image('charDemonChest', 'imgs/charDemonChest.png'));
+		this.charDemonPelvis = (game.load.image('charDemonPelvis', 'imgs/charDemonPelvis.png'));
+		this.charDemonArmL = (game.load.image('charDemonArmL', 'imgs/charDemonArmL.png'));
+		this.charDemonArmR = (game.load.image('charDemonArmR', 'imgs/charDemonArmR.png'));
+		this.charDemonLegL = (game.load.image('charDemonLegL', 'imgs/charDemonLegL.png'));
+		this.charDemonLegR = (game.load.image('charDemonLegR', 'imgs/charDemonLegR.png'));
+		this.charDemonWingL = (game.load.image('charDemonWingL', 'imgs/charDemonWingL.png'));
+		this.charDemonWingR = (game.load.image('charDemonWingR', 'imgs/charDemonWingR.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
