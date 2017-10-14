@@ -42,7 +42,7 @@ class demon {
 		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
 		bloodGeyser.bounce.setTo(.5, .5);
 		bloodGeyser.setXSpeed(800, -200);
-		bloodGeyser.setYSpeed(500, 0);
+		bloodGeyser.setYSpeed(500, -500);
 		bloodGeyser.minParticleScale = .70;
 		bloodGeyser.maxParticleScale = .50;
 		bloodGeyser.makeParticles(this.particleSource, 0, 250, true, true);
@@ -70,20 +70,5 @@ class demon {
 		this.characterBox.body.collideWorldBounds = true;
 		this.characterBox.body.gravity.y = 500;
 		this.characterBox.body.bounce.y = 0.6;
-	}
-	getAirStatus() {
-		if (this.characterBox.position.y == 324) {
-			if (this.airStatus == true) {
-				this.airStatus = false;
-				console.log('air status changed to false');
-				this.characterWingR.angle = 50;
-				this.characterWingL.angle = -50;
-			}
-		} else if (this.characterBox.position.y < 324) {
-			if (this.airStatus == false) {
-				this.airStatus = true;
-				console.log(this.airStatus);
-			}
-		}
 	}
 }

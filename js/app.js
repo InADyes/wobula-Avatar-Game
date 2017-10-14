@@ -22,6 +22,5 @@ function create() {
 function update() {
 	controls.processor();
 	animations.processor();
-	avatar.getAirStatus();
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
 }

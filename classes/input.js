@@ -5,10 +5,12 @@ class input {
 		this.z;
 		this.s;
 		this.a;
+		this.q;
+		this.w;
 		this.space;
 		this.instantiateKeys();
 		this.keys = [];
-		this.keys.push(this.space, this.z, this.s, this.a);
+		this.keys.push(this.space, this.z, this.s, this.a, this.q, this.w);
 	}
 	instantiateKeys() {
 		this.z = game.input.keyboard.addKey(Phaser.Keyboard.Z);
@@ -27,6 +29,14 @@ class input {
 		this.s.press = false;
 		this.s.action = () => { this.sAction(); };
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.S]);
+		this.q = game.input.keyboard.addKey(Phaser.Keyboard.Q);
+		this.q.press = false;
+		this.q.action = () => { this.qAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.Q]);
+		this.w = game.input.keyboard.addKey(Phaser.Keyboard.W);
+		this.w.press = false;
+		this.w.action = () => { this.wAction(); };
+		game.input.keyboard.addKeyCapture([Phaser.Keyboard.W]);
 	}
 	processor() {
 		this.cursorPad();
@@ -58,6 +68,12 @@ class input {
 			key.action();
 			key.press = false;
 		}
+	}
+	wAction() {
+		console.log('You pressed the w key');
+	}
+	qAction() {
+		console.log('You pressed the q key');
 	}
 	aAction() {
 		console.log('You pressed the a key');
