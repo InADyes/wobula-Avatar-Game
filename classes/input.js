@@ -105,10 +105,10 @@ class input {
 	}
 	spaceAction() {
 		console.log('You pressed the space key');
-		this.player.characterBox.body.velocity.y = 0;
-		this.player.characterBox.body.velocity.y -= 400;
-		this.player.characterWingR.angle = -10;
-		this.player.characterWingL.angle = 10;
+		avatar.characterBox.body.velocity.y = 0;
+		avatar.characterBox.body.velocity.y -= 400;
+		//avatar.characterWingR.angle = -10;
+		//avatar.characterWingL.angle = 10;
 		data.jump.play();
 	}
 	autoAnimating() {

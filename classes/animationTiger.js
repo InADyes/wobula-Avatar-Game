@@ -32,7 +32,7 @@ class animationTiger {
 		if (this.avatar.characterArm1.angle == -10) {
 			this.arm1.start();
 			this.arm2Rev.start();
-		} else if (avatar.characterArm1.angle == -110) {
+		} else if (avatar.characterArm1.angle == -30) {
 			this.arm2.start();
 			this.arm1Rev.start();
 		}
@@ -72,14 +72,14 @@ class animationTiger {
 
 		avatar.characterArm1.angle = -10;
 		this.arm1 = game.add.tween(avatar.characterArm1);
-		this.arm1.to({ angle: -110 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm1.to({ angle: -30 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm1Rev = game.add.tween(avatar.characterArm1);
 		this.arm1Rev.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
 
 		this.arm2 = game.add.tween(avatar.characterArm2);
 		this.arm2.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm2Rev = game.add.tween(avatar.characterArm2);
-		this.arm2Rev.to({ angle: 90 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm2Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
 	}
 	waveLeftSetup(avatar) {
 		this.arm1Wave = game.add.tween(avatar.characterArm1);

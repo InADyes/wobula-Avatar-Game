@@ -1,10 +1,13 @@
 class player {
 	constructor(name) {
 		this.name = name;
+		this.particlesource = [];
+		this.particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
 		this.addGeysers();
+		
 		//this.animations = new animation(this, 'player');
 	}
 	addBodyParts() {
@@ -65,7 +68,7 @@ class player {
 		bloodGeyser.setYSpeed(500, 0);
 		bloodGeyser.minParticleScale = .70;
 		bloodGeyser.maxParticleScale = .50;
-		bloodGeyser.makeParticles(particlesource, 0, 250, true, true);
+		bloodGeyser.makeParticles(this.particlesource, 0, 250, true, true);
 		anchor.addChild(bloodGeyser);
 		bloodGeyser.start(false, 5000, 1);
 		return(bloodGeyser);

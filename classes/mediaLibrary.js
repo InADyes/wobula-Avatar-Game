@@ -20,8 +20,17 @@ class mediaLibrary {
 		this.blood2 = (game.load.image('bloodDrop2', 'imgs/bloodDrop2.png'));
 		this.blood3 = (game.load.image('bloodDrop3', 'imgs/bloodDrop3.png'));
 		this.blood4 = (game.load.image('bloodDrop4', 'imgs/bloodDrop4.png'));
-
-		particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
+		
+		
+		//tiger
+		this.tigerhead = (game.load.image('tigerhead', 'imgs/Tiger/Tiger_Head.png'));
+		this.tigerfrontleg1 = (game.load.image('tigerfrontleg1', 'imgs/Tiger/Tiger_FrontLeg.png'));
+		this.tigerfrontleg2 = (game.load.image('tigerfrontleg2', 'imgs/Tiger/Tiger_FrontLeg.png'));
+		this.tigerbackleg1 = (game.load.image('tigerbackleg1', 'imgs/Tiger/Tiger_BackLeg.png'));
+		this.tigerbackleg2 = (game.load.image('tigerbackleg2', 'imgs/Tiger/Tiger_BackLeg.png'));
+		this.tigerbody = (game.load.image('tigerbody', 'imgs/Tiger/Tiger_Body.png'));
+		this.tigertail = (game.load.image('tigertail', 'imgs/Tiger/Tiger_Tail.png'));
+		
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
 		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
 		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));

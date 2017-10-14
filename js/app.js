@@ -1,7 +1,7 @@
 var game = new Phaser.Game(600, 400, Phaser.CANVAS, 'canvas', { preload: preload, create: create, update: update });
 var data;
 
-var particlesource = [];
+
 function preload() {
 	data = new mediaLibrary();
 }
@@ -14,9 +14,11 @@ var animations;
 function create() {
 	env = new environment('grassy');
 	//avatar = new demon('wobula');
-	avatar = new player('wubala');
+	//avatar = new player('wubala');
+	avatar = new tiger('wabala');
 	//animations = new animationDemon(avatar);
-	animations = new animationPlayer(avatar);
+	//animations = new animationPlayer(avatar);
+	animations = new animationTiger(avatar);
 	controls = new input(avatar, animations);
 	data.addSounds();
 	addListeners()

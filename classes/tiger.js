@@ -1,6 +1,8 @@
 class tiger {
 	constructor(name) {
 		this.name = name;
+		this.particlesource = [];
+		this.particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
@@ -24,26 +26,26 @@ class tiger {
 		this.pelvisblood = game.add.sprite(5, -130);
 		//this.pelvisblood.scale.setTo(.3, .3);
 
-		this.characterHead = game.add.sprite(0, -30, 'duckhead');
-		//this.characterHead.scale.setTo(.3, .3);
+		this.characterHead = game.add.sprite(-40, -15, 'tigerhead');
+		this.characterHead.scale.setTo(.6, .6);
 		this.characterHead.anchor.setTo(.5, .5);
-		this.characterArm2 = game.add.sprite(8, -10, 'duckarm2');
-		//this.characterArm2.scale.setTo(.3, .3);
-		this.characterArm2.anchor.setTo(0, 0);
-		this.characterChest = game.add.sprite(0, 0, 'duckbody');
+		this.characterArm1 = game.add.sprite(-38, 0, 'tigerfrontleg1');
+		this.characterArm1.scale.setTo(.6, .6);
+		this.characterArm1.anchor.setTo(0, 0);
+		this.characterChest = game.add.sprite(-5, 10, 'tigerbody');
 		//this.characterChest.scale.setTo(.3, .3);
 		this.characterChest.anchor.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-8, -10, 'duckarm1');
-		//this.characterArm1.scale.setTo(.3, .3);
-		this.characterArm1.anchor.setTo(1, 0);
-		this.characterLeg1 = game.add.sprite(-8, 15, 'duckleg1');
-		//this.characterLeg1.scale.setTo(.3, .3);
+		this.characterArm2 = game.add.sprite(-28, 0, 'tigerfrontleg2');
+		this.characterArm2.scale.setTo(.6, .6);
+		this.characterArm2.anchor.setTo(0, 0);
+		this.characterLeg1 = game.add.sprite(12, 0, 'tigerbackleg1');
+		this.characterLeg1.scale.setTo(.6, .6);
 		this.characterLeg1.anchor.setTo(0, 0);
-		this.characterLeg2 = game.add.sprite(-18, 15, 'duckleg2');
-		//this.characterLeg2.scale.setTo(.3, .3);
+		this.characterLeg2 = game.add.sprite(2, 0, 'tigerbackleg2');
+		this.characterLeg2.scale.setTo(.6, .6);
 		this.characterLeg2.anchor.setTo(0, 0);
-		this.characterPelvis = game.add.sprite(5, 10, 'char1Pelvis');
-		this.characterPelvis.scale.setTo(.01, .01);
+		this.characterPelvis = game.add.sprite(45, 15, 'tigertail');
+		//this.characterPelvis.scale.setTo(.01, .01);
 		this.characterPelvis.anchor.setTo(.5, .5);
 	}
 	addGeysers() {
@@ -65,7 +67,7 @@ class tiger {
 		bloodGeyser.setYSpeed(500, 0);
 		bloodGeyser.minParticleScale = .70;
 		bloodGeyser.maxParticleScale = .50;
-		bloodGeyser.makeParticles(particlesource, 0, 250, true, true);
+		bloodGeyser.makeParticles(this.particlesource, 0, 250, true, true);
 		anchor.addChild(bloodGeyser);
 		bloodGeyser.start(false, 5000, 1);
 		return(bloodGeyser);
