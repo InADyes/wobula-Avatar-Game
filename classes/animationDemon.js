@@ -5,6 +5,7 @@ class animationDemon {
 		this.avatar = avatar;
 		this.walkSetup();
 		this.waveSetup();
+		this.wingWaveSetup();
 		this.wingFlySetup();
 	}
 	processor() {
@@ -85,6 +86,28 @@ class animationDemon {
 			this.wingRRev.start();
 			this.wingLRev.start();
 		}
+	}
+	wingWaveSetup() {
+		console.log('Setting up wing wave');
+		this.wingLWave = game.add.tween(this.avatar.characterWingL);
+		this.wingLWave.to({angle: 120}, 900, Phaser.Easing.Linear.None);
+		this.wingLWave.to({angle: 121}, 400, Phaser.Easing.Linear.None);
+		this.wingLWave.to({angle: 40}, 100, Phaser.Easing.Linear.None);
+		this.wingLWave.to({angle: 39}, 500, Phaser.Easing.Linear.None);
+		this.wingLWave.to({angle: -40}, 1000, Phaser.Easing.Linear.None);
+
+		this.wingRWave = game.add.tween(this.avatar.characterWingR);
+		this.wingRWave.to({angle: -120}, 900, Phaser.Easing.Linear.None);
+		this.wingRWave.to({angle: -121}, 400, Phaser.Easing.Linear.None);
+		this.wingRWave.to({angle: -40}, 100, Phaser.Easing.Linear.None);
+		this.wingRWave.to({angle: -39}, 500, Phaser.Easing.Linear.None);
+		this.wingRWave.to({angle: 40}, 1000, Phaser.Easing.Linear.None);
+	}
+	wingWaveRight() {
+		this.wingRWave.start();
+	}
+	wingWaveLeft() {
+		this.wingLWave.start();
 	}
 	waveSetup() {
 		this.waveLeftSetup();

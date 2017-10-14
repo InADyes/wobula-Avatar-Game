@@ -54,9 +54,9 @@ class demon {
 		this.headGeyser = this.addIndividualGeysers(this.characterHead, 0, 0);
 	}
 	bindBody() {
-		this.characterBox.addChild(this.characterHead);
 		this.characterBox.addChild(this.characterWingL);
 		this.characterBox.addChild(this.characterWingR);
+		this.characterBox.addChild(this.characterHead);
 		this.characterBox.addChild(this.characterArm1);
 		this.characterBox.addChild(this.characterChest);
 		this.characterBox.addChild(this.characterPelvis);

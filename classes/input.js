@@ -69,11 +69,13 @@ class input {
 			key.press = false;
 		}
 	}
-	wAction() {
-		console.log('You pressed the w key');
-	}
 	qAction() {
 		console.log('You pressed the q key');
+		animations.wingWaveLeft();
+	}
+	wAction() {
+		console.log('You pressed the w key');
+		animations.wingWaveRight();
 	}
 	aAction() {
 		console.log('You pressed the a key');
