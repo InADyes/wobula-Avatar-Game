@@ -3,12 +3,15 @@ class animationDemon {
 		this.now = game.time.time;
 		this.targetTime = undefined;
 		this.avatar = avatar;
+		this.targetTime = undefined;
 		this.walkSetup();
 		this.waveSetup();
 		this.wingWaveSetup();
 		this.wingFlySetup();
+		this.defaultGroundWingSetup();
 	}
 	processor() {
+		this.checkAirStatus(game.time.time);
 		if (this.avatar.characterBox.position.y < 320)
 			this.wingFly();
 		if (this.avatar.characterBox.body.velocity.x != 0)
@@ -19,6 +22,28 @@ class animationDemon {
 			this.avatar.characterHead.loadTexture('charDemonHeadR', 0);
 		else
 			this.avatar.characterHead.loadTexture('charDemonHead', 0);
+	}
+	checkAirStatus(time) {
+		if (this.avatar.characterBox.position.y > 320 && this.avatar.characterWingR.angle != 40 && this.targetTime == undefined)
+			this.targetTime = game.time.time + 200;
+		if (this.targetTime != undefined && this.targetTime < game.time.time && this.wingDefault == 0) {
+			this.wingGround();
+			this.wingDefault = 1;
+		}
+		if (this.avatar.characterBox.position.y < 320) {
+			this.targetTime = undefined;
+			this.wingDefault = 0;
+		}
+	}
+	wingGround() {
+		this.wingGroundR.start();
+		this.wingGroundL.start();
+	}
+	defaultGroundWingSetup() {
+		this.wingGroundR = game.add.tween(this.avatar.characterWingR);
+		this.wingGroundL = game.add.tween(this.avatar.characterWingL);
+		this.wingGroundR.to({angle: 40}, 550, Phaser.Easing.Linear.None);
+		this.wingGroundL.to({angle: -40}, 550, Phaser.Easing.Linear.None);
 	}
 	walkSetup() {
 		this.avatar.characterLeg1.angle = -20;
@@ -116,16 +141,16 @@ class animationDemon {
 	waveLeftSetup() {
 		this.arm1Wave = game.add.tween(this.avatar.characterArm1);
 		this.arm1Wave.to({angle: 180}, 600, Phaser.Easing.Linear.None);
-		this.waveSidetoSide(5, 'left');
+		this.waveSideToSide(5, 'left');
 		this.arm1Wave.to({angle: -10}, 600, Phaser.Easing.Linear.None);
 	}
 	waveRightSetup() {
 		this.arm2Wave = game.add.tween(this.avatar.characterArm2);
 		this.arm2Wave.to({angle: -180}, 600, Phaser.Easing.Linear.None);
-		this.waveSidetoSide(5, 'right');
+		this.waveSideToSide(5, 'right');
 		this.arm2Wave.to({angle: -10}, 600, Phaser.Easing.Linear.None);
 	}
-	waveSidetoSide(repeat, side) {
+	waveSideToSide(repeat, side) {
 		if (side == 'left') {
 			while (repeat > 0) {
 				this.arm1Wave.to({angle: 80}, 100, Phaser.Easing.Linear.None);

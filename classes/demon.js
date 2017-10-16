@@ -8,6 +8,8 @@ class demon {
 		this.addGeysers();
 		this.bindBody();
 		this.physics();
+		if (this.characterBox.position.y < 320)
+			this.inAir = true;
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(100, 100);
