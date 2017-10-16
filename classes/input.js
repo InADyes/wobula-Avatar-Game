@@ -61,10 +61,14 @@ class input {
 			this.player.characterBox.body.velocity.y -= 1;
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
-		if (this.cursors.left.isDown)
+		if (this.cursors.left.isDown){
 			this.player.characterBox.body.velocity.x -= 5;
-		if (this.cursors.right.isDown)
+			this.player.facing = 0;
+		}
+		if (this.cursors.right.isDown){
 			this.player.characterBox.body.velocity.x += 5;
+			this.player.facing = 1;
+		}
 	}
 	keyPress(key) {
 		if (key.isDown)

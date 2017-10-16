@@ -1,16 +1,19 @@
 class tiger {
 	constructor(name) {
 		this.name = name;
+		this.facing = 0;
 		this.particlesource = [];
 		this.particlesource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
 		this.addBodyParts();
 		this.bindBody();
 		this.physics();
 		this.addGeysers();
+		
 		//this.animations = new animation(this, 'player');
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(50, 100);
+
 		this.headblood = game.add.sprite(0, -195);
 		//this.headblood.scale.setTo(.3, .3);
 		this.arm1blood = game.add.sprite(-20, -165);
@@ -26,6 +29,8 @@ class tiger {
 		this.pelvisblood = game.add.sprite(5, -130);
 		//this.pelvisblood.scale.setTo(.3, .3);
 
+		
+		//tiger left
 		this.characterHead = game.add.sprite(-40, -12, 'tigerhead');
 		this.characterHead.scale.setTo(.6, .6);
 		this.characterHead.anchor.setTo(.5, .5);
@@ -47,6 +52,32 @@ class tiger {
 		this.characterPelvis = game.add.sprite(45, 15, 'tigertail');
 		//this.characterPelvis.scale.setTo(.01, .01);
 		this.characterPelvis.anchor.setTo(.5, .5);
+		
+		//tiger right
+		
+		/*
+		this.characterHead = game.add.sprite(-40, -12, 'tigerhead');
+		this.characterHead.scale.setTo(-0.6, .6);
+		this.characterHead.anchor.setTo(.5, .5);
+		this.characterArm1 = game.add.sprite(-20, 4, 'tigerfrontleg1');
+		this.characterArm1.scale.setTo(-0.6, .6);
+		this.characterArm1.anchor.setTo(.5, .2);
+		this.characterChest = game.add.sprite(-5, 10, 'tigerbody');
+		//this.characterChest.scale.setTo(.3, .3);
+		this.characterChest.anchor.setTo(.5, .5);
+		this.characterArm2 = game.add.sprite(-10, 4, 'tigerfrontleg2');
+		this.characterArm2.scale.setTo(-0.6, .6);
+		this.characterArm2.anchor.setTo(.5, .2);
+		this.characterLeg1 = game.add.sprite(21, 4, 'tigerbackleg1');
+		this.characterLeg1.scale.setTo(-0.6, .6);
+		this.characterLeg1.anchor.setTo(.4, .2);
+		this.characterLeg2 = game.add.sprite(11, 4, 'tigerbackleg2');
+		this.characterLeg2.scale.setTo(-0.6, .6);
+		this.characterLeg2.anchor.setTo(.5, .2);
+		this.characterPelvis = game.add.sprite(45, 15, 'tigertail');
+		//this.characterPelvis.scale.setTo(.01, .01);
+		this.characterPelvis.anchor.setTo(.5, .5);
+		*/
 	}
 	addGeysers() {
 		this.headGeyser = this.addIndividualGeysers(this.characterHead, 0, 0);
@@ -96,4 +127,5 @@ class tiger {
 		this.characterBox.body.gravity.y = 500;
 		this.characterBox.body.bounce.y = 0.6;
 	}
+
 }
