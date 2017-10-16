@@ -113,7 +113,6 @@ class animationDemon {
 		}
 	}
 	wingWaveSetup() {
-		console.log('Setting up wing wave');
 		this.wingLWave = game.add.tween(this.avatar.characterWingL);
 		this.wingLWave.to({angle: 120}, 900, Phaser.Easing.Linear.None);
 		this.wingLWave.to({angle: 121}, 400, Phaser.Easing.Linear.None);
