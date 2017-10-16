@@ -54,6 +54,8 @@ class mediaLibrary {
 		this.charDemonLegR = (game.load.image('charDemonLegR', 'imgs/charDemonLegR.png'));
 		this.charDemonWingL = (game.load.image('charDemonWingL', 'imgs/charDemonWingL.png'));
 		this.charDemonWingR = (game.load.image('charDemonWingR', 'imgs/charDemonWingR.png'));
+
+		this.headBlank = (game.load.image('headBlank', 'imgs/headBlank.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');

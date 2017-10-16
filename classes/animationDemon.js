@@ -4,6 +4,7 @@ class animationDemon {
 		this.targetTime = undefined;
 		this.avatar = avatar;
 		this.targetTime = undefined;
+		this.headPresent = 1;
 		this.walkSetup();
 		this.waveSetup();
 		this.wingWaveSetup();
@@ -16,11 +17,11 @@ class animationDemon {
 			this.wingFly();
 		if (this.avatar.characterBox.body.velocity.x != 0)
 			this.walk();
-		if (this.avatar.characterBox.body.velocity.x < 0)
+		if (this.avatar.characterBox.body.velocity.x < 0 && this.headPresent == 1)
 			this.avatar.characterHead.loadTexture('charDemonHeadL', 0);
-		else if (this.avatar.characterBox.body.velocity.x > 0)
+		else if (this.avatar.characterBox.body.velocity.x > 0 && this.headPresent == 1)
 			this.avatar.characterHead.loadTexture('charDemonHeadR', 0);
-		else
+		else if (this.headPresent == 1)
 			this.avatar.characterHead.loadTexture('charDemonHead', 0);
 	}
 	checkAirStatus(time) {

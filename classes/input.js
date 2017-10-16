@@ -87,7 +87,14 @@ class input {
 	}
 	zAction() {
 		console.log('You pressed the head key');
-		this.player.headGeyser.flow(1000, 500, 15, -1);
+		this.player.headGeyser.flow(1000, 500, 100, -1);
+		if (this.player.characterHead.key == "charDemonHead") {
+			animations.headPresent = 0;
+			this.player.characterHead.loadTexture('headBlank', 0);
+		} else {
+			animations.headPresent = 1;
+			this.player.characterHead.loadTexture('charDemonHead', 0);
+		}
 	}
 	spaceAction() {
 		console.log('You pressed the space key');
