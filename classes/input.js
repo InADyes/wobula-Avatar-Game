@@ -44,6 +44,12 @@ class input {
 		game.input.keyboard.addKeyCapture([Phaser.Keyboard.S]);
 	}
 	processor() {
+		if (this.player.characterBox.body.velocity.x == 0){
+		this.player.characterHeadleft.alpha = 0;
+		this.player.characterHeadstillleft.alpha = 1;
+		this.player.characterHeadright.alpha = 0;
+		this.player.characterHeadstillright.alpha = 1;
+		}
 		this.cursorPad();
 		for (var i = this.keys.length - 1; i >= 0; i--)
 			this.keyPress(this.keys[i]);
@@ -55,6 +61,7 @@ class input {
 			this.player.characterBox.body.velocity.x -= 1;
 		else if (this.player.characterBox.body.velocity.x < 0)
 			this.player.characterBox.body.velocity.x += 1;
+		
 	}
 	cursorPad() {
 		if (this.cursors.up.isDown)
@@ -62,12 +69,18 @@ class input {
 		if (this.cursors.down.isDown)
 			this.player.characterBox.body.velocity.y += 1;
 		if (this.cursors.left.isDown){
-			this.player.characterBox.body.velocity.x -= 5;
-			this.player.facing = 0;
+			this.player.characterBox.body.velocity.x = -30;
+			this.player.characterHeadstillleft.alpha = 0;
+			this.player.characterBoxright.alpha = 0;
+			this.player.characterBoxleft.alpha = 1;
+			this.player.characterHeadleft.alpha = 1;
 		}
 		if (this.cursors.right.isDown){
-			this.player.characterBox.body.velocity.x += 5;
-			this.player.facing = 1;
+			this.player.characterBox.body.velocity.x = 30;
+			this.player.characterHeadstillright.alpha = 0;
+			this.player.characterBoxright.alpha = 1;
+			this.player.characterBoxleft.alpha = 0;
+			this.player.characterHeadright.alpha = 1;
 		}
 	}
 	keyPress(key) {

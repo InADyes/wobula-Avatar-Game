@@ -24,13 +24,15 @@ class mediaLibrary {
 		
 		//tiger
 		this.tigerhead = (game.load.image('tigerhead', 'imgs/Tiger/Tiger_Head.png'));
+		this.tigerheadmove = (game.load.image('tigerheadmove', 'imgs/Tiger/Tiger_Head__L_Side.png'));
 		this.tigerfrontleg1 = (game.load.image('tigerfrontleg1', 'imgs/Tiger/Tiger_FrontLeg.png'));
 		this.tigerfrontleg2 = (game.load.image('tigerfrontleg2', 'imgs/Tiger/Tiger_FrontLeg.png'));
 		this.tigerbackleg1 = (game.load.image('tigerbackleg1', 'imgs/Tiger/Tiger_BackLeg.png'));
 		this.tigerbackleg2 = (game.load.image('tigerbackleg2', 'imgs/Tiger/Tiger_BackLeg.png'));
-		this.tigerbody = (game.load.image('tigerbody', 'imgs/Tiger/Tiger_Body.png'));
+		this.tigerbody = (game.load.image('tigerbody', 'imgs/Tiger/Tiger_Body1.png'));
 		this.tigertail = (game.load.image('tigertail', 'imgs/Tiger/Tiger_Tail.png'));
 		
+
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
 		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
 		this.invenCloseSound = (game.load.audio('invenClose', 'sounds/invenOpen.wav'));

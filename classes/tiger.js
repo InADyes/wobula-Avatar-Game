@@ -13,6 +13,8 @@ class tiger {
 	}
 	addBodyParts() {
 		this.characterBox = game.add.sprite(50, 100);
+		this.characterBoxleft = game.add.sprite(0,0);
+		this.characterBoxright = game.add.sprite(0,0);
 
 		this.headblood = game.add.sprite(0, -195);
 		//this.headblood.scale.setTo(.3, .3);
@@ -31,59 +33,78 @@ class tiger {
 
 		
 		//tiger left
-		this.characterHead = game.add.sprite(-40, -12, 'tigerhead');
-		this.characterHead.scale.setTo(.6, .6);
-		this.characterHead.anchor.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-20, 4, 'tigerfrontleg1');
-		this.characterArm1.scale.setTo(.6, .6);
-		this.characterArm1.anchor.setTo(.5, .2);
-		this.characterChest = game.add.sprite(-5, 10, 'tigerbody');
+		this.characterHeadstillleft = game.add.sprite(-40, -12, 'tigerhead');
+		this.characterHeadstillleft.scale.setTo(.6, .6);
+		this.characterHeadstillleft.anchor.setTo(.5, .5);
+		
+		this.characterHeadleft = game.add.sprite(-40, -12, 'tigerheadmove');
+		this.characterHeadleft.scale.setTo(.6, .6);
+		this.characterHeadleft.anchor.setTo(.5, .5);
+		
+		this.characterArm1left = game.add.sprite(-20, 4, 'tigerfrontleg1');
+		this.characterArm1left.scale.setTo(.6, .6);
+		this.characterArm1left.anchor.setTo(.5, .2);
+		
+		this.characterChestleft = game.add.sprite(-4, 10, 'tigerbody');
 		//this.characterChest.scale.setTo(.3, .3);
-		this.characterChest.anchor.setTo(.5, .5);
-		this.characterArm2 = game.add.sprite(-10, 4, 'tigerfrontleg2');
-		this.characterArm2.scale.setTo(.6, .6);
-		this.characterArm2.anchor.setTo(.5, .2);
-		this.characterLeg1 = game.add.sprite(21, 4, 'tigerbackleg1');
-		this.characterLeg1.scale.setTo(.6, .6);
-		this.characterLeg1.anchor.setTo(.4, .2);
-		this.characterLeg2 = game.add.sprite(11, 4, 'tigerbackleg2');
-		this.characterLeg2.scale.setTo(.6, .6);
-		this.characterLeg2.anchor.setTo(.5, .2);
-		this.characterPelvis = game.add.sprite(45, 15, 'tigertail');
+		this.characterChestleft.anchor.setTo(.5, .5);
+		
+		this.characterArm2left = game.add.sprite(-10, 4, 'tigerfrontleg2');
+		this.characterArm2left.scale.setTo(.6, .6);
+		this.characterArm2left.anchor.setTo(.5, .2);
+		
+		this.characterLeg1left = game.add.sprite(21, 4, 'tigerbackleg1');
+		this.characterLeg1left.scale.setTo(.6, .6);
+		this.characterLeg1left.anchor.setTo(.4, .2);
+		
+		this.characterLeg2left = game.add.sprite(11, 4, 'tigerbackleg2');
+		this.characterLeg2left.scale.setTo(.6, .6);
+		this.characterLeg2left.anchor.setTo(.5, .2);
+		
+		this.characterPelvisleft = game.add.sprite(20, -2, 'tigertail');
 		//this.characterPelvis.scale.setTo(.01, .01);
-		this.characterPelvis.anchor.setTo(.5, .5);
+		this.characterPelvisleft.anchor.setTo(0, .1);
 		
 		//tiger right
 		
-		/*
-		this.characterHead = game.add.sprite(-40, -12, 'tigerhead');
-		this.characterHead.scale.setTo(-0.6, .6);
-		this.characterHead.anchor.setTo(.5, .5);
-		this.characterArm1 = game.add.sprite(-20, 4, 'tigerfrontleg1');
-		this.characterArm1.scale.setTo(-0.6, .6);
-		this.characterArm1.anchor.setTo(.5, .2);
-		this.characterChest = game.add.sprite(-5, 10, 'tigerbody');
-		//this.characterChest.scale.setTo(.3, .3);
-		this.characterChest.anchor.setTo(.5, .5);
-		this.characterArm2 = game.add.sprite(-10, 4, 'tigerfrontleg2');
-		this.characterArm2.scale.setTo(-0.6, .6);
-		this.characterArm2.anchor.setTo(.5, .2);
-		this.characterLeg1 = game.add.sprite(21, 4, 'tigerbackleg1');
-		this.characterLeg1.scale.setTo(-0.6, .6);
-		this.characterLeg1.anchor.setTo(.4, .2);
-		this.characterLeg2 = game.add.sprite(11, 4, 'tigerbackleg2');
-		this.characterLeg2.scale.setTo(-0.6, .6);
-		this.characterLeg2.anchor.setTo(.5, .2);
-		this.characterPelvis = game.add.sprite(45, 15, 'tigertail');
-		//this.characterPelvis.scale.setTo(.01, .01);
-		this.characterPelvis.anchor.setTo(.5, .5);
-		*/
+		this.characterHeadstillright = game.add.sprite(40, -12, 'tigerhead');
+		this.characterHeadstillright.scale.setTo(-0.6, .6);
+		this.characterHeadstillright.anchor.setTo(.5, .5);
+		
+		this.characterHeadright = game.add.sprite(40, -12, 'tigerheadmove');
+		this.characterHeadright.scale.setTo(-0.6, .6);
+		this.characterHeadright.anchor.setTo(.5, .5);
+		
+		this.characterArm1right = game.add.sprite(21, 4, 'tigerfrontleg1');
+		this.characterArm1right.scale.setTo(-0.6, .6);
+		this.characterArm1right.anchor.setTo(.5, .2);
+		
+		this.characterChestright = game.add.sprite(5, 10, 'tigerbody');
+		this.characterChestright.scale.setTo(-1, 1);
+		this.characterChestright.anchor.setTo(.5, .5);
+		
+		this.characterArm2right = game.add.sprite(11, 4, 'tigerfrontleg2');
+		this.characterArm2right.scale.setTo(-0.6, .6);
+		this.characterArm2right.anchor.setTo(.5, .2);
+		
+		this.characterLeg1right = game.add.sprite(-20, 4, 'tigerbackleg1');
+		this.characterLeg1right.scale.setTo(-0.6, .6);
+		this.characterLeg1right.anchor.setTo(.4, .2);
+		
+		this.characterLeg2right = game.add.sprite(-10, 4, 'tigerbackleg2');
+		this.characterLeg2right.scale.setTo(-0.6, .6);
+		this.characterLeg2right.anchor.setTo(.5, .2);
+		
+		this.characterPelvisright = game.add.sprite(-20, -2, 'tigertail');
+		this.characterPelvisright.scale.setTo(-1, 1);
+		this.characterPelvisright.anchor.setTo(0, .1);
+		
 	}
 	addGeysers() {
-		this.headGeyser = this.addIndividualGeysers(this.characterHead, 0, 0);
+		this.headGeyser = this.addIndividualGeysers(this.characterHeadleft, 0, 0);
 		//this.headGeyser = this.addIndividualGeysers(this.characterHead, this.characterHead.width/2, this.characterHead.height/2);
-		this.chestGeyser = this.addIndividualGeysers(this.characterChest, 0, 0);
-		this.pelvisGeyser = this.addIndividualGeysers(this.characterPelvis, 0, 0);
+		this.chestGeyser = this.addIndividualGeysers(this.characterChestleft, 0, 0);
+		this.pelvisGeyser = this.addIndividualGeysers(this.characterPelvisleft, 0, 0);
 		this.leftarmGeyser = this.addIndividualGeysers(this.arm1blood, 0, 0);
 		this.rightarmGeyser = this.addIndividualGeysers(this.arm2blood, 0, 0);
 		this.leftlegGeyser = this.addIndividualGeysers(this.leg1blood, 0, 0);
@@ -105,13 +126,30 @@ class tiger {
 	}
 
 	bindBody() {
-		this.characterBox.addChild(this.characterHead);
-		this.characterBox.addChild(this.characterArm1);
-		this.characterBox.addChild(this.characterChest);
-		this.characterBox.addChild(this.characterPelvis);
-		this.characterBox.addChild(this.characterLeg1);
-		this.characterBox.addChild(this.characterLeg2);
-		this.characterBox.addChild(this.characterArm2);
+		this.characterBox.addChild(this.characterBoxleft);
+		this.characterBoxleft.addChild(this.characterHeadstillleft);
+		this.characterBoxleft.addChild(this.characterHeadleft);
+		this.characterBoxleft.addChild(this.characterArm1left);
+		this.characterBoxleft.addChild(this.characterLeg1left);
+		this.characterBoxleft.addChild(this.characterChestleft);
+		this.characterBoxleft.addChild(this.characterPelvisleft);
+		this.characterBoxleft.addChild(this.characterLeg2left);
+		this.characterBoxleft.addChild(this.characterArm2left);
+		this.characterHeadleft.alpha = 0;
+		
+
+		this.characterBox.addChild(this.characterBoxright);
+		this.characterBoxright.addChild(this.characterHeadstillright);
+		this.characterBoxright.addChild(this.characterHeadright);
+		this.characterBoxright.addChild(this.characterArm1right);
+		this.characterBoxright.addChild(this.characterLeg1right);
+		this.characterBoxright.addChild(this.characterChestright);
+		this.characterBoxright.addChild(this.characterPelvisright);
+		this.characterBoxright.addChild(this.characterLeg2right);
+		this.characterBoxright.addChild(this.characterArm2right);
+		this.characterBoxright.alpha = 0;
+		this.characterHeadright.alpha = 0;
+
 		this.characterBox.addChild(this.headblood);
 		this.characterBox.addChild(this.arm1blood);
 		this.characterBox.addChild(this.torsoblood);
