@@ -16,6 +16,8 @@ function create() {
 	//avatar = new demon('wobula');
 	//avatar = new player('wubala');
 	avatar = new tiger('wabala');
+	//avatar = new star('webala');
+	//animations = new animationStar(avatar);
 	//animations = new animationDemon(avatar);
 	//animations = new animationPlayer(avatar);
 	animations = new animationTiger(avatar);

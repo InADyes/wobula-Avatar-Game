@@ -42,6 +42,9 @@ class mediaLibrary {
 		this.lionbody = (game.load.image('lionbody', 'imgs/Lion/Lion_Body.png'));
 		this.liontail = (game.load.image('liontail', 'imgs/Lion/Lion_Tail.png'));
 
+		//star
+		this.star = (game.load.image('star', 'imgs/star.png'));
+		this.laugh = (game.load.image('laugh','imgs/badlaugh.png'));
 
 
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
