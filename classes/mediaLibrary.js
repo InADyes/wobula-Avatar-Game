@@ -55,6 +55,12 @@ class mediaLibrary {
 		this.charDemonWingL = (game.load.image('charDemonWingL', 'imgs/charDemonWingL.png'));
 		this.charDemonWingR = (game.load.image('charDemonWingR', 'imgs/charDemonWingR.png'));
 
+		this.charDemonHeadGib1 = (game.load.image('demonHeadGib1', 'imgs/charDemonHeadGib1.png'));
+		this.charDemonHeadGib2 = (game.load.image('demonHeadGib2', 'imgs/charDemonHeadGib2.png'));
+		this.charDemonHeadGib3 = (game.load.image('demonHeadGib3', 'imgs/charDemonHeadGib3.png'));
+		this.charDemonHeadGib4 = (game.load.image('demonHeadGib4', 'imgs/charDemonHeadGib4.png'));
+		this.charDemonHeadGib5 = (game.load.image('demonHeadGib5', 'imgs/charDemonHeadGib5.png'));
+
 		this.headBlank = (game.load.image('headBlank', 'imgs/headBlank.png'));
 	}
 	addSounds() {

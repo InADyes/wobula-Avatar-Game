@@ -3,7 +3,9 @@ class demon {
 		this.name = name;
 		this.airStatus = true;
 		this.particleSource = [];
+		this.particleSource2 = [];
 		this.particleSource.push('bloodDrop1', 'bloodDrop2', 'bloodDrop3', 'bloodDrop4');
+		this.particleSource2.push('demonHeadGib1', 'demonHeadGib2', 'demonHeadGib3', 'demonHeadGib4', 'demonHeadGib5');
 		this.addBodyParts();
 		this.addGeysers();
 		this.bindBody();
@@ -38,20 +40,37 @@ class demon {
 		this.characterPelvis.anchor.setTo(.5, .5);
 		this.characterPelvis.scale.setTo(.6, 1);
 	}
-	addIndividualGeysers(anchor, xoffset, yoffset) {
-		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
+	addIndividualGeysers(anchor, particleSource, qty) {
+		var bloodGeyser = game.add.emitter(0, 0, qty);
 		bloodGeyser.bounce.setTo(.5, .5);
-		bloodGeyser.setXSpeed(800, -200);
-		bloodGeyser.setYSpeed(500, -500);
-		bloodGeyser.minParticleScale = .70;
-		bloodGeyser.maxParticleScale = .50;
-		bloodGeyser.makeParticles(this.particleSource, 0, 250, true, true);
+		bloodGeyser.setXSpeed(1000, -500);
+		bloodGeyser.setYSpeed(9000, 4000);
+		bloodGeyser.minParticleScale = .20;
+		bloodGeyser.maxParticleScale = .40;
+		bloodGeyser.makeParticles(particleSource, 0, 250, true, true);
 		anchor.addChild(bloodGeyser);
 		bloodGeyser.start(false, 5000, 1);
+		bloodGeyser.gravity = 1300;
+		game.physics.enable(bloodGeyser, Phaser.Physics.ARCADE);
+		return(bloodGeyser);
+	}
+	addHeadGibGeyser(anchor, particleSource, qty) {
+		var bloodGeyser = game.add.emitter(0, 0, qty);
+		bloodGeyser.bounce.setTo(.5, .5);
+		bloodGeyser.setXSpeed(1000, -500);
+		bloodGeyser.setYSpeed(15000, 1000);
+		bloodGeyser.minParticleScale = 1.2;
+		bloodGeyser.maxParticleScale = 1.2;
+		bloodGeyser.makeParticles(particleSource, 0, 250, true, true);
+		anchor.addChild(bloodGeyser);
+		bloodGeyser.start(false, 5000, 1);
+		bloodGeyser.gravity = 1300;
+		game.physics.enable(bloodGeyser, Phaser.Physics.ARCADE);
 		return(bloodGeyser);
 	}
 	addGeysers() {
-		this.headGeyser = this.addIndividualGeysers(this.characterHead, 0, 0);
+		this.headGeyser = this.addIndividualGeysers(this.characterHead, this.particleSource, 999);
+		this.headGeyser2 = this.addHeadGibGeyser(this.characterHead, this.particleSource2, 5);
 	}
 	bindBody() {
 		this.characterBox.addChild(this.characterWingL);

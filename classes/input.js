@@ -87,8 +87,9 @@ class input {
 	}
 	zAction() {
 		console.log('You pressed the head key');
-		this.player.headGeyser.flow(1000, 500, 100, -1);
-		if (this.player.characterHead.key == "charDemonHead") {
+		this.player.headGeyser.flow(3000, 500, 100, -1);
+		this.player.headGeyser2.flow(3000, 500, 5, -1);
+		if (animations.headPresent == 1) {
 			animations.headPresent = 0;
 			this.player.characterHead.loadTexture('headBlank', 0);
 		} else {

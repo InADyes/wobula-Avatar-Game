@@ -23,4 +23,6 @@ function update() {
 	controls.processor();
 	animations.processor();
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
+	game.physics.arcade.collide(env.floor, avatar.headGeyser);
+	game.physics.arcade.collide(env.floor, avatar.headGeyser2);
 }
