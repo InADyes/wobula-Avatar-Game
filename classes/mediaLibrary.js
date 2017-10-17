@@ -29,7 +29,7 @@ class mediaLibrary {
 		this.tigerfrontleg2 = (game.load.image('tigerfrontleg2', 'imgs/Tiger/Tiger_FrontLeg.png'));
 		this.tigerbackleg1 = (game.load.image('tigerbackleg1', 'imgs/Tiger/Tiger_BackLeg.png'));
 		this.tigerbackleg2 = (game.load.image('tigerbackleg2', 'imgs/Tiger/Tiger_BackLeg.png'));
-		this.tigerbody = (game.load.image('tigerbody', 'imgs/Tiger/Tiger_Body1.png'));
+		this.tigerbody = (game.load.image('tigerbody', 'imgs/Tiger/Tiger_Body.png'));
 		this.tigertail = (game.load.image('tigertail', 'imgs/Tiger/Tiger_Tail.png'));
 		
 		//lion
