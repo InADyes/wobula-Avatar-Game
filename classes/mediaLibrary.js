@@ -32,6 +32,17 @@ class mediaLibrary {
 		this.tigerbody = (game.load.image('tigerbody', 'imgs/Tiger/Tiger_Body1.png'));
 		this.tigertail = (game.load.image('tigertail', 'imgs/Tiger/Tiger_Tail.png'));
 		
+		//lion
+		this.lionhead = (game.load.image('lionhead', 'imgs/Lion/Lion_Head.png'));
+		this.lionheadmove = (game.load.image('lionheadmove', 'imgs/Lion/Lion_ProfileHead.png'));
+		this.lionfrontleg1 = (game.load.image('lionfrontleg1', 'imgs/Lion/Lion_FrontLeg.png'));
+		this.lionfrontleg2 = (game.load.image('lionfrontleg2', 'imgs/Lion/Lion_FrontLeg.png'));
+		this.lionbackleg1 = (game.load.image('lionbackleg1', 'imgs/Lion/Lion_BackLeg.png'));
+		this.lionbackleg2 = (game.load.image('lionbackleg2', 'imgs/Lion/Lion_BackLeg.png'));
+		this.lionbody = (game.load.image('lionbody', 'imgs/Lion/Lion_Body.png'));
+		this.liontail = (game.load.image('liontail', 'imgs/Lion/Lion_Tail.png'));
+
+
 
 		this.jumpSound = (game.load.audio('jump', 'sounds/jump.mp3'));
 		this.invenOpenSound = (game.load.audio('invenOpen', 'sounds/invenClose.wav'));
