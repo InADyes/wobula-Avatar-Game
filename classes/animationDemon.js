@@ -10,6 +10,7 @@ class animationDemon {
 		this.wingWaveSetup();
 		this.wingFlySetup();
 		this.defaultGroundWingSetup();
+		this.fallOverSetup();
 	}
 	processor() {
 		this.checkAirStatus(game.time.time);
@@ -36,15 +37,23 @@ class animationDemon {
 			this.wingDefault = 0;
 		}
 	}
-	wingGround() {
-		this.wingGroundR.start();
-		this.wingGroundL.start();
-	}
 	defaultGroundWingSetup() {
 		this.wingGroundR = game.add.tween(this.avatar.characterWingR);
 		this.wingGroundL = game.add.tween(this.avatar.characterWingL);
 		this.wingGroundR.to({angle: 40}, 550, Phaser.Easing.Linear.None);
 		this.wingGroundL.to({angle: -40}, 550, Phaser.Easing.Linear.None);
+	}
+	wingGround() {
+		this.wingGroundR.start();
+		this.wingGroundL.start();
+	}
+	fallOverSetup() {
+		console.log(this.avatar.characterBox);
+		this.fallOver = game.add.tween(this.avatar.characterBox);
+		this.riseUp = game.add.tween(this.avatar.characterBox);
+
+		this.fallOver.to({rotation: .1}, 3000, Phaser.Easing.Linear.None).to({rotation: 1.7}, 500, Phaser.Easing.Linear.None);
+		this.riseUp.to({rotation: 0}, 2000, Phaser.Easing.Linear.None);
 	}
 	walkSetup() {
 		this.avatar.characterLeg1.angle = -20;
@@ -199,5 +208,42 @@ class animationDemon {
 				direction = 'left';
 			console.log(direction);
 		}
+	}
+	qAction() {
+		console.log('You pressed the q key');
+		this.wingWaveLeft();
+	}
+	wAction() {
+		console.log('You pressed the w key');
+		this.wingWaveRight();
+	}
+	aAction() {
+		console.log('You pressed the a key');
+		this.waveLeft();
+	}
+	sAction() {
+		console.log('You pressed the s key');
+		this.waveRight();
+	}
+	zAction() {
+		console.log('You pressed the head key');
+		if (this.headPresent == 1) {
+			this.headPresent = 0;
+			this.avatar.headGeyser.flow(3000, 500, 100, -1);
+			this.avatar.characterHead.loadTexture('headBlank', 0);
+			this.fallOver.start();
+		} else {
+			this.headPresent = 1;
+			this.riseUp.start();
+			this.avatar.characterHead.loadTexture('charDemonHead', 0);
+		}
+	}
+	spaceAction() {
+		console.log('You pressed the space key');
+		this.avatar.characterBox.body.velocity.y = 0;
+		this.avatar.characterBox.body.velocity.y -= 400;
+		this.avatar.characterWingR.angle = -10;
+		this.avatar.characterWingL.angle = 10;
+		data.jump.play();
 	}
 }

@@ -70,39 +70,27 @@ class input {
 		}
 	}
 	qAction() {
-		console.log('You pressed the q key');
-		animations.wingWaveLeft();
+		animations.qAction();
 	}
 	wAction() {
 		console.log('You pressed the w key');
-		animations.wingWaveRight();
+		animations.wAction();
 	}
 	aAction() {
 		console.log('You pressed the a key');
-		animations.waveLeft();
+		animations.aAction();
 	}
 	sAction() {
 		console.log('You pressed the s key');
-		animations.waveRight();
+		animations.sAction();
 	}
 	zAction() {
 		console.log('You pressed the head key');
-		this.player.headGeyser.flow(3000, 500, 100, -1);
-		this.player.headGeyser2.flow(3000, 500, 5, -1);
-		if (animations.headPresent == 1) {
-			animations.headPresent = 0;
-			this.player.characterHead.loadTexture('headBlank', 0);
-		} else {
-			animations.headPresent = 1;
-			this.player.characterHead.loadTexture('charDemonHead', 0);
-		}
+		animations.zAction();
 	}
 	spaceAction() {
 		console.log('You pressed the space key');
-		this.player.characterBox.body.velocity.y = 0;
-		this.player.characterBox.body.velocity.y -= 400;
-		this.player.characterWingR.angle = -10;
-		this.player.characterWingL.angle = 10;
+		animations.spaceAction();
 		data.jump.play();
 	}
 }
