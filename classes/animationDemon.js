@@ -42,9 +42,23 @@ class animationDemon {
 			this.wingDefault = 0;
 		}
 	}
+	defaultGroundWingSetup() {
+		this.wingGroundR = game.add.tween(this.avatar.characterWingR);
+		this.wingGroundL = game.add.tween(this.avatar.characterWingL);
+		this.wingGroundR.to({angle: 40}, 550, Phaser.Easing.Linear.None);
+		this.wingGroundL.to({angle: -40}, 550, Phaser.Easing.Linear.None);
+	}
 	wingGround() {
 		this.wingGroundR.start();
 		this.wingGroundL.start();
+	}
+	fallOverSetup() {
+		console.log(this.avatar.characterBox);
+		this.fallOver = game.add.tween(this.avatar.characterBox);
+		this.riseUp = game.add.tween(this.avatar.characterBox);
+
+		this.fallOver.to({rotation: .1}, 3000, Phaser.Easing.Linear.None).to({rotation: 1.7}, 500, Phaser.Easing.Linear.None);
+		this.riseUp.to({rotation: 0}, 2000, Phaser.Easing.Linear.None);
 	}
 	walkSetup() {
 		this.avatar.characterLeg1.angle = -20;
