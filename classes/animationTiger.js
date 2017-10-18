@@ -29,12 +29,12 @@ class animationTiger {
 		this.arm2Wave.start();
 	}
 	walkArms(direction) {
-		if (this.avatar.characterArm1left.angle == -10) {
+		if (this.avatar.characterArm1left.angle == 10) {
 			this.arm1.start();
 			this.arm2Rev.start();
 			this.arm11.start();
 			this.arm21Rev.start();
-		} else if (avatar.characterArm1left.angle == -30) {
+		} else if (avatar.characterArm1left.angle == -10) {
 			this.arm2.start();
 			this.arm1Rev.start();
 			this.arm21.start();
@@ -79,11 +79,11 @@ class animationTiger {
 		this.leg2Rev = game.add.tween(avatar.characterLeg2left);
 		this.leg2Rev.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 
-		avatar.characterArm1left.angle = -10;
+		avatar.characterArm1left.angle = 10;
 		this.arm1 = game.add.tween(avatar.characterArm1left);
-		this.arm1.to({ angle: -30 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm1.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm1Rev = game.add.tween(avatar.characterArm1left);
-		this.arm1Rev.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm1Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
 
 		this.arm2 = game.add.tween(avatar.characterArm2left);
 		this.arm2.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
@@ -104,14 +104,14 @@ class animationTiger {
 
 		avatar.characterArm1right.angle = 10;
 		this.arm11 = game.add.tween(avatar.characterArm1right);
-		this.arm11.to({ angle: 30 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm11.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm11Rev = game.add.tween(avatar.characterArm1right);
 		this.arm11Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
 
 		this.arm21 = game.add.tween(avatar.characterArm2right);
-		this.arm21.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm21.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm21Rev = game.add.tween(avatar.characterArm2right);
-		this.arm21Rev.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm21Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
 	}
 	waveLeftSetup(avatar) {
 		this.arm1Wave = game.add.tween(avatar.characterArm1left);
@@ -169,11 +169,11 @@ class animationTiger {
 		this.headbounceup1 = game.add.tween(avatar.characterHeadright);
 		this.chestbounceup1 = game.add.tween(avatar.characterChestright);
 		this.tailbounceup1 = game.add.tween(avatar.characterPelvisright);
-		this.headbounceup.to({ y: -15 }, 400, Phaser.Easing.Linear.None);
-		this.chestbounceup.to({ y: 7 }, 400, Phaser.Easing.Linear.None);
+		this.headbounceup.to({ y: -31 }, 400, Phaser.Easing.Linear.None);
+		this.chestbounceup.to({ y: 9}, 400, Phaser.Easing.Linear.None);
 		this.tailbounceup.to({angle: -10}, 400, Phaser.Easing.Linear.None);
-		this.headbounceup1.to({ y: -15 }, 400, Phaser.Easing.Linear.None);
-		this.chestbounceup1.to({ y: 7 }, 400, Phaser.Easing.Linear.None);
+		this.headbounceup1.to({ y: -31 }, 400, Phaser.Easing.Linear.None);
+		this.chestbounceup1.to({ y: 9 }, 400, Phaser.Easing.Linear.None);
 		this.tailbounceup1.to({angle: 10}, 400, Phaser.Easing.Linear.None);
 
 
@@ -183,16 +183,16 @@ class animationTiger {
 		this.headbouncedown1 = game.add.tween(avatar.characterHeadright);
 		this.chestbouncedown1 = game.add.tween(avatar.characterChestright);
 		this.tailbouncedown1 = game.add.tween(avatar.characterPelvisright);
-		this.headbouncedown.to({ y: -12 }, 400, Phaser.Easing.Linear.None);
-		this.chestbouncedown.to({ y: 10 }, 400, Phaser.Easing.Linear.None);
+		this.headbouncedown.to({ y: -28 }, 400, Phaser.Easing.Linear.None);
+		this.chestbouncedown.to({ y: 12 }, 400, Phaser.Easing.Linear.None);
 		this.tailbouncedown.to({angle: 0}, 400, Phaser.Easing.Linear.None);
-		this.headbouncedown1.to({ y: -12 }, 400, Phaser.Easing.Linear.None);
-		this.chestbouncedown1.to({ y: 10 }, 400, Phaser.Easing.Linear.None);
+		this.headbouncedown1.to({ y: -28 }, 400, Phaser.Easing.Linear.None);
+		this.chestbouncedown1.to({ y: 12 }, 400, Phaser.Easing.Linear.None);
 		this.tailbouncedown1.to({angle: 0}, 400, Phaser.Easing.Linear.None);
 	}
 
 	walkBounce() {
-		if (avatar.characterHeadleft.y == -12) {
+		if (avatar.characterHeadleft.y == -28) {
 			this.headbounceup.start();
 			this.chestbounceup.start();
 			this.tailbounceup.start();
@@ -200,7 +200,7 @@ class animationTiger {
 			this.chestbounceup1.start();
 			this.tailbounceup1.start();
 		}
-		if (avatar.characterHeadleft.y == -15) {
+		if (avatar.characterHeadleft.y == -31) {
 			this.headbouncedown.start();
 			this.chestbouncedown.start();
 			this.tailbouncedown.start();
