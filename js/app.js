@@ -12,8 +12,8 @@ var animations;
 
 function create() {
 	env = new environment('grassy');
-	avatar = new demon('wobula');
-	animations = new animationDemon(avatar);
+	avatar = new felix('wobula');
+	animations = new animationFelix(avatar);
 	controls = new input(avatar);
 	data.addSounds();
 	addListeners()
@@ -23,6 +23,4 @@ function update() {
 	controls.processor();
 	animations.processor();
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
-	game.physics.arcade.collide(env.floor, avatar.headGeyser);
-	game.physics.arcade.collide(env.floor, avatar.headGeyser2);
 }

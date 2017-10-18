@@ -1,15 +1,15 @@
 class animationDemon {
-	constructor(avatar, type) {
+	constructor(avatar) {
 		this.now = game.time.time;
 		this.targetTime = undefined;
 		this.avatar = avatar;
-		this.targetTime = undefined;
 		this.headPresent = 1;
 		this.walkSetup();
 		this.waveSetup();
 		this.wingWaveSetup();
 		this.wingFlySetup();
 		this.defaultGroundWingSetup();
+		this.fallOverSetup();
 	}
 	processor() {
 		this.checkAirStatus(game.time.time);
@@ -23,6 +23,12 @@ class animationDemon {
 			this.avatar.characterHead.loadTexture('charDemonHeadR', 0);
 		else if (this.headPresent == 1)
 			this.avatar.characterHead.loadTexture('charDemonHead', 0);
+	}
+	defaultGroundWingSetup() {
+		this.wingGroundR = game.add.tween(this.avatar.characterWingR);
+		this.wingGroundL = game.add.tween(this.avatar.characterWingL);
+		this.wingGroundR.to({angle: 40}, 550, Phaser.Easing.Linear.None);
+		this.wingGroundL.to({angle: -40}, 550, Phaser.Easing.Linear.None);
 	}
 	checkAirStatus(time) {
 		if (this.avatar.characterBox.position.y > 320 && this.avatar.characterWingR.angle != 40 && this.targetTime == undefined)
@@ -39,12 +45,6 @@ class animationDemon {
 	wingGround() {
 		this.wingGroundR.start();
 		this.wingGroundL.start();
-	}
-	defaultGroundWingSetup() {
-		this.wingGroundR = game.add.tween(this.avatar.characterWingR);
-		this.wingGroundL = game.add.tween(this.avatar.characterWingL);
-		this.wingGroundR.to({angle: 40}, 550, Phaser.Easing.Linear.None);
-		this.wingGroundL.to({angle: -40}, 550, Phaser.Easing.Linear.None);
 	}
 	walkSetup() {
 		this.avatar.characterLeg1.angle = -20;
@@ -68,6 +68,14 @@ class animationDemon {
 		this.arm2.to({angle: -10}, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm2Rev = game.add.tween(this.avatar.characterArm2);
 		this.arm2Rev.to({angle: 90}, 550, Phaser.Easing.Quadratic.InOut);
+	}
+	fallOverSetup() {
+		console.log(this.avatar.characterBox);
+		this.fallOver = game.add.tween(this.avatar.characterBox);
+		this.riseUp = game.add.tween(this.avatar.characterBox);
+
+		this.fallOver.to({rotation: .1}, 3000, Phaser.Easing.Linear.None).to({rotation: 1.7}, 500, Phaser.Easing.Linear.None);
+		this.riseUp.to({rotation: 0}, 2000, Phaser.Easing.Linear.None);
 	}
 	walk() {
 		this.walkArms();
@@ -199,5 +207,42 @@ class animationDemon {
 				direction = 'left';
 			console.log(direction);
 		}
+	}
+	qAction() {
+		console.log('You pressed the q key');
+		this.wingWaveLeft();
+	}
+	wAction() {
+		console.log('You pressed the w key');
+		this.wingWaveRight();
+	}
+	aAction() {
+		console.log('You pressed the a key');
+		this.waveLeft();
+	}
+	sAction() {
+		console.log('You pressed the s key');
+		this.waveRight();
+	}
+	zAction() {
+		console.log('You pressed the head key');
+		if (this.headPresent == 1) {
+			this.headPresent = 0;
+			this.avatar.headGeyser.flow(3000, 500, 100, -1);
+			this.avatar.characterHead.loadTexture('headBlank', 0);
+			this.fallOver.start();
+		} else {
+			this.headPresent = 1;
+			this.riseUp.start();
+			this.avatar.characterHead.loadTexture('charDemonHead', 0);
+		}
+	}
+	spaceAction() {
+		console.log('You pressed the space key');
+		this.avatar.characterBox.body.velocity.y = 0;
+		this.avatar.characterBox.body.velocity.y -= 400;
+		this.avatar.characterWingR.angle = -10;
+		this.avatar.characterWingL.angle = 10;
+		data.jump.play();
 	}
 }

@@ -60,8 +60,22 @@ class mediaLibrary {
 		this.charDemonHeadGib3 = (game.load.image('demonHeadGib3', 'imgs/charDemonHeadGib3.png'));
 		this.charDemonHeadGib4 = (game.load.image('demonHeadGib4', 'imgs/charDemonHeadGib4.png'));
 		this.charDemonHeadGib5 = (game.load.image('demonHeadGib5', 'imgs/charDemonHeadGib5.png'));
-
 		this.headBlank = (game.load.image('headBlank', 'imgs/headBlank.png'));
+
+		this.charFelixHeadFront = (game.load.image('charFelixHead', 'imgs/charFelixHead.png'));
+		this.charFelixHeadL = (game.load.image('charFelixHeadL', 'imgs/charFelixHeadL.png'));
+		this.charFelixHeadR = (game.load.image('charFelixHeadR', 'imgs/charFelixHeadR.png'));
+		this.charFelixBodyFront = (game.load.image('charFelixBody', 'imgs/charFelixBody.png'));
+		this.charFelixBodyR = (game.load.image('charFelixBodyR', 'imgs/charFelixBodyR.png'));
+		this.charFelixBodyL = (game.load.image('charFelixBodyL', 'imgs/charFelixBodyL.png'));
+		this.charFelixArmLJoint1 = (game.load.image('charFelixArmLJoint1', 'imgs/charFelixArmLJoint1.png'));
+		this.charFelixArmLJoint2 = (game.load.image('charFelixArmLJoint2', 'imgs/charFelixArmLJoint2.png'));
+		this.charFelixArmLHandTop = (game.load.image('charFelixArmLHandTop', 'imgs/charFelixArmLHandTop.png'));
+		this.charFelixArmLHandBot = (game.load.image('charFelixArmLHandBot', 'imgs/charFelixArmLHandBot.png'));
+		this.charFelixArmR = (game.load.image('charFelixArmR', 'imgs/charFelixArmR.png'));
+		this.charFelixAntena = (game.load.image('charFelixAntena', 'imgs/charFelixAntena.png'));
+		this.charFelixAntenaL = (game.load.image('charFelixAntenaL', 'imgs/charFelixAntenaL.png'));
+		this.charFelixAntenaR = (game.load.image('charFelixAntenaR', 'imgs/charFelixAntenaR.png'));
 	}
 	addSounds() {
 		this.jump = game.add.audio('jump');
