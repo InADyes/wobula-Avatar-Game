@@ -15,7 +15,7 @@ class tiger {
 		this.characterBox = game.add.sprite(50, 100);
 		this.characterBoxleft = game.add.sprite(0,0);
 		this.characterBoxright = game.add.sprite(0,0);
-
+/*
 		this.headblood = game.add.sprite(0, -195);
 		//this.headblood.scale.setTo(.3, .3);
 		this.arm1blood = game.add.sprite(-20, -165);
@@ -30,8 +30,9 @@ class tiger {
 		//this.leg2blood.scale.setTo(.3, .3);
 		this.pelvisblood = game.add.sprite(5, -130);
 		//this.pelvisblood.scale.setTo(.3, .3);
-
-		
+*/
+		this.poopoutleft = game.add.sprite(0,0);
+		this.poopoutright = game.add.sprite(0,0);
 		//tiger left
 		this.characterHeadstillleft = game.add.sprite(-24, -28, 'tigerhead');
 		this.characterHeadstillleft.scale.setTo(.6, .6);
@@ -101,7 +102,7 @@ class tiger {
 		
 	}
 	addGeysers() {
-		this.headGeyser = this.addIndividualGeysers(this.characterHeadleft, 0, 0);
+		/*this.headGeyser = this.addIndividualGeysers(this.characterHeadleft, 0, 0);
 		//this.headGeyser = this.addIndividualGeysers(this.characterHead, this.characterHead.width/2, this.characterHead.height/2);
 		this.chestGeyser = this.addIndividualGeysers(this.characterChestleft, 0, 0);
 		this.pelvisGeyser = this.addIndividualGeysers(this.characterPelvisleft, 0, 0);
@@ -109,17 +110,20 @@ class tiger {
 		this.rightarmGeyser = this.addIndividualGeysers(this.arm2blood, 0, 0);
 		this.leftlegGeyser = this.addIndividualGeysers(this.leg1blood, 0, 0);
 		this.rightlegGeyser = this.addIndividualGeysers(this.leg2blood, 0, 0);
+		*/
+		this.poopleftGeyser = this.addIndividualGeysers(this.characterPelvisleft, 0, 0);
+		this.pooprightGeyser = this.addIndividualGeysers(this.characterPelvisright, 0, 0);
 		//this.leftarmGeyser = this.addIndividualGeysers(this.characterArm1,0,0);
 	}
 
 	addIndividualGeysers(anchor, xoffset, yoffset) {
 		var bloodGeyser = game.add.emitter(0 + xoffset, 0 + yoffset, 999);
 		bloodGeyser.bounce.setTo(.5, .5);
-		bloodGeyser.setXSpeed(800, -200);
-		bloodGeyser.setYSpeed(500, 0);
+		bloodGeyser.setXSpeed(-200, -800);
+		bloodGeyser.setYSpeed(50, 0);
 		bloodGeyser.minParticleScale = .70;
 		bloodGeyser.maxParticleScale = .50;
-		bloodGeyser.makeParticles(this.particlesource, 0, 250, true, true);
+		bloodGeyser.makeParticles('poop', 0, 250, true, true);
 		anchor.addChild(bloodGeyser);
 		bloodGeyser.start(false, 5000, 1);
 		return(bloodGeyser);
@@ -150,13 +154,7 @@ class tiger {
 		this.characterBoxright.alpha = 0;
 		this.characterHeadright.alpha = 0;
 
-		this.characterBox.addChild(this.headblood);
-		this.characterBox.addChild(this.arm1blood);
-		this.characterBox.addChild(this.torsoblood);
-		this.characterBox.addChild(this.pelvisblood);
-		this.characterBox.addChild(this.arm2blood);
-		this.characterBox.addChild(this.leg1blood);
-		this.characterBox.addChild(this.leg2blood);
+	
 		//this.characterBox.scale.setTo(.3, .3);
 	}
 	physics() {

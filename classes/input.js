@@ -107,7 +107,8 @@ class input {
 	}
 	xAction() {
 		console.log('You pressed the chest key');
-		avatar.chestGeyser.flow(1000, 500, 15, -1);
+		avatar.poopleftGeyser.flow(1000, 500, 1, -1);
+		avatar.pooprightGeyser.flow(1000, 500, 1, -1)
 	}
 	cAction() {
 		console.log('You pressed the pelvis key');
@@ -128,6 +129,7 @@ class input {
 		//avatar.characterWingL.angle = 10;
 		data.jump.play();
 	}
+	/*
 	autoAnimating() {
 		var direction = 1000 * Math.random();
 		if (direction < 500) {
@@ -139,6 +141,6 @@ class input {
 			this.player.animations.walk();
 		}
 		console.log(direction);
-	}
+	}*/
 }
 

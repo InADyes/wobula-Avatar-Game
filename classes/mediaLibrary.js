@@ -31,7 +31,11 @@ class mediaLibrary {
 		this.tigerbackleg2 = (game.load.image('tigerbackleg2', 'imgs/Tiger/Tiger_BackLeg.png'));
 		this.tigerbody = (game.load.image('tigerbody', 'imgs/Tiger/Tiger_Body.png'));
 		this.tigertail = (game.load.image('tigertail', 'imgs/Tiger/Tiger_Tail.png'));
-		
+		//poop
+		this.poop = (game.load.image('poop', 'imgs/Tiger/poop.png'));
+		//baseball
+		this.baseball = (game.load.image('baseball', 'imgs/Tiger/baseballsmall.png'));
+
 		//lion
 		this.lionhead = (game.load.image('lionhead', 'imgs/Lion/Lion_Head.png'));
 		this.lionheadmove = (game.load.image('lionheadmove', 'imgs/Lion/Lion_ProfileHead.png'));
