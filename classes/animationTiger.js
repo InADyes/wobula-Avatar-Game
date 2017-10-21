@@ -29,12 +29,12 @@ class animationTiger {
 		this.arm2Wave.start();
 	}
 	walkArms(direction) {
-		if (this.avatar.characterArm1left.angle == 10) {
+		if (this.avatar.characterArm1left.angle == 20) {
 			this.arm1.start();
 			this.arm2Rev.start();
 			this.arm11.start();
 			this.arm21Rev.start();
-		} else if (avatar.characterArm1left.angle == -10) {
+		} else if (avatar.characterArm1left.angle == -20) {
 			this.arm2.start();
 			this.arm1Rev.start();
 			this.arm21.start();
@@ -79,16 +79,16 @@ class animationTiger {
 		this.leg2Rev = game.add.tween(avatar.characterLeg2left);
 		this.leg2Rev.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 
-		avatar.characterArm1left.angle = 10;
+		avatar.characterArm1left.angle = 20;
 		this.arm1 = game.add.tween(avatar.characterArm1left);
-		this.arm1.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm1.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm1Rev = game.add.tween(avatar.characterArm1left);
-		this.arm1Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm1Rev.to({ angle: 20 }, 550, Phaser.Easing.Quadratic.InOut);
 
 		this.arm2 = game.add.tween(avatar.characterArm2left);
-		this.arm2.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm2.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm2Rev = game.add.tween(avatar.characterArm2left);
-		this.arm2Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm2Rev.to({ angle: 20 }, 550, Phaser.Easing.Quadratic.InOut);
 		
 		//right
 		avatar.characterLeg1right.angle = -20;
@@ -102,16 +102,16 @@ class animationTiger {
 		this.leg21Rev = game.add.tween(avatar.characterLeg2right);
 		this.leg21Rev.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 
-		avatar.characterArm1right.angle = 10;
+		avatar.characterArm1right.angle = 20;
 		this.arm11 = game.add.tween(avatar.characterArm1right);
-		this.arm11.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm11.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm11Rev = game.add.tween(avatar.characterArm1right);
-		this.arm11Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm11Rev.to({ angle: 20 }, 550, Phaser.Easing.Quadratic.InOut);
 
 		this.arm21 = game.add.tween(avatar.characterArm2right);
-		this.arm21.to({ angle: -10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm21.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm21Rev = game.add.tween(avatar.characterArm2right);
-		this.arm21Rev.to({ angle: 10 }, 550, Phaser.Easing.Quadratic.InOut);
+		this.arm21Rev.to({ angle: 20 }, 550, Phaser.Easing.Quadratic.InOut);
 	}
 	waveLeftSetup(avatar) {
 		this.arm1Wave = game.add.tween(avatar.characterArm1left);
