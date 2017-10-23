@@ -3,6 +3,8 @@ class animationTiger {
 		this.now = game.time.time;
 		this.targetTime = undefined;
 		this.avatar = avatar;
+		this.firstenter = true;
+		this.jumpsetup(this.avatar);
 		this.walkSetup(this.avatar);
 		this.waveRightSetup(this.avatar);
 		this.waveLeftSetup(this.avatar);
@@ -11,11 +13,15 @@ class animationTiger {
 	}
 
 	processor() {
-		if (this.avatar.characterBox.body.velocity.x != 0)
-			{
-			this.walk();
-			this.walkBounce();
+		//console.log(this.avatar.characterBox.y);
+		if(this.avatar.characterBox.y > 287){
+			if (this.avatar.characterBox.body.velocity.x != 0) {
+				this.walk();
+				this.walkBounce();
 			}
+		}
+		this.Jump();
+		
 	}
 
 	walk(direction) {
@@ -89,7 +95,7 @@ class animationTiger {
 		this.arm2.to({ angle: -20 }, 550, Phaser.Easing.Quadratic.InOut);
 		this.arm2Rev = game.add.tween(avatar.characterArm2left);
 		this.arm2Rev.to({ angle: 20 }, 550, Phaser.Easing.Quadratic.InOut);
-		
+
 		//right
 		avatar.characterLeg1right.angle = -20;
 		this.leg11 = game.add.tween(avatar.characterLeg1right);
@@ -170,11 +176,11 @@ class animationTiger {
 		this.chestbounceup1 = game.add.tween(avatar.characterChestright);
 		this.tailbounceup1 = game.add.tween(avatar.characterPelvisright);
 		this.headbounceup.to({ y: -31 }, 400, Phaser.Easing.Linear.None);
-		this.chestbounceup.to({ y: 9}, 400, Phaser.Easing.Linear.None);
-		this.tailbounceup.to({angle: -10}, 400, Phaser.Easing.Linear.None);
+		this.chestbounceup.to({ y: 9 }, 400, Phaser.Easing.Linear.None);
+		this.tailbounceup.to({ angle: -10 }, 400, Phaser.Easing.Linear.None);
 		this.headbounceup1.to({ y: -31 }, 400, Phaser.Easing.Linear.None);
 		this.chestbounceup1.to({ y: 9 }, 400, Phaser.Easing.Linear.None);
-		this.tailbounceup1.to({angle: 10}, 400, Phaser.Easing.Linear.None);
+		this.tailbounceup1.to({ angle: 10 }, 400, Phaser.Easing.Linear.None);
 
 
 		this.headbouncedown = game.add.tween(avatar.characterHeadleft);
@@ -185,10 +191,10 @@ class animationTiger {
 		this.tailbouncedown1 = game.add.tween(avatar.characterPelvisright);
 		this.headbouncedown.to({ y: -28 }, 400, Phaser.Easing.Linear.None);
 		this.chestbouncedown.to({ y: 12 }, 400, Phaser.Easing.Linear.None);
-		this.tailbouncedown.to({angle: 0}, 400, Phaser.Easing.Linear.None);
+		this.tailbouncedown.to({ angle: 0 }, 400, Phaser.Easing.Linear.None);
 		this.headbouncedown1.to({ y: -28 }, 400, Phaser.Easing.Linear.None);
 		this.chestbouncedown1.to({ y: 12 }, 400, Phaser.Easing.Linear.None);
-		this.tailbouncedown1.to({angle: 0}, 400, Phaser.Easing.Linear.None);
+		this.tailbouncedown1.to({ angle: 0 }, 400, Phaser.Easing.Linear.None);
 	}
 
 	walkBounce() {
@@ -209,6 +215,59 @@ class animationTiger {
 			this.tailbouncedown1.start();
 		}
 	}
+	jumpsetup(avatar){
+		this.jumpArm1left = game.add.tween(this.avatar.characterArm1left);
+		this.jumpArm1left.to({angle: 60}, 100, Phaser.Easing.Linear.None);
+		this.jumpArm2left = game.add.tween(this.avatar.characterArm2left);
+		this.jumpArm2left.to({angle: 60}, 100, Phaser.Easing.Linear.None);
+		this.jumpLeg1left = game.add.tween(this.avatar.characterLeg1left);
+		this.jumpLeg1left.to({angle: -60}, 100, Phaser.Easing.Linear.None);
+		this.jumpLeg2left = game.add.tween(this.avatar.characterLeg2left);
+		this.jumpLeg2left.to({angle: -60}, 100, Phaser.Easing.Linear.None);
+
+		this.jumpArm1right = game.add.tween(this.avatar.characterArm1right);
+		this.jumpArm1right.to({angle: -60}, 50, Phaser.Easing.Linear.None);
+		this.jumpArm2right = game.add.tween(this.avatar.characterArm2right);
+		this.jumpArm2right.to({angle: -60}, 50, Phaser.Easing.Linear.None);
+		this.jumpLeg1right = game.add.tween(this.avatar.characterLeg1right);
+		this.jumpLeg1right.to({angle: 60}, 50, Phaser.Easing.Linear.None);
+		this.jumpLeg2right = game.add.tween(this.avatar.characterLeg2right);
+		this.jumpLeg2right.to({angle: 60}, 50, Phaser.Easing.Linear.None);
+	}
+
+	Jump() {
+			if (this.avatar.characterBox.body.velocity.x != 0 && this.avatar.characterBox.y < 230) {
+				if(this.firstenter){
+				this.jumpArm1left.start();
+				this.jumpArm2left.start();
+				this.jumpLeg1left.start();
+				this.jumpLeg2left.start();
+
+				this.jumpArm1right.start();
+				this.jumpArm2right.start();
+				this.jumpLeg1right.start();
+				this.jumpLeg2right.start();
+
+				this.counter = 1;
+				this.firstenter = false;
+				}
+			}
+			else{
+				if(this.counter == 1){
+				this.avatar.characterArm1left.angle = 20;
+				this.avatar.characterArm2left.angle = -20;
+				this.avatar.characterLeg1left.angle = 20;
+				this.avatar.characterLeg2left.angle = -20;
+	
+				this.avatar.characterArm1right.angle = 20;
+				this.avatar.characterArm2right.angle = -20;
+				this.avatar.characterLeg1right.angle = 20;
+				this.avatar.characterLeg2right.angle = -20;
+				this.counter = 0;
+				}
+			}
+	}
+
 
 	randomWalk() {
 		if ((avatar.animations.walkSideToSide(random(5000, 200), direction)) == 0) {
