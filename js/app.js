@@ -22,5 +22,11 @@ function create() {
 function update() {
 	controls.processor();
 	animations.processor();
+	physics();
+}
+
+function physics() {
 	game.physics.arcade.collide(env.floor, avatar.characterBox);
+	game.physics.arcade.collide(env.floor, avatar.headGeyser2);
+	game.physics.arcade.collide(env.floor, avatar.headGeyser);
 }

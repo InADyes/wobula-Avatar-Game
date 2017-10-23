@@ -11,6 +11,8 @@ class felix {
 	addBodyParts() {
 		this.characterBox = game.add.sprite(100, 100);
 		this.characterHead = game.add.sprite(-15, -60, 'charFelixHead');
+		this.characterAntenna = game.add.sprite(-35, -55, 'charFelixAntena');
+		this.characterAntenna.anchor.setTo(0, 1);
 		this.characterBody = game.add.sprite(-15, -10, 'charFelixBody');
 		this.characterArmR = game.add.sprite(5, -5, 'charFelixArmR');
 		this.characterArmR.scale.setTo(.7, .7);
@@ -31,6 +33,7 @@ class felix {
 		this.characterArmLJoint2.addChild(this.characterArmLHandBot);
 		this.characterArmLJoint2.addChild(this.characterArmLHandTop);
 		this.characterBox.addChild(this.characterHead);
+		this.characterBox.addChild(this.characterAntenna);
 		this.characterBox.addChild(this.characterArmR);
 		this.characterBox.addChild(this.characterBody);
 		this.characterBox.scale.setTo(.7, .7);
