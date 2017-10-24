@@ -3,7 +3,7 @@ class animationTiger {
 		this.now = game.time.time;
 		this.targetTime = undefined;
 		this.avatar = avatar;
-		this.firstenter = true;
+		//this.firstenter = true;
 		this.jumpsetup(this.avatar);
 		this.walkSetup(this.avatar);
 		this.waveRightSetup(this.avatar);
@@ -237,7 +237,7 @@ class animationTiger {
 
 	Jump() {
 			if (this.avatar.characterBox.body.velocity.x != 0 && this.avatar.characterBox.y < 230) {
-				if(this.firstenter){
+				
 				this.jumpArm1left.start();
 				this.jumpArm2left.start();
 				this.jumpLeg1left.start();
@@ -249,8 +249,7 @@ class animationTiger {
 				this.jumpLeg2right.start();
 
 				this.counter = 1;
-				this.firstenter = false;
-				}
+				
 			}
 			else{
 				if(this.counter == 1){

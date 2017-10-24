@@ -42,7 +42,7 @@ class tiger {
 		this.characterHeadleft.scale.setTo(.6, .6);
 		this.characterHeadleft.anchor.setTo(.5, .5);
 		
-		this.characterArm1left = game.add.sprite(-10, 9, 'tigerfrontleg1');
+		this.characterArm1left = game.add.sprite(-10, 3, 'tigerfrontleg1');
 		this.characterArm1left.scale.setTo(.6, .6);
 		this.characterArm1left.anchor.setTo(.5, .2);
 		
@@ -50,15 +50,15 @@ class tiger {
 		//this.characterChest.scale.setTo(.3, .3);
 		this.characterChestleft.anchor.setTo(.5, .5);
 		
-		this.characterArm2left = game.add.sprite(-10, 9, 'tigerfrontleg2');
+		this.characterArm2left = game.add.sprite(-10, 3, 'tigerfrontleg2');
 		this.characterArm2left.scale.setTo(.6, .6);
 		this.characterArm2left.anchor.setTo(.5, .2);
 		
-		this.characterLeg1left = game.add.sprite(19, 9, 'tigerbackleg1');
+		this.characterLeg1left = game.add.sprite(19, 3, 'tigerbackleg1');
 		this.characterLeg1left.scale.setTo(.6, .6);
 		this.characterLeg1left.anchor.setTo(.4, .2);
 		
-		this.characterLeg2left = game.add.sprite(19, 9, 'tigerbackleg2');
+		this.characterLeg2left = game.add.sprite(19, 3, 'tigerbackleg2');
 		this.characterLeg2left.scale.setTo(.6, .6);
 		this.characterLeg2left.anchor.setTo(.5, .2);
 		
