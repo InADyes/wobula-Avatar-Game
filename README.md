@@ -1,5 +1,5 @@
-# Avatar-Game by Opera Event (2017)
-### A sandbox pet game for twitch streamers and viewers.
+# Avatar-Game
+### A sandbox pet game
 
 ## <p>Installation:</p>
 
